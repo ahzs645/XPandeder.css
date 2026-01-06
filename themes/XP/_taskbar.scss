@@ -70,6 +70,14 @@
                 background: #194AA8;
                 box-shadow: 4px 6px 5px -5px rgba(0,0,0,0.7) inset;
             }
+            &:hover,
+            &:focus,
+            &:focus-within {
+                filter: brightness(1.2);
+                img {
+                    filter: brightness(83.333333333%)
+                }
+            }
         }
     }
     .notification-tray {

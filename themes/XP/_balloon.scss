@@ -1,0 +1,36 @@
+/*-------------------------------------------*\
+    Balloon
+\*-------------------------------------------*/
+
+.balloon-tip {
+    background-color: #F1F1D5;
+    border-radius: 7px;
+    border: 1px solid black;
+    padding: 4px 5px 9px 11px;
+
+    .balloon-titlebar {
+        font-weight: 600;
+        display: flex;
+        margin-bottom: 5px;
+        .balloon-title {
+            flex: 1;
+        }
+        [aria-label="close"]{
+            background-image: svg-load('./icon/close-balloon.svg');
+            background-repeat: no-repeat;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            min-width: 16px;
+            min-height: 16px;
+            border-radius: 0;
+            &:hover,
+            &:focus,
+            &:focus-within {
+                background-image: svg-load('./icon/close-balloon-hover.svg');
+                box-shadow: 1px 1px 1px 0px #00000031;
+                outline: none;
+            }
+        }
+    }
+}

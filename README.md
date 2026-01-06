@@ -89,9 +89,9 @@ Also please refer to [the GitHub issues page](https://github.com/jdan/98.css/iss
 - [x] Title bar icons
 - [ ] Taskbar
   - [ ] Start Menu
-  - [ ] Taskbar buttons
+  - [x] Taskbar buttons
   - [ ] Clock/Notifications area
-    - [ ] Clock
+    - [x] Clock
     - [ ] Notification bubbles
 - [ ] Tooltip/comments
   - [ ] Bubble tips 
