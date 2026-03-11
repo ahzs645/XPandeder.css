@@ -113,9 +113,11 @@
         }
 
         label {
-            font-size: 17px;
             padding: 2px 15px 2px 15px;
-            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 100%;
             filter: drop-shadow(1px 1.5px 3px rgba(43, 49, 0, 1));
             position: relative;
             z-index: 2;
