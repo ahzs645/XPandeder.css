@@ -18,24 +18,107 @@
         flex: 0 0 95px;
         box-sizing: border-box;
         height: 28px;
-        position:relative;
-        display:inline-block;
-        font-style:italic;
-        text-shadow:1px 1px 1px #333;
-        border-radius:0px 10px 15px 0px;
-        border:none;
-        transform:skewX(-3deg);
+        position: relative;
+        display: inline-block;
+        font-style: italic;
+        text-shadow: 1px 1px 1px #333;
+        border-radius: 0px 10px 15px 0px;
+        border: none;
+        transform: skewX(-3deg);
         left: -5px;
-        
+        overflow: hidden;
 
-        background-color: #459246 ;
-        box-shadow: 5px 6px 5px 0px rgba(146,191,147,1) inset, 1px 4px 1px 1px #39793A inset, 0px 10px 5px 1px #39793a inset, 8px 0px 5px 1px #39793a inset, -8px 0px 5px 1px #39793a inset;
+        background-color: #4DB632;
+        box-shadow:
+            /* External drop shadow (blue tint from taskbar) */
+            1px 1px 1px rgba(48, 127, 232, 1),
+            /* Top bright green glow */
+            inset 0 11px 17px rgba(50, 137, 50, 0.66),
+            /* Right side darkening */
+            inset -14px 0 12px rgba(0, 0, 0, 0.2),
+            /* Left side darkening */
+            inset 12px 0 12px rgba(0, 0, 0, 0.2),
+            /* Bottom edge green tint */
+            inset 0 -3px 4px rgba(50, 134, 50, 1),
+            /* Right dark green edge */
+            inset -4px 0 6px rgba(17, 86, 56, 1),
+            /* Thin right edge */
+            inset -1px 0 2px rgba(0, 67, 38, 0.5),
+            /* Thin left edge */
+            inset 1px 0 2px rgba(0, 67, 38, 0.5);
+
+        /* Top horizontal white highlight */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            right: 5px;
+            height: 4px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.33));
+            opacity: 0.66;
+            filter: blur(1.5px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Left vertical white highlight */
+        &::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 2px;
+            width: 3px;
+            height: 18px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            opacity: 0.66;
+            filter: blur(1.5px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Hover state - brighter green, softer shadows */
+        &:hover {
+            background-color: #3AC43B;
+            box-shadow:
+                1px 1px 1px rgba(48, 127, 232, 1),
+                inset 0 11px 17px rgba(65, 171, 65, 1),
+                inset -14px 0 12px rgba(0, 0, 0, 0.05),
+                inset 0 -3px 4px rgba(50, 134, 50, 0.5),
+                inset -4px 0 6px rgba(17, 86, 56, 0.33),
+                inset -1px 0 2px rgba(0, 67, 38, 0.5),
+                inset 1px 0 2px rgba(0, 67, 38, 0.5);
+        }
+
+        /* Active/pressed state (start menu open) */
+        &:active,
+        &:has(input:checked) {
+            background-color: #1F9A1F;
+            box-shadow:
+                1px 1px 1px rgba(48, 127, 232, 1),
+                inset -12px 6px 12px rgba(0, 0, 0, 0.2),
+                inset 12px 6px 12px rgba(0, 0, 0, 0.2),
+                inset 0 3px 4px rgba(50, 134, 50, 1),
+                inset 0 -1px 2px rgba(17, 86, 56, 0.66),
+                inset -1px 0 2px rgba(0, 67, 38, 0.5),
+                inset 2px 2px 4px rgba(0, 67, 38, 0.66);
+
+            &::before {
+                opacity: 0.2;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
 
         label {
-            font-size:17px;
+            font-size: 17px;
             padding: 2px 15px 2px 15px;
             font-weight: 500;
-            filter: drop-shadow( 1px 2px 1px rgba(0, 0, 0, .7));
+            filter: drop-shadow(1px 1.5px 3px rgba(43, 49, 0, 1));
+            position: relative;
+            z-index: 2;
         }
     }
     .running-applications {
