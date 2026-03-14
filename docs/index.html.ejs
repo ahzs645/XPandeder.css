@@ -32,6 +32,7 @@
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#combo-box">ComboBox</a></li>
           <li><a href="#menus">Menus</a></li>
           <li>
             <a href="#window">Window</a>
@@ -584,6 +585,46 @@ import "xp.css/dist/98.css";</pre>
       </div>
     </section>
 
+    <section class="component">
+      <h3 id="combo-box">ComboBox</h3>
+      <div>
+        <blockquote>
+          A <em>combo box</em> is a combination of a text box and a
+          drop-down list. It allows the user to type a value directly
+          or select from a predefined list.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 177
+          </footer>
+        </blockquote>
+
+        <p>
+          ComboBoxes can be rendered by wrapping an <code>input</code> and
+          a <code>button</code> inside a container with the
+          <code>combo-box</code> class.
+        </p>
+
+        <%- example(`
+          <div class="combo-box">
+            <input type="text" value="" />
+            <button></button>
+          </div>
+        `) %>
+
+        <p>
+          You can set a default value using the <code>value</code> attribute
+          on the input.
+        </p>
+
+        <%- example(`
+          <label for="combo-example">Open:</label>
+          <div class="combo-box" style="width: 200px;">
+            <input type="text" id="combo-example" value="3 - Pretty good" />
+            <button></button>
+          </div>
+        `) %>
+      </div>
+    </section>
 
     <section class="component">
       <h3 id="menus">Menus</h3>

@@ -32,6 +32,7 @@
           <li><a href="#text-box">TextBox</a></li>
           <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#combo-box">ComboBox</a></li>
           <li><a href="#menus">Menus</a></li>
           <li>
             <a href="#window">Window</a>
@@ -802,6 +803,61 @@ import "xp.css/dist/98.css";</pre>
       </div>
     </section>
 
+    <section class="component">
+      <h3 id="combo-box">ComboBox</h3>
+      <div>
+        <blockquote>
+          A <em>combo box</em> is a combination of a text box and a
+          drop-down list. It allows the user to type a value directly
+          or select from a predefined list.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 177
+          </footer>
+        </blockquote>
+
+        <p>
+          ComboBoxes can be rendered by wrapping an <code>input</code> and
+          a <code>button</code> inside a container with the
+          <code>combo-box</code> class.
+        </p>
+
+        <div class="example">
+      <div class="combo-box">
+  <input type="text" value="" />
+  <button></button>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;combo-box&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+
+        <p>
+          You can set a default value using the <code>value</code> attribute
+          on the input.
+        </p>
+
+        <div class="example">
+      <label for="combo-example">Open:</label>
+<div class="combo-box" style="width: 200px;">
+  <input type="text" id="combo-example" value="3 - Pretty good" />
+  <button></button>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;combo-example&quot;</span>&gt;</span>Open:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;combo-box&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 200px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;combo-example&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3 - Pretty good&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+      </div>
+    </section>
 
     <section class="component">
       <h3 id="menus">Menus</h3>

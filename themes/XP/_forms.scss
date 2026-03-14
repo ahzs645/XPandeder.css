@@ -167,6 +167,31 @@ select {
     height: 23px;
 }
 
+.combo-box {
+    border: 1px solid #7f9db9;
+    height: 23px;
+    button {
+        background: svg-load("./icon/dropdown.svg") no-repeat center;
+        background-size: 15px;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        &:hover {
+            background: svg-load("./icon/dropdown-hover.svg") no-repeat center;
+            background-size: 15px;
+            box-shadow: none;
+        }
+        &:active {
+            background: svg-load("./icon/dropdown-active.svg") no-repeat center;
+            background-size: 15px;
+            box-shadow: none;
+        }
+    }
+    &:focus-within {
+        box-shadow: inset 2px 2px white, inset -2px -2px white;
+    }
+}
+
 input::selection,
 textarea::selection {
     background: var(--dialog-blue);

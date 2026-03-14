@@ -306,6 +306,51 @@ input[type="range"].has-box-indicator {
         transform: translateY(0px);
     }
 }
+.combo-box {
+    display: inline-flex;
+    align-items: stretch;
+    height: 21px;
+    background-color: var(--button-highlight);
+    box-sizing: border-box;
+    input[type="text"] {
+        border: none;
+        flex: 1;
+        padding: 3px 4px;
+        font-family: var(--sans-serif);
+        font-size: 11px;
+        background: transparent;
+        box-sizing: border-box;
+        outline: none;
+        min-width: 0;
+        height: auto;
+        line-height: normal;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+    }
+    button {
+        width: 17px;
+        min-width: 17px;
+        min-height: 0;
+        flex-shrink: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: svg-load("./icon/button-down.svg") no-repeat center;
+        box-shadow: none;
+        cursor: default;
+        box-sizing: border-box;
+        outline: none;
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            background: svg-load("./icon/button-down-active.svg") no-repeat center;
+            box-shadow: none;
+        }
+    }
+}
 .is-vertical {
     display: inline-block;
     width: 4px;
