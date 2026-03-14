@@ -1,0 +1,138 @@
+/*-------------------------------------------*\
+    Color Picker
+\*-------------------------------------------*/
+
+.color-picker {
+    display: flex;
+    gap: 16px;
+    font-family: var(--sans-serif);
+    font-size: 11px;
+}
+
+.color-picker-left {
+    flex-shrink: 0;
+}
+
+.color-picker-right {
+    flex-shrink: 0;
+}
+
+.color-picker-basic,
+.color-picker-custom {
+    display: grid;
+    grid-template-columns: repeat(8, 16px);
+    gap: 3px;
+}
+
+.color-swatch {
+    width: 16px;
+    height: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px #fff, -1px -1px 2px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 0;
+    &.selected {
+        border: 2px solid #000;
+    }
+}
+
+.color-spectrum {
+    position: relative;
+    width: 190px;
+    height: 181px;
+    flex-shrink: 0;
+    cursor: crosshair;
+    box-shadow: 1px 1px 2px #fff, -1px -1px 2px rgba(0, 0, 0, 0.25);
+    canvas {
+        display: block;
+        width: 190px;
+        height: 181px;
+    }
+}
+
+.color-spectrum-cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #fff;
+    pointer-events: none;
+    transform: translate(-5px, -5px);
+}
+
+.color-luminance {
+    position: relative;
+    flex-shrink: 0;
+    width: 22px;
+    canvas {
+        display: block;
+        width: 10px;
+        height: 181px;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px #fff, -1px -1px 2px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.color-luminance-arrow {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #000;
+    pointer-events: none;
+}
+
+.color-spectrum-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.color-preview-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-preview {
+    width: 58px;
+    height: 40px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #fff, -1px -1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.color-preview-hex {
+    font-size: 10px;
+    color: #555;
+}
+
+.color-inputs {
+    display: flex;
+    gap: 16px;
+    .color-input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+    .color-input-row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        label {
+            min-width: 28px;
+        }
+        input[type="number"] {
+            width: 40px;
+            font-family: var(--sans-serif);
+            font-size: 11px;
+            padding: 1px 2px;
+        }
+    }
+}

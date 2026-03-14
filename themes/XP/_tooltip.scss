@@ -1,0 +1,16 @@
+/*-------------------------------------------*\
+    Tooltip
+\*-------------------------------------------*/
+
+[role="tooltip"],
+.tooltip {
+    display: inline-block;
+    width: fit-content;
+    font-family: var(--sans-serif);
+    font-size: 11px;
+    background-color: #ffffe1;
+    border: 1px solid black;
+    padding: 2px 4px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    -webkit-font-smoothing: antialiased;
+}

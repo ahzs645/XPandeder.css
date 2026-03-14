@@ -49,7 +49,9 @@
           <li><a href="#progress-bar">ProgressBar</a></li>
           <li><a href="#inactive-windows">Inactive Windows</a></li>
           <li><a href="#taskbar">Taskbar</a></li>
+          <li><a href="#tooltip">Tooltip</a></li>
           <li><a href="#balloon-tips">Balloon Tips</a></li>
+          <li><a href="#color-picker">Color Picker</a></li>
         </ul>
       </li>
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
@@ -1270,6 +1272,29 @@ import "xp.css/dist/98.css";</pre>
     </section>
 
 
+    <section class="component">
+      <h3 id="tooltip">Tooltip</h3>
+      <div>
+        <blockquote>
+          A <em>tooltip</em> is a small pop-up window that displays a brief
+          description of a control's function.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 162
+          </footer>
+        </blockquote>
+
+        <p>
+          Tooltips can be rendered using the <code>tooltip</code> class
+          or the <code>role="tooltip"</code> attribute.
+        </p>
+
+        <%- example(`
+          <div class="tooltip">Help description</div>
+        `) %>
+      </div>
+    </section>
+
     <div class="component">
       <h3 id="balloon-tips">Balloon Tips</h3>
       <div>
@@ -1287,6 +1312,174 @@ import "xp.css/dist/98.css";</pre>
       
     </div>
 
+
+    <section class="component">
+      <h3 id="color-picker">Color Picker</h3>
+      <div>
+        <blockquote>
+          A faithful recreation of the Windows XP "Edit Colors" dialog.
+          Uses existing window, button, and input components to compose the color picker UI.
+          Wire up the canvas and input interactions with your own JavaScript.
+          <footer>
+            &mdash; Windows XP Color Picker Dialog
+          </footer>
+        </blockquote>
+
+        <p>
+          The color picker is built as a <code>window</code> containing swatches, a spectrum canvas,
+          luminance slider, color preview, and HSL/RGB inputs. Use the <code>color-picker</code>,
+          <code>color-swatches</code>, <code>color-swatch</code>, <code>color-spectrum</code>,
+          <code>color-luminance</code>, <code>color-preview</code>, and <code>color-inputs</code> classes.
+        </p>
+
+        <%- example(`
+          <div class="window active" style="width: 530px">
+            <div class="title-bar">
+              <div class="title-bar-text">Edit Colors</div>
+              <div class="title-bar-controls">
+                <button aria-label="Help"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body">
+              <div class="color-picker">
+                <!-- Left column -->
+                <div>
+                  <label style="margin-bottom: 4px">Basic colors:</label>
+                  <div class="color-picker-basic" style="margin-bottom: 8px">
+                    <div class="color-swatch" style="background: #FF8080"></div>
+                    <div class="color-swatch" style="background: #FFFF80"></div>
+                    <div class="color-swatch" style="background: #80FF80"></div>
+                    <div class="color-swatch" style="background: #00FF80"></div>
+                    <div class="color-swatch" style="background: #80FFFF"></div>
+                    <div class="color-swatch" style="background: #0080FF"></div>
+                    <div class="color-swatch" style="background: #FF80C0"></div>
+                    <div class="color-swatch" style="background: #FF80FF"></div>
+                    <div class="color-swatch selected" style="background: #FF0000"></div>
+                    <div class="color-swatch" style="background: #FFFF00"></div>
+                    <div class="color-swatch" style="background: #80FF00"></div>
+                    <div class="color-swatch" style="background: #00FF40"></div>
+                    <div class="color-swatch" style="background: #00FFFF"></div>
+                    <div class="color-swatch" style="background: #0080C0"></div>
+                    <div class="color-swatch" style="background: #8080C0"></div>
+                    <div class="color-swatch" style="background: #FF00FF"></div>
+                    <div class="color-swatch" style="background: #804040"></div>
+                    <div class="color-swatch" style="background: #FF8040"></div>
+                    <div class="color-swatch" style="background: #00FF00"></div>
+                    <div class="color-swatch" style="background: #008080"></div>
+                    <div class="color-swatch" style="background: #004080"></div>
+                    <div class="color-swatch" style="background: #8080FF"></div>
+                    <div class="color-swatch" style="background: #800040"></div>
+                    <div class="color-swatch" style="background: #FF0080"></div>
+                    <div class="color-swatch" style="background: #800000"></div>
+                    <div class="color-swatch" style="background: #FF8000"></div>
+                    <div class="color-swatch" style="background: #008000"></div>
+                    <div class="color-swatch" style="background: #008040"></div>
+                    <div class="color-swatch" style="background: #0000FF"></div>
+                    <div class="color-swatch" style="background: #0000A0"></div>
+                    <div class="color-swatch" style="background: #800080"></div>
+                    <div class="color-swatch" style="background: #8000FF"></div>
+                    <div class="color-swatch" style="background: #400000"></div>
+                    <div class="color-swatch" style="background: #804000"></div>
+                    <div class="color-swatch" style="background: #004000"></div>
+                    <div class="color-swatch" style="background: #004040"></div>
+                    <div class="color-swatch" style="background: #000080"></div>
+                    <div class="color-swatch" style="background: #000040"></div>
+                    <div class="color-swatch" style="background: #400040"></div>
+                    <div class="color-swatch" style="background: #400080"></div>
+                    <div class="color-swatch" style="background: #000000"></div>
+                    <div class="color-swatch" style="background: #808000"></div>
+                    <div class="color-swatch" style="background: #808040"></div>
+                    <div class="color-swatch" style="background: #808080"></div>
+                    <div class="color-swatch" style="background: #408080"></div>
+                    <div class="color-swatch" style="background: #C0C0C0"></div>
+                    <div class="color-swatch" style="background: #400040"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                  </div>
+
+                  <label style="margin-bottom: 4px">Custom colors:</label>
+                  <div class="color-picker-custom" style="margin-bottom: 8px">
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                  </div>
+
+                  <div class="color-inputs" style="margin-top: 8px">
+                    <div class="color-input-group">
+                      <div class="color-input-row">
+                        <label>Hue:</label>
+                        <input type="number" value="160" min="0" max="360">
+                      </div>
+                      <div class="color-input-row">
+                        <label>Sat:</label>
+                        <input type="number" value="240" min="0" max="240">
+                      </div>
+                      <div class="color-input-row">
+                        <label>Lum:</label>
+                        <input type="number" value="120" min="0" max="240">
+                      </div>
+                    </div>
+                    <div class="color-input-group">
+                      <div class="color-input-row">
+                        <label>Red:</label>
+                        <input type="number" value="0" min="0" max="255">
+                      </div>
+                      <div class="color-input-row">
+                        <label>Green:</label>
+                        <input type="number" value="255" min="0" max="255">
+                      </div>
+                      <div class="color-input-row">
+                        <label>Blue:</label>
+                        <input type="number" value="128" min="0" max="255">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; gap: 6px; margin-top: 12px">
+                    <button>Add to Custom Colors</button>
+                  </div>
+                  <div style="display: flex; gap: 6px; margin-top: 8px">
+                    <button style="min-width: 68px">OK</button>
+                    <button style="min-width: 68px">Cancel</button>
+                  </div>
+                </div>
+
+                <!-- Right column - spectrum & luminance -->
+                <div>
+                  <div style="display: flex; gap: 14px; margin-bottom: 12px">
+                    <div class="color-spectrum">
+                      <canvas width="190" height="181" id="color-spectrum-canvas"></canvas>
+                      <div class="color-spectrum-cursor" style="left: 85px; top: 0px"></div>
+                    </div>
+                    <div class="color-luminance">
+                      <canvas width="10" height="181" id="color-luminance-canvas"></canvas>
+                      <div class="color-luminance-arrow" style="top: 86px"></div>
+                    </div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px">
+                    <div class="color-preview" style="background: #00FF80"></div>
+                    <span style="font-size: 10px; color: #555">#00FF80</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>
 
     <h2 id="issues-contributing-etc">Issues, Contributing, etc.</h2>
 
