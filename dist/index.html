@@ -49,6 +49,7 @@
           <li><a href="#progress-bar">ProgressBar</a></li>
           <li><a href="#inactive-windows">Inactive Windows</a></li>
           <li><a href="#taskbar">Taskbar</a></li>
+          <li><a href="#table">Table</a></li>
           <li><a href="#tooltip">Tooltip</a></li>
           <li><a href="#balloon-tips">Balloon Tips</a></li>
           <li><a href="#color-picker">Color Picker</a></li>
@@ -1923,6 +1924,105 @@ import "xp.css/dist/98.css";</pre>
 
 
     <section class="component">
+      <h3 id="table">Table</h3>
+      <div>
+        <blockquote>
+          A <em>list view</em> displays a collection of items, each
+          consisting of an icon and a label, presented in one of
+          several arrangements.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          Tables can be rendered using standard <code>table</code>,
+          <code>thead</code>, <code>tbody</code>, <code>tr</code>,
+          <code>th</code>, and <code>td</code> elements.
+        </p>
+
+        <div class="example">
+      <table style="width: 300px;">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Date Modified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>App Patch</td>
+      <td>File Folder</td>
+      <td>25/06/2022 17:26</td>
+    </tr>
+    <tr aria-selected="true">
+      <td>Connection Wizard</td>
+      <td>File Folder</td>
+      <td>25/06/2022 17:26</td>
+    </tr>
+    <tr>
+      <td>Cursors</td>
+      <td>File Folder</td>
+      <td>25/06/2022 17:26</td>
+    </tr>
+    <tr>
+      <td>Fonts</td>
+      <td>File Folder</td>
+      <td>25/06/2022 17:26</td>
+    </tr>
+    <tr>
+      <td>Help</td>
+      <td>File Folder</td>
+      <td>25/06/2022 17:26</td>
+    </tr>
+  </tbody>
+</table>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 300px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Type<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Date Modified<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>App Patch<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>25/06/2022 17:26<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">aria-selected</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Connection Wizard<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>25/06/2022 17:26<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cursors<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>25/06/2022 17:26<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Fonts<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>25/06/2022 17:26<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Help<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>File Folder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>25/06/2022 17:26<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></code></pre>
+      </details>
+    </div>
+      </div>
+    </section>
+
+    <section class="component">
       <h3 id="tooltip">Tooltip</h3>
       <div>
         <blockquote>
@@ -1987,7 +2087,7 @@ import "xp.css/dist/98.css";</pre>
         </p>
 
         <div class="example">
-      <div class="window active" style="width: 530px">
+      <div class="window active" style="display: inline-block">
   <div class="title-bar">
     <div class="title-bar-text">Edit Colors</div>
     <div class="title-bar-controls">
@@ -1997,8 +2097,7 @@ import "xp.css/dist/98.css";</pre>
   </div>
   <div class="window-body">
     <div class="color-picker">
-      <!-- Left column -->
-      <div>
+      <div class="color-picker-left">
         <label style="margin-bottom: 4px">Basic colors:</label>
         <div class="color-picker-basic" style="margin-bottom: 8px">
           <div class="color-swatch" style="background: #FF8080"></div>
@@ -2111,9 +2210,8 @@ import "xp.css/dist/98.css";</pre>
         </div>
       </div>
 
-      <!-- Right column - spectrum & luminance -->
-      <div>
-        <div style="display: flex; gap: 14px; margin-bottom: 12px">
+      <div class="color-picker-right">
+        <div class="color-spectrum-row">
           <div class="color-spectrum">
             <canvas width="190" height="181" id="color-spectrum-canvas"></canvas>
             <div class="color-spectrum-cursor" style="left: 85px; top: 0px"></div>
@@ -2123,9 +2221,9 @@ import "xp.css/dist/98.css";</pre>
             <div class="color-luminance-arrow" style="top: 86px"></div>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px">
+        <div class="color-preview-row">
           <div class="color-preview" style="background: #00FF80"></div>
-          <span style="font-size: 10px; color: #555">#00FF80</span>
+          <span class="color-preview-hex">#00FF80</span>
         </div>
       </div>
     </div>
@@ -2133,7 +2231,7 @@ import "xp.css/dist/98.css";</pre>
 </div>
       <details>
         <summary>Show code</summary>
-        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window active&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 530px&quot;</span>&gt;</span>
+        <pre><code>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>Edit Colors<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
@@ -2143,8 +2241,7 @@ import "xp.css/dist/98.css";</pre>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker&quot;</span>&gt;</span>
-      <span class="hljs-comment">&lt;!-- Left column --&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-left&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 4px&quot;</span>&gt;</span>Basic colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-basic&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #FF8080&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2257,9 +2354,8 @@ import "xp.css/dist/98.css";</pre>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-      <span class="hljs-comment">&lt;!-- Right column - spectrum &amp; luminance --&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: flex; gap: 14px; margin-bottom: 12px&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-right&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum-row&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;190&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;181&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;color-spectrum-canvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum-cursor&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;left: 85px; top: 0px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2269,14 +2365,14 @@ import "xp.css/dist/98.css";</pre>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance-arrow&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;top: 86px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: flex; align-items: center; gap: 10px&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-row&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #00FF80&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 10px; color: #555&quot;</span>&gt;</span>#00FF80<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-hex&quot;</span>&gt;</span>#00FF80<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+</code></pre>
       </details>
     </div>
       </div>

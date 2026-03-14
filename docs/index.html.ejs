@@ -49,6 +49,7 @@
           <li><a href="#progress-bar">ProgressBar</a></li>
           <li><a href="#inactive-windows">Inactive Windows</a></li>
           <li><a href="#taskbar">Taskbar</a></li>
+          <li><a href="#table">Table</a></li>
           <li><a href="#tooltip">Tooltip</a></li>
           <li><a href="#balloon-tips">Balloon Tips</a></li>
           <li><a href="#color-picker">Color Picker</a></li>
@@ -1273,6 +1274,66 @@ import "xp.css/dist/98.css";</pre>
 
 
     <section class="component">
+      <h3 id="table">Table</h3>
+      <div>
+        <blockquote>
+          A <em>list view</em> displays a collection of items, each
+          consisting of an icon and a label, presented in one of
+          several arrangements.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          Tables can be rendered using standard <code>table</code>,
+          <code>thead</code>, <code>tbody</code>, <code>tr</code>,
+          <code>th</code>, and <code>td</code> elements.
+        </p>
+
+        <%- example(`
+          <table style="width: 300px;">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Date Modified</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>App Patch</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr aria-selected="true">
+                <td>Connection Wizard</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Cursors</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Fonts</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Help</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+            </tbody>
+          </table>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
       <h3 id="tooltip">Tooltip</h3>
       <div>
         <blockquote>
@@ -1333,7 +1394,7 @@ import "xp.css/dist/98.css";</pre>
         </p>
 
         <%- example(`
-          <div class="window active" style="width: 530px">
+          [[<div class="window active" style="display: inline-block">]]
             <div class="title-bar">
               <div class="title-bar-text">Edit Colors</div>
               <div class="title-bar-controls">
@@ -1343,8 +1404,7 @@ import "xp.css/dist/98.css";</pre>
             </div>
             <div class="window-body">
               <div class="color-picker">
-                <!-- Left column -->
-                <div>
+                <div class="color-picker-left">
                   <label style="margin-bottom: 4px">Basic colors:</label>
                   <div class="color-picker-basic" style="margin-bottom: 8px">
                     <div class="color-swatch" style="background: #FF8080"></div>
@@ -1457,9 +1517,8 @@ import "xp.css/dist/98.css";</pre>
                   </div>
                 </div>
 
-                <!-- Right column - spectrum & luminance -->
-                <div>
-                  <div style="display: flex; gap: 14px; margin-bottom: 12px">
+                <div class="color-picker-right">
+                  <div class="color-spectrum-row">
                     <div class="color-spectrum">
                       <canvas width="190" height="181" id="color-spectrum-canvas"></canvas>
                       <div class="color-spectrum-cursor" style="left: 85px; top: 0px"></div>
@@ -1469,14 +1528,14 @@ import "xp.css/dist/98.css";</pre>
                       <div class="color-luminance-arrow" style="top: 86px"></div>
                     </div>
                   </div>
-                  <div style="display: flex; align-items: center; gap: 10px">
+                  <div class="color-preview-row">
                     <div class="color-preview" style="background: #00FF80"></div>
-                    <span style="font-size: 10px; color: #555">#00FF80</span>
+                    <span class="color-preview-hex">#00FF80</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          [[</div>]]
         `) %>
       </div>
     </section>
