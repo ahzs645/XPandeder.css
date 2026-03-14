@@ -253,6 +253,37 @@ input[type="email"] {
         outline: none;
     }
 }
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    padding: 2px;
+    width: 44px;
+    height: 23px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: var(--surface);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border-radius: 0;
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    &::-webkit-color-swatch {
+        border: 1px solid #7f9db9;
+        border-radius: 0;
+    }
+    &::-moz-color-swatch {
+        border: 1px solid #7f9db9;
+        border-radius: 0;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:not(:disabled):active {
+        box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    }
+}
 input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
@@ -348,6 +379,80 @@ input[type="range"].has-box-indicator {
         &:active {
             background: svg-load("./icon/button-down-active.svg") no-repeat center;
             box-shadow: none;
+        }
+    }
+}
+.spin-box {
+    display: inline-flex;
+    align-items: stretch;
+    height: 21px;
+    background-color: var(--button-highlight);
+    box-sizing: border-box;
+    input[type="text"],
+    input[type="number"] {
+        border: none;
+        flex: 1;
+        padding: 3px 4px;
+        font-family: var(--sans-serif);
+        font-size: 11px;
+        background: transparent;
+        box-sizing: border-box;
+        outline: none;
+        min-width: 0;
+        height: auto;
+        line-height: normal;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+    }
+    .spin-box-controls {
+        display: flex;
+        flex-direction: column;
+        width: 17px;
+        min-width: 17px;
+        flex-shrink: 0;
+        background: var(--button-highlight);
+        border-radius: 3px;
+        overflow: hidden;
+        button {
+            flex: 1;
+            width: 100%;
+            min-height: 0;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            cursor: default;
+            box-sizing: border-box;
+            outline: none;
+            background-color: var(--button-face);
+            box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 7px 4px;
+            &.up {
+                background-image: svg-load("./icon/arrow-up.svg");
+            }
+            &.down {
+                background-image: svg-load("./icon/arrow-down.svg");
+            }
+            &:active {
+                box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    &[disabled],
+    &.disabled {
+        input {
+            color: var(--button-shadow);
+            background-color: var(--surface);
+        }
+        .spin-box-controls button {
+            opacity: 0.5;
+            pointer-events: none;
         }
     }
 }

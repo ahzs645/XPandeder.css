@@ -33,6 +33,7 @@
           <li><a href="#slider">Slider</a></li>
           <li><a href="#dropdown">Dropdown</a></li>
           <li><a href="#combo-box">ComboBox</a></li>
+          <li><a href="#spin-box">SpinBox</a></li>
           <li><a href="#menus">Menus</a></li>
           <li>
             <a href="#window">Window</a>
@@ -624,6 +625,70 @@ import "xp.css/dist/98.css";</pre>
           <div class="combo-box" style="width: 200px;">
             <input type="text" id="combo-example" value="3 - Pretty good" />
             <button></button>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h3 id="spin-box">SpinBox</h3>
+      <div>
+        <blockquote>
+          A <em>spin box</em> is a text box with an associated pair of
+          arrow buttons that allow the user to increment or decrement
+          a numeric value.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          SpinBoxes can be rendered by wrapping an <code>input</code> and
+          a <code>div</code> with class <code>spin-box-controls</code>
+          containing two <code>button</code> elements (with classes
+          <code>up</code> and <code>down</code>) inside a container with
+          the <code>spin-box</code> class.
+        </p>
+
+        <%- example(`
+          <div class="spin-box" style="width: 80px;">
+            <input type="text" value="01:01" />
+            <div class="spin-box-controls">
+              <button class="up"></button>
+              <button class="down"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          SpinBoxes work well for numeric values too.
+        </p>
+
+        <%- example(`
+          <label for="spin-example">Value:</label>
+          <div class="spin-box" style="width: 100px;">
+            <input type="text" id="spin-example" value="1024" />
+            <div class="spin-box-controls">
+              <button class="up"></button>
+              <button class="down"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          Disabled SpinBoxes can be rendered by adding the
+          <code>disabled</code> class to the container and
+          the <code>disabled</code> attribute to the input.
+        </p>
+
+        <%- example(`
+          <div class="spin-box disabled" style="width: 80px;">
+            <input type="text" value="01:01" disabled />
+            <div class="spin-box-controls">
+              <button class="up" disabled></button>
+              <button class="down" disabled></button>
+            </div>
           </div>
         `) %>
       </div>
@@ -1296,7 +1361,7 @@ import "xp.css/dist/98.css";</pre>
           <table style="width: 300px;">
             <thead>
               <tr>
-                <th>Name</th>
+                <th aria-sort="ascending">Name</th>
                 <th>Type</th>
                 <th>Date Modified</th>
               </tr>
@@ -1378,23 +1443,44 @@ import "xp.css/dist/98.css";</pre>
       <h3 id="color-picker">Color Picker</h3>
       <div>
         <blockquote>
-          A faithful recreation of the Windows XP "Edit Colors" dialog.
-          Uses existing window, button, and input components to compose the color picker UI.
-          Wire up the canvas and input interactions with your own JavaScript.
+          The color picker input provides a small button showing the current color.
+          Clicking it opens the browser's native color picker dialog.
           <footer>
             &mdash; Windows XP Color Picker Dialog
           </footer>
         </blockquote>
 
         <p>
-          The color picker is built as a <code>window</code> containing swatches, a spectrum canvas,
-          luminance slider, color preview, and HSL/RGB inputs. Use the <code>color-picker</code>,
-          <code>color-swatches</code>, <code>color-swatch</code>, <code>color-spectrum</code>,
+          Use a standard <code>&lt;input type="color"&gt;</code> for a compact color picker button.
+          It is styled to match XP buttons, with the selected color shown inside.
+        </p>
+
+        <%- example(`
+          <section class="field-row">
+            <label>Pick a color:</label>
+            <input type="color" value="#0080FF">
+          </section>
+        `) %>
+
+        <p>You can also place it alongside text inputs in a form.</p>
+
+        <%- example(`
+          <div class="field-row" style="align-items: center">
+            <label>Background:</label>
+            <input type="color" value="#FF8040">
+            <input type="text" value="#FF8040" style="width: 80px">
+          </div>
+        `) %>
+
+        <p>
+          For a full "Edit Colors" dialog, compose a <code>window</code> with swatches, a spectrum canvas,
+          luminance slider, color preview, and HSL/RGB inputs using the <code>color-picker</code>,
+          <code>color-swatch</code>, <code>color-spectrum</code>,
           <code>color-luminance</code>, <code>color-preview</code>, and <code>color-inputs</code> classes.
         </p>
 
         <%- example(`
-          [[<div class="window active" style="display: inline-block">]]
+          [[<div class="window active" style="display: inline-block" id="cp-dialog">]]
             <div class="title-bar">
               <div class="title-bar-text">Edit Colors</div>
               <div class="title-bar-controls">
@@ -1406,7 +1492,7 @@ import "xp.css/dist/98.css";</pre>
               <div class="color-picker">
                 <div class="color-picker-left">
                   <label style="margin-bottom: 4px">Basic colors:</label>
-                  <div class="color-picker-basic" style="margin-bottom: 8px">
+                  <div class="color-picker-basic" id="cp-basic" style="margin-bottom: 8px">
                     <div class="color-swatch" style="background: #FF8080"></div>
                     <div class="color-swatch" style="background: #FFFF80"></div>
                     <div class="color-swatch" style="background: #80FF80"></div>
@@ -1415,7 +1501,7 @@ import "xp.css/dist/98.css";</pre>
                     <div class="color-swatch" style="background: #0080FF"></div>
                     <div class="color-swatch" style="background: #FF80C0"></div>
                     <div class="color-swatch" style="background: #FF80FF"></div>
-                    <div class="color-swatch selected" style="background: #FF0000"></div>
+                    <div class="color-swatch" style="background: #FF0000"></div>
                     <div class="color-swatch" style="background: #FFFF00"></div>
                     <div class="color-swatch" style="background: #80FF00"></div>
                     <div class="color-swatch" style="background: #00FF40"></div>
@@ -1458,7 +1544,7 @@ import "xp.css/dist/98.css";</pre>
                   </div>
 
                   <label style="margin-bottom: 4px">Custom colors:</label>
-                  <div class="color-picker-custom" style="margin-bottom: 8px">
+                  <div class="color-picker-custom" id="cp-custom" style="margin-bottom: 8px">
                     <div class="color-swatch" style="background: #FFFFFF"></div>
                     <div class="color-swatch" style="background: #FFFFFF"></div>
                     <div class="color-swatch" style="background: #FFFFFF"></div>
@@ -1481,35 +1567,35 @@ import "xp.css/dist/98.css";</pre>
                     <div class="color-input-group">
                       <div class="color-input-row">
                         <label>Hue:</label>
-                        <input type="number" value="160" min="0" max="360">
+                        <input type="number" id="cp-hue" value="0" min="0" max="360">
                       </div>
                       <div class="color-input-row">
                         <label>Sat:</label>
-                        <input type="number" value="240" min="0" max="240">
+                        <input type="number" id="cp-sat" value="240" min="0" max="240">
                       </div>
                       <div class="color-input-row">
                         <label>Lum:</label>
-                        <input type="number" value="120" min="0" max="240">
+                        <input type="number" id="cp-lum" value="120" min="0" max="240">
                       </div>
                     </div>
                     <div class="color-input-group">
                       <div class="color-input-row">
                         <label>Red:</label>
-                        <input type="number" value="0" min="0" max="255">
+                        <input type="number" id="cp-red" value="255" min="0" max="255">
                       </div>
                       <div class="color-input-row">
                         <label>Green:</label>
-                        <input type="number" value="255" min="0" max="255">
+                        <input type="number" id="cp-green" value="0" min="0" max="255">
                       </div>
                       <div class="color-input-row">
                         <label>Blue:</label>
-                        <input type="number" value="128" min="0" max="255">
+                        <input type="number" id="cp-blue" value="0" min="0" max="255">
                       </div>
                     </div>
                   </div>
 
                   <div style="display: flex; gap: 6px; margin-top: 12px">
-                    <button>Add to Custom Colors</button>
+                    <button id="cp-add-custom">Add to Custom Colors</button>
                   </div>
                   <div style="display: flex; gap: 6px; margin-top: 8px">
                     <button style="min-width: 68px">OK</button>
@@ -1519,24 +1605,213 @@ import "xp.css/dist/98.css";</pre>
 
                 <div class="color-picker-right">
                   <div class="color-spectrum-row">
-                    <div class="color-spectrum">
-                      <canvas width="190" height="181" id="color-spectrum-canvas"></canvas>
-                      <div class="color-spectrum-cursor" style="left: 85px; top: 0px"></div>
+                    <div class="color-spectrum" id="cp-spectrum">
+                      <canvas width="190" height="181" id="cp-spectrum-canvas"></canvas>
+                      <div class="color-spectrum-cursor" id="cp-spectrum-cursor" style="left: 0px; top: 90px"></div>
                     </div>
-                    <div class="color-luminance">
-                      <canvas width="10" height="181" id="color-luminance-canvas"></canvas>
-                      <div class="color-luminance-arrow" style="top: 86px"></div>
+                    <div class="color-luminance" id="cp-luminance">
+                      <canvas width="10" height="181" id="cp-luminance-canvas"></canvas>
+                      <div class="color-luminance-arrow" id="cp-luminance-arrow" style="top: 86px"></div>
                     </div>
                   </div>
                   <div class="color-preview-row">
-                    <div class="color-preview" style="background: #00FF80"></div>
-                    <span class="color-preview-hex">#00FF80</span>
+                    <div class="color-preview" id="cp-preview" style="background: #FF0000"></div>
+                    <span class="color-preview-hex" id="cp-hex">#FF0000</span>
                   </div>
                 </div>
               </div>
             </div>
           [[</div>]]
         `) %>
+
+        <script>
+        (function () {
+          var SW = 190, SH = 181, LW = 10, LH = 181;
+          var hue = 0, sat = 100, lum = 50;
+          var customIdx = 0;
+          var draggingSpec = false, draggingLum = false;
+
+          // --- Color math ---
+          function hslToRgb(h, s, l) {
+            h /= 360; s /= 100; l /= 100;
+            var r, g, b;
+            if (s === 0) { r = g = b = l; } else {
+              var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+              function f(p, q, t) { if (t < 0) t++; if (t > 1) t--; if (t < 1/6) return p+(q-p)*6*t; if (t < 1/2) return q; if (t < 2/3) return p+(q-p)*(2/3-t)*6; return p; }
+              r = f(p, q, h+1/3); g = f(p, q, h); b = f(p, q, h-1/3);
+            }
+            return [Math.round(r*255), Math.round(g*255), Math.round(b*255)];
+          }
+          function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            var max = Math.max(r,g,b), min = Math.min(r,g,b);
+            var h = 0, s = 0, l = (max+min)/2;
+            if (max !== min) {
+              var d = max-min; s = l > 0.5 ? d/(2-max-min) : d/(max+min);
+              if (max===r) h=((g-b)/d+(g<b?6:0))/6; else if (max===g) h=((b-r)/d+2)/6; else h=((r-g)/d+4)/6;
+            }
+            return [Math.round(h*360), Math.round(s*100), Math.round(l*100)];
+          }
+          function rgbToHex(r,g,b) { return "#"+[r,g,b].map(function(c){return c.toString(16).padStart(2,"0");}).join("").toUpperCase(); }
+          function hexToRgb(hex) { var m = hex.replace("#","").match(/.{2}/g); return m ? m.map(function(c){return parseInt(c,16);}) : [0,0,0]; }
+
+          // --- DOM refs ---
+          var specCanvas = document.getElementById("cp-spectrum-canvas");
+          var lumCanvas = document.getElementById("cp-luminance-canvas");
+          var specCursor = document.getElementById("cp-spectrum-cursor");
+          var lumArrow = document.getElementById("cp-luminance-arrow");
+          var specEl = document.getElementById("cp-spectrum");
+          var lumEl = document.getElementById("cp-luminance");
+          var preview = document.getElementById("cp-preview");
+          var hexLabel = document.getElementById("cp-hex");
+          var inHue = document.getElementById("cp-hue");
+          var inSat = document.getElementById("cp-sat");
+          var inLum = document.getElementById("cp-lum");
+          var inRed = document.getElementById("cp-red");
+          var inGreen = document.getElementById("cp-green");
+          var inBlue = document.getElementById("cp-blue");
+          var addBtn = document.getElementById("cp-add-custom");
+          var basicGrid = document.getElementById("cp-basic");
+          var customGrid = document.getElementById("cp-custom");
+          if (!specCanvas) return;
+
+          // --- Draw spectrum (hue x, sat y, fixed lum=50) ---
+          function drawSpectrum() {
+            var ctx = specCanvas.getContext("2d");
+            var img = ctx.createImageData(SW, SH);
+            for (var y = 0; y < SH; y++) {
+              for (var x = 0; x < SW; x++) {
+                var rgb = hslToRgb((x / SW) * 360, (1 - y / SH) * 100, 50);
+                var i = (y * SW + x) * 4;
+                img.data[i] = rgb[0]; img.data[i+1] = rgb[1]; img.data[i+2] = rgb[2]; img.data[i+3] = 255;
+              }
+            }
+            ctx.putImageData(img, 0, 0);
+          }
+
+          // --- Draw luminance bar for current hue/sat ---
+          function drawLuminance() {
+            var ctx = lumCanvas.getContext("2d");
+            for (var y = 0; y < LH; y++) {
+              var rgb = hslToRgb(hue, sat, (1 - y / LH) * 100);
+              ctx.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
+              ctx.fillRect(0, y, LW, 1);
+            }
+          }
+
+          // --- Update all UI from current hue/sat/lum ---
+          function updateUI() {
+            var rgb = hslToRgb(hue, sat, lum);
+            var hex = rgbToHex(rgb[0], rgb[1], rgb[2]);
+            // cursor positions
+            specCursor.style.left = ((hue / 360) * SW) + "px";
+            specCursor.style.top = ((1 - sat / 100) * SH) + "px";
+            lumArrow.style.top = ((1 - lum / 100) * LH - 5) + "px";
+            // preview
+            preview.style.background = hex;
+            hexLabel.textContent = hex;
+            // inputs (Sat/Lum scaled to 0-240 like Windows)
+            inHue.value = hue;
+            inSat.value = Math.round(sat * 2.4);
+            inLum.value = Math.round(lum * 2.4);
+            inRed.value = rgb[0];
+            inGreen.value = rgb[1];
+            inBlue.value = rgb[2];
+            // redraw luminance bar
+            drawLuminance();
+          }
+
+          function setFromHSL(h, s, l) {
+            hue = Math.max(0, Math.min(360, h));
+            sat = Math.max(0, Math.min(100, s));
+            lum = Math.max(0, Math.min(100, l));
+            updateUI();
+          }
+
+          function setFromRGB(r, g, b) {
+            var hsl = rgbToHsl(r, g, b);
+            hue = hsl[0]; sat = hsl[1]; lum = hsl[2];
+            updateUI();
+          }
+
+          function setFromHex(hex) {
+            var rgb = hexToRgb(hex);
+            setFromRGB(rgb[0], rgb[1], rgb[2]);
+          }
+
+          // --- Spectrum interaction ---
+          function pickSpectrum(e) {
+            var r = specEl.getBoundingClientRect();
+            var x = Math.max(0, Math.min(SW - 1, e.clientX - r.left));
+            var y = Math.max(0, Math.min(SH - 1, e.clientY - r.top));
+            hue = Math.round((x / SW) * 360);
+            sat = Math.round((1 - y / SH) * 100);
+            updateUI();
+          }
+          specEl.addEventListener("mousedown", function(e) { draggingSpec = true; pickSpectrum(e); e.preventDefault(); });
+
+          // --- Luminance interaction ---
+          function pickLuminance(e) {
+            var r = lumEl.getBoundingClientRect();
+            var y = Math.max(0, Math.min(LH - 1, e.clientY - r.top));
+            lum = Math.round((1 - y / LH) * 100);
+            updateUI();
+          }
+          lumEl.addEventListener("mousedown", function(e) { draggingLum = true; pickLuminance(e); e.preventDefault(); });
+
+          // --- Global drag ---
+          window.addEventListener("mousemove", function(e) {
+            if (draggingSpec) pickSpectrum(e);
+            if (draggingLum) pickLuminance(e);
+          });
+          window.addEventListener("mouseup", function() { draggingSpec = false; draggingLum = false; });
+
+          // --- Swatch clicks ---
+          function clearSelected() {
+            document.querySelectorAll("#cp-dialog .color-swatch.selected").forEach(function(el) { el.classList.remove("selected"); });
+          }
+          basicGrid.addEventListener("click", function(e) {
+            var sw = e.target.closest(".color-swatch");
+            if (!sw) return;
+            clearSelected(); sw.classList.add("selected");
+            setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
+          });
+          customGrid.addEventListener("click", function(e) {
+            var sw = e.target.closest(".color-swatch");
+            if (!sw) return;
+            clearSelected(); sw.classList.add("selected");
+            customIdx = Array.from(customGrid.children).indexOf(sw);
+            setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
+          });
+
+          function rgbStyleToHex(str) {
+            var m = str.match(/\d+/g);
+            return m ? rgbToHex(+m[0], +m[1], +m[2]) : "#000000";
+          }
+
+          // --- Input changes ---
+          inHue.addEventListener("input", function() { setFromHSL(+inHue.value, sat, lum); });
+          inSat.addEventListener("input", function() { setFromHSL(hue, Math.round(+inSat.value / 2.4), lum); });
+          inLum.addEventListener("input", function() { setFromHSL(hue, sat, Math.round(+inLum.value / 2.4)); });
+          inRed.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
+          inGreen.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
+          inBlue.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
+
+          // --- Add to Custom Colors ---
+          addBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            var hex = rgbToHex.apply(null, hslToRgb(hue, sat, lum));
+            var swatches = customGrid.querySelectorAll(".color-swatch");
+            swatches[customIdx].style.background = hex;
+            clearSelected(); swatches[customIdx].classList.add("selected");
+            customIdx = (customIdx + 1) % swatches.length;
+          });
+
+          // --- Init ---
+          drawSpectrum();
+          setFromHSL(0, 100, 50);
+        })();
+        </script>
       </div>
     </section>
 
