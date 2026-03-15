@@ -1472,17 +1472,10 @@ import "xp.css/dist/98.css";</pre>
           </div>
         `) %>
 
-        <p>
-          For a full "Edit Colors" dialog, compose a <code>window</code> with swatches, a spectrum canvas,
-          luminance slider, color preview, and HSL/RGB inputs using the <code>color-picker</code>,
-          <code>color-swatch</code>, <code>color-spectrum</code>,
-          <code>color-luminance</code>, <code>color-preview</code>, and <code>color-inputs</code> classes.
-        </p>
-
         <%- example(`
           [[<div class="window active" style="display: inline-block" id="cp-dialog">]]
             <div class="title-bar">
-              <div class="title-bar-text">Edit Colors</div>
+              <div class="title-bar-text">Color</div>
               <div class="title-bar-controls">
                 <button aria-label="Help"></button>
                 <button aria-label="Close"></button>
@@ -1490,80 +1483,104 @@ import "xp.css/dist/98.css";</pre>
             </div>
             <div class="window-body">
               <div class="color-picker">
-                <div class="color-picker-left">
-                  <label style="margin-bottom: 4px">Basic colors:</label>
-                  <div class="color-picker-basic" id="cp-basic" style="margin-bottom: 8px">
-                    <div class="color-swatch" style="background: #FF8080"></div>
-                    <div class="color-swatch" style="background: #FFFF80"></div>
-                    <div class="color-swatch" style="background: #80FF80"></div>
-                    <div class="color-swatch" style="background: #00FF80"></div>
-                    <div class="color-swatch" style="background: #80FFFF"></div>
-                    <div class="color-swatch" style="background: #0080FF"></div>
-                    <div class="color-swatch" style="background: #FF80C0"></div>
-                    <div class="color-swatch" style="background: #FF80FF"></div>
-                    <div class="color-swatch" style="background: #FF0000"></div>
-                    <div class="color-swatch" style="background: #FFFF00"></div>
-                    <div class="color-swatch" style="background: #80FF00"></div>
-                    <div class="color-swatch" style="background: #00FF40"></div>
-                    <div class="color-swatch" style="background: #00FFFF"></div>
-                    <div class="color-swatch" style="background: #0080C0"></div>
-                    <div class="color-swatch" style="background: #8080C0"></div>
-                    <div class="color-swatch" style="background: #FF00FF"></div>
-                    <div class="color-swatch" style="background: #804040"></div>
-                    <div class="color-swatch" style="background: #FF8040"></div>
-                    <div class="color-swatch" style="background: #00FF00"></div>
-                    <div class="color-swatch" style="background: #008080"></div>
-                    <div class="color-swatch" style="background: #004080"></div>
-                    <div class="color-swatch" style="background: #8080FF"></div>
-                    <div class="color-swatch" style="background: #800040"></div>
-                    <div class="color-swatch" style="background: #FF0080"></div>
-                    <div class="color-swatch" style="background: #800000"></div>
-                    <div class="color-swatch" style="background: #FF8000"></div>
-                    <div class="color-swatch" style="background: #008000"></div>
-                    <div class="color-swatch" style="background: #008040"></div>
-                    <div class="color-swatch" style="background: #0000FF"></div>
-                    <div class="color-swatch" style="background: #0000A0"></div>
-                    <div class="color-swatch" style="background: #800080"></div>
-                    <div class="color-swatch" style="background: #8000FF"></div>
-                    <div class="color-swatch" style="background: #400000"></div>
-                    <div class="color-swatch" style="background: #804000"></div>
-                    <div class="color-swatch" style="background: #004000"></div>
-                    <div class="color-swatch" style="background: #004040"></div>
-                    <div class="color-swatch" style="background: #000080"></div>
-                    <div class="color-swatch" style="background: #000040"></div>
-                    <div class="color-swatch" style="background: #400040"></div>
-                    <div class="color-swatch" style="background: #400080"></div>
-                    <div class="color-swatch" style="background: #000000"></div>
-                    <div class="color-swatch" style="background: #808000"></div>
-                    <div class="color-swatch" style="background: #808040"></div>
-                    <div class="color-swatch" style="background: #808080"></div>
-                    <div class="color-swatch" style="background: #408080"></div>
-                    <div class="color-swatch" style="background: #C0C0C0"></div>
-                    <div class="color-swatch" style="background: #400040"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                <div class="color-picker-top">
+                  <div class="color-picker-left">
+                    <label style="margin-bottom: 4px">Basic colors:</label>
+                    <div class="color-picker-basic" id="cp-basic" style="margin-bottom: 8px">
+                      <div class="color-swatch" style="background:#FF8080"></div>
+                      <div class="color-swatch" style="background:#FFFF80"></div>
+                      <div class="color-swatch" style="background:#80FF80"></div>
+                      <div class="color-swatch" style="background:#00FF80"></div>
+                      <div class="color-swatch" style="background:#80FFFF"></div>
+                      <div class="color-swatch" style="background:#0080FF"></div>
+                      <div class="color-swatch" style="background:#FF80C0"></div>
+                      <div class="color-swatch" style="background:#FF80FF"></div>
+                      <div class="color-swatch" style="background:#FF0000"></div>
+                      <div class="color-swatch" style="background:#FFFF00"></div>
+                      <div class="color-swatch" style="background:#80FF00"></div>
+                      <div class="color-swatch" style="background:#00FF40"></div>
+                      <div class="color-swatch" style="background:#00FFFF"></div>
+                      <div class="color-swatch" style="background:#0080C0"></div>
+                      <div class="color-swatch" style="background:#8080C0"></div>
+                      <div class="color-swatch" style="background:#FF00FF"></div>
+                      <div class="color-swatch" style="background:#804040"></div>
+                      <div class="color-swatch" style="background:#FF8040"></div>
+                      <div class="color-swatch" style="background:#00FF00"></div>
+                      <div class="color-swatch" style="background:#008080"></div>
+                      <div class="color-swatch" style="background:#004080"></div>
+                      <div class="color-swatch" style="background:#8080FF"></div>
+                      <div class="color-swatch" style="background:#800040"></div>
+                      <div class="color-swatch" style="background:#FF0080"></div>
+                      <div class="color-swatch" style="background:#800000"></div>
+                      <div class="color-swatch" style="background:#FF8000"></div>
+                      <div class="color-swatch" style="background:#008000"></div>
+                      <div class="color-swatch" style="background:#008040"></div>
+                      <div class="color-swatch" style="background:#0000FF"></div>
+                      <div class="color-swatch" style="background:#0000A0"></div>
+                      <div class="color-swatch" style="background:#800080"></div>
+                      <div class="color-swatch" style="background:#8000FF"></div>
+                      <div class="color-swatch" style="background:#400000"></div>
+                      <div class="color-swatch" style="background:#804000"></div>
+                      <div class="color-swatch" style="background:#004000"></div>
+                      <div class="color-swatch" style="background:#004040"></div>
+                      <div class="color-swatch" style="background:#000080"></div>
+                      <div class="color-swatch" style="background:#000040"></div>
+                      <div class="color-swatch" style="background:#400040"></div>
+                      <div class="color-swatch" style="background:#400080"></div>
+                      <div class="color-swatch" style="background:#000000"></div>
+                      <div class="color-swatch" style="background:#808000"></div>
+                      <div class="color-swatch" style="background:#808040"></div>
+                      <div class="color-swatch" style="background:#808080"></div>
+                      <div class="color-swatch" style="background:#408080"></div>
+                      <div class="color-swatch" style="background:#C0C0C0"></div>
+                      <div class="color-swatch" style="background:#400040"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                    </div>
+                    <label style="margin-bottom: 4px">Custom colors:</label>
+                    <div class="color-picker-custom" id="cp-custom" style="margin-bottom: 8px">
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                      <div class="color-swatch" style="background:#FFFFFF"></div>
+                    </div>
                   </div>
 
-                  <label style="margin-bottom: 4px">Custom colors:</label>
-                  <div class="color-picker-custom" id="cp-custom" style="margin-bottom: 8px">
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
-                    <div class="color-swatch" style="background: #FFFFFF"></div>
+                  <div class="color-picker-right">
+                    <div class="color-spectrum" id="cp-spectrum">
+                      <canvas width="190" height="181" id="cp-spectrum-canvas"></canvas>
+                      <div class="color-spectrum-cursor" id="cp-spectrum-cursor" style="left: 0px; top: 90px"></div>
+                    </div>
+                    <div class="color-luminance" id="cp-luminance">
+                      <canvas width="12" height="181" id="cp-luminance-canvas"></canvas>
+                      <div class="color-luminance-arrows" id="cp-luminance-arrows" style="top: 86px">
+                        <div class="color-luminance-arrow-right"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="color-picker-controls">
+                  <div class="color-picker-preview-block">
+                    <div class="color-preview-label"><span>Color</span><span>|</span><span>Solid</span></div>
+                    <div class="color-preview-dual">
+                      <div class="color-preview-new" id="cp-preview-new" style="background: #FF0000"></div>
+                      <div class="color-preview-old" id="cp-preview-old" style="background: #000000"></div>
+                    </div>
                   </div>
 
-                  <div class="color-inputs" style="margin-top: 8px">
+                  <div class="color-inputs">
                     <div class="color-input-group">
                       <div class="color-input-row">
                         <label>Hue:</label>
@@ -1593,31 +1610,14 @@ import "xp.css/dist/98.css";</pre>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div style="display: flex; gap: 6px; margin-top: 12px">
-                    <button id="cp-add-custom">Add to Custom Colors</button>
-                  </div>
-                  <div style="display: flex; gap: 6px; margin-top: 8px">
+                <div class="color-picker-bottom">
+                  <div class="color-picker-bottom-left">
                     <button style="min-width: 68px">OK</button>
                     <button style="min-width: 68px">Cancel</button>
                   </div>
-                </div>
-
-                <div class="color-picker-right">
-                  <div class="color-spectrum-row">
-                    <div class="color-spectrum" id="cp-spectrum">
-                      <canvas width="190" height="181" id="cp-spectrum-canvas"></canvas>
-                      <div class="color-spectrum-cursor" id="cp-spectrum-cursor" style="left: 0px; top: 90px"></div>
-                    </div>
-                    <div class="color-luminance" id="cp-luminance">
-                      <canvas width="10" height="181" id="cp-luminance-canvas"></canvas>
-                      <div class="color-luminance-arrow" id="cp-luminance-arrow" style="top: 86px"></div>
-                    </div>
-                  </div>
-                  <div class="color-preview-row">
-                    <div class="color-preview" id="cp-preview" style="background: #FF0000"></div>
-                    <span class="color-preview-hex" id="cp-hex">#FF0000</span>
-                  </div>
+                  <button id="cp-add-custom">Add to Custom Colors</button>
                 </div>
               </div>
             </div>
@@ -1626,12 +1626,11 @@ import "xp.css/dist/98.css";</pre>
 
         <script>
         (function () {
-          var SW = 190, SH = 181, LW = 10, LH = 181;
+          var SW = 190, SH = 181, LW = 12, LH = 181;
           var hue = 0, sat = 100, lum = 50;
           var customIdx = 0;
           var draggingSpec = false, draggingLum = false;
 
-          // --- Color math ---
           function hslToRgb(h, s, l) {
             h /= 360; s /= 100; l /= 100;
             var r, g, b;
@@ -1654,16 +1653,15 @@ import "xp.css/dist/98.css";</pre>
           }
           function rgbToHex(r,g,b) { return "#"+[r,g,b].map(function(c){return c.toString(16).padStart(2,"0");}).join("").toUpperCase(); }
           function hexToRgb(hex) { var m = hex.replace("#","").match(/.{2}/g); return m ? m.map(function(c){return parseInt(c,16);}) : [0,0,0]; }
+          function rgbStyleToHex(str) { var m = str.match(/\d+/g); return m ? rgbToHex(+m[0], +m[1], +m[2]) : "#000000"; }
 
-          // --- DOM refs ---
           var specCanvas = document.getElementById("cp-spectrum-canvas");
           var lumCanvas = document.getElementById("cp-luminance-canvas");
           var specCursor = document.getElementById("cp-spectrum-cursor");
-          var lumArrow = document.getElementById("cp-luminance-arrow");
+          var lumArrows = document.getElementById("cp-luminance-arrows");
           var specEl = document.getElementById("cp-spectrum");
           var lumEl = document.getElementById("cp-luminance");
-          var preview = document.getElementById("cp-preview");
-          var hexLabel = document.getElementById("cp-hex");
+          var previewNew = document.getElementById("cp-preview-new");
           var inHue = document.getElementById("cp-hue");
           var inSat = document.getElementById("cp-sat");
           var inLum = document.getElementById("cp-lum");
@@ -1675,7 +1673,6 @@ import "xp.css/dist/98.css";</pre>
           var customGrid = document.getElementById("cp-custom");
           if (!specCanvas) return;
 
-          // --- Draw spectrum (hue x, sat y, fixed lum=50) ---
           function drawSpectrum() {
             var ctx = specCanvas.getContext("2d");
             var img = ctx.createImageData(SW, SH);
@@ -1689,7 +1686,6 @@ import "xp.css/dist/98.css";</pre>
             ctx.putImageData(img, 0, 0);
           }
 
-          // --- Draw luminance bar for current hue/sat ---
           function drawLuminance() {
             var ctx = lumCanvas.getContext("2d");
             for (var y = 0; y < LH; y++) {
@@ -1699,25 +1695,19 @@ import "xp.css/dist/98.css";</pre>
             }
           }
 
-          // --- Update all UI from current hue/sat/lum ---
           function updateUI() {
             var rgb = hslToRgb(hue, sat, lum);
             var hex = rgbToHex(rgb[0], rgb[1], rgb[2]);
-            // cursor positions
             specCursor.style.left = ((hue / 360) * SW) + "px";
             specCursor.style.top = ((1 - sat / 100) * SH) + "px";
-            lumArrow.style.top = ((1 - lum / 100) * LH - 5) + "px";
-            // preview
-            preview.style.background = hex;
-            hexLabel.textContent = hex;
-            // inputs (Sat/Lum scaled to 0-240 like Windows)
+            lumArrows.style.top = ((1 - lum / 100) * LH - 4) + "px";
+            previewNew.style.background = hex;
             inHue.value = hue;
             inSat.value = Math.round(sat * 2.4);
             inLum.value = Math.round(lum * 2.4);
             inRed.value = rgb[0];
             inGreen.value = rgb[1];
             inBlue.value = rgb[2];
-            // redraw luminance bar
             drawLuminance();
           }
 
@@ -1727,69 +1717,40 @@ import "xp.css/dist/98.css";</pre>
             lum = Math.max(0, Math.min(100, l));
             updateUI();
           }
+          function setFromRGB(r, g, b) { var hsl = rgbToHsl(r, g, b); hue = hsl[0]; sat = hsl[1]; lum = hsl[2]; updateUI(); }
+          function setFromHex(hex) { var rgb = hexToRgb(hex); setFromRGB(rgb[0], rgb[1], rgb[2]); }
 
-          function setFromRGB(r, g, b) {
-            var hsl = rgbToHsl(r, g, b);
-            hue = hsl[0]; sat = hsl[1]; lum = hsl[2];
-            updateUI();
-          }
-
-          function setFromHex(hex) {
-            var rgb = hexToRgb(hex);
-            setFromRGB(rgb[0], rgb[1], rgb[2]);
-          }
-
-          // --- Spectrum interaction ---
           function pickSpectrum(e) {
             var r = specEl.getBoundingClientRect();
-            var x = Math.max(0, Math.min(SW - 1, e.clientX - r.left));
-            var y = Math.max(0, Math.min(SH - 1, e.clientY - r.top));
-            hue = Math.round((x / SW) * 360);
-            sat = Math.round((1 - y / SH) * 100);
+            hue = Math.round(Math.max(0, Math.min(SW-1, e.clientX-r.left)) / SW * 360);
+            sat = Math.round((1 - Math.max(0, Math.min(SH-1, e.clientY-r.top)) / SH) * 100);
             updateUI();
           }
           specEl.addEventListener("mousedown", function(e) { draggingSpec = true; pickSpectrum(e); e.preventDefault(); });
 
-          // --- Luminance interaction ---
           function pickLuminance(e) {
             var r = lumEl.getBoundingClientRect();
-            var y = Math.max(0, Math.min(LH - 1, e.clientY - r.top));
-            lum = Math.round((1 - y / LH) * 100);
+            lum = Math.round((1 - Math.max(0, Math.min(LH-1, e.clientY-r.top)) / LH) * 100);
             updateUI();
           }
           lumEl.addEventListener("mousedown", function(e) { draggingLum = true; pickLuminance(e); e.preventDefault(); });
 
-          // --- Global drag ---
-          window.addEventListener("mousemove", function(e) {
-            if (draggingSpec) pickSpectrum(e);
-            if (draggingLum) pickLuminance(e);
-          });
+          window.addEventListener("mousemove", function(e) { if (draggingSpec) pickSpectrum(e); if (draggingLum) pickLuminance(e); });
           window.addEventListener("mouseup", function() { draggingSpec = false; draggingLum = false; });
 
-          // --- Swatch clicks ---
-          function clearSelected() {
-            document.querySelectorAll("#cp-dialog .color-swatch.selected").forEach(function(el) { el.classList.remove("selected"); });
-          }
+          function clearSelected() { document.querySelectorAll("#cp-dialog .color-swatch.selected").forEach(function(el) { el.classList.remove("selected"); }); }
           basicGrid.addEventListener("click", function(e) {
-            var sw = e.target.closest(".color-swatch");
-            if (!sw) return;
+            var sw = e.target.closest(".color-swatch"); if (!sw) return;
             clearSelected(); sw.classList.add("selected");
             setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
           });
           customGrid.addEventListener("click", function(e) {
-            var sw = e.target.closest(".color-swatch");
-            if (!sw) return;
+            var sw = e.target.closest(".color-swatch"); if (!sw) return;
             clearSelected(); sw.classList.add("selected");
             customIdx = Array.from(customGrid.children).indexOf(sw);
             setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
           });
 
-          function rgbStyleToHex(str) {
-            var m = str.match(/\d+/g);
-            return m ? rgbToHex(+m[0], +m[1], +m[2]) : "#000000";
-          }
-
-          // --- Input changes ---
           inHue.addEventListener("input", function() { setFromHSL(+inHue.value, sat, lum); });
           inSat.addEventListener("input", function() { setFromHSL(hue, Math.round(+inSat.value / 2.4), lum); });
           inLum.addEventListener("input", function() { setFromHSL(hue, sat, Math.round(+inLum.value / 2.4)); });
@@ -1797,7 +1758,6 @@ import "xp.css/dist/98.css";</pre>
           inGreen.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
           inBlue.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
 
-          // --- Add to Custom Colors ---
           addBtn.addEventListener("click", function(e) {
             e.preventDefault();
             var hex = rgbToHex.apply(null, hslToRgb(hue, sat, lum));
@@ -1807,7 +1767,6 @@ import "xp.css/dist/98.css";</pre>
             customIdx = (customIdx + 1) % swatches.length;
           });
 
-          // --- Init ---
           drawSpectrum();
           setFromHSL(0, 100, 50);
         })();
