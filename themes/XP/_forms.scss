@@ -223,38 +223,36 @@ input[type="color"] {
     .spin-box-controls {
         background: white;
         border-radius: 3px;
+        overflow: hidden;
+        padding: 1px;
         gap: 1px;
         button {
-            background-color: transparent;
-            box-shadow: none;
-            border: none;
+            background-color: #C1D3FB;
+            box-shadow: inset 2px 2px 3px #E0EAFF, inset -2px -2px 3px #B1CCFA;
+            border: 1px solid rgba(149, 178, 246, 0.5);
             border-radius: 3px;
+            background-image: none;
+            background-size: 13px 7px;
             &.up {
-                background: svg-load("./icon/spinbox-up.svg") no-repeat center;
-                background-size: 15px 8px;
+                background-image: svg-load("./icon/spinbox-up.svg");
                 &:hover {
-                    background: svg-load("./icon/spinbox-up-hover.svg") no-repeat center;
-                    background-size: 15px 8px;
-                    box-shadow: none;
+                    background-color: #D4E4FF;
+                    box-shadow: inset 2px 2px 3px #EAF2FF, inset -2px -2px 3px #C0D6FF;
                 }
                 &:active {
-                    background: svg-load("./icon/spinbox-up-active.svg") no-repeat center;
-                    background-size: 15px 8px;
-                    box-shadow: none;
+                    background-color: #A0B5E0;
+                    box-shadow: inset 2px 2px 3px #B8CCF0, inset -2px -2px 3px #8EA6D0;
                 }
             }
             &.down {
-                background: svg-load("./icon/spinbox-down.svg") no-repeat center;
-                background-size: 15px 8px;
+                background-image: svg-load("./icon/spinbox-down.svg");
                 &:hover {
-                    background: svg-load("./icon/spinbox-down-hover.svg") no-repeat center;
-                    background-size: 15px 8px;
-                    box-shadow: none;
+                    background-color: #D4E4FF;
+                    box-shadow: inset 2px 2px 3px #EAF2FF, inset -2px -2px 3px #C0D6FF;
                 }
                 &:active {
-                    background: svg-load("./icon/spinbox-down-active.svg") no-repeat center;
-                    background-size: 15px 8px;
-                    box-shadow: none;
+                    background-color: #A0B5E0;
+                    box-shadow: inset 2px 2px 3px #B8CCF0, inset -2px -2px 3px #8EA6D0;
                 }
             }
         }
@@ -271,16 +269,15 @@ input[type="color"] {
             text-shadow: 1px 1px 0 white;
         }
         .spin-box-controls button {
+            background-color: #EAEAE2;
+            border-color: rgba(208, 208, 190, 0.5);
+            box-shadow: inset 2px 2px 3px #FBFBF9, inset -2px -2px 3px #E6E6DD;
             opacity: 1;
             &.up {
-                background: svg-load("./icon/spinbox-up.svg") no-repeat center;
-                background-size: 15px 8px;
-                filter: saturate(0) brightness(1.1);
+                background-image: svg-load("./icon/spinbox-up.svg", fill: #C9C9C2);
             }
             &.down {
-                background: svg-load("./icon/spinbox-down.svg") no-repeat center;
-                background-size: 15px 8px;
-                filter: saturate(0) brightness(1.1);
+                background-image: svg-load("./icon/spinbox-down.svg", fill: #C9C9C2);
             }
         }
     }
