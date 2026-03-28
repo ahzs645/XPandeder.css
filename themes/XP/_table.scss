@@ -38,28 +38,21 @@ table {
                 display: none;
             }
 
-            &[aria-sort] {
-                padding-right: 16px;
-            }
-
-            &[aria-sort="ascending"]::before,
-            &[aria-sort="descending"]::before {
-                content: "";
-                position: absolute;
-                right: 6px;
-                top: 50%;
-                transform: translateY(-50%);
+            .sort-arrow {
+                display: inline-block;
+                margin-left: 4px;
+                vertical-align: middle;
                 width: 0;
                 height: 0;
                 border-left: 4px solid transparent;
                 border-right: 4px solid transparent;
             }
 
-            &[aria-sort="ascending"]::before {
+            &[aria-sort="ascending"] .sort-arrow {
                 border-bottom: 5px solid #aca899;
             }
 
-            &[aria-sort="descending"]::before {
+            &[aria-sort="descending"] .sort-arrow {
                 border-top: 5px solid #aca899;
             }
         }
