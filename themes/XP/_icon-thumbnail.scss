@@ -34,8 +34,10 @@
         }
 
         &.size-32 {
-            width: 64px;
-            height: 64px;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
         }
     }
 
@@ -53,6 +55,10 @@
     &.selected {
         .icon-thumbnail-image {
             border: 3px solid #316ac5;
+
+            &.size-32 {
+                border: none;
+            }
         }
 
         .icon-thumbnail-label {
@@ -64,6 +70,10 @@
     &:hover:not(.selected) {
         .icon-thumbnail-image {
             border: 3px solid #ece9d8;
+
+            &.size-32 {
+                border: none;
+            }
         }
     }
 

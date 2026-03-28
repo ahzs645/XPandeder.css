@@ -228,31 +228,31 @@ input[type="color"] {
         gap: 1px;
         button {
             background-color: #C1D3FB;
-            box-shadow: inset 2px 2px 3px #E0EAFF, inset -2px -2px 3px #B1CCFA;
-            border: 2px solid rgba(149, 178, 246, 0.5);
+            box-shadow: inset 4px 4px 3px 1px #E0EAFF, inset -4px -4px 3px 1px #B1CCFA;
+            border: 1px solid rgba(149, 178, 246, 0.5);
             border-radius: 3px;
             background-image: none;
-            background-size: 15px 8px;
+            background-size: 9px 5px;
             &.up {
                 background-image: svg-load("./icon/spinbox-up.svg");
                 &:hover {
                     background-color: #D4E4FF;
-                    box-shadow: inset 2px 2px 3px #EAF2FF, inset -2px -2px 3px #C0D6FF;
+                    box-shadow: inset 4px 4px 3px 1px #EAF2FF, inset -4px -4px 3px 1px #C0D6FF;
                 }
                 &:active {
                     background-color: #A0B5E0;
-                    box-shadow: inset 2px 2px 3px #B8CCF0, inset -2px -2px 3px #8EA6D0;
+                    box-shadow: inset 4px 4px 3px 1px #B8CCF0, inset -4px -4px 3px 1px #8EA6D0;
                 }
             }
             &.down {
                 background-image: svg-load("./icon/spinbox-down.svg");
                 &:hover {
                     background-color: #D4E4FF;
-                    box-shadow: inset 2px 2px 3px #EAF2FF, inset -2px -2px 3px #C0D6FF;
+                    box-shadow: inset 4px 4px 3px 1px #EAF2FF, inset -4px -4px 3px 1px #C0D6FF;
                 }
                 &:active {
                     background-color: #A0B5E0;
-                    box-shadow: inset 2px 2px 3px #B8CCF0, inset -2px -2px 3px #8EA6D0;
+                    box-shadow: inset 4px 4px 3px 1px #B8CCF0, inset -4px -4px 3px 1px #8EA6D0;
                 }
             }
         }
@@ -271,7 +271,7 @@ input[type="color"] {
         .spin-box-controls button {
             background-color: #EAEAE2;
             border-color: rgba(208, 208, 190, 0.5);
-            box-shadow: inset 2px 2px 3px #FBFBF9, inset -2px -2px 3px #E6E6DD;
+            box-shadow: inset 4px 4px 3px 1px #FBFBF9, inset -4px -4px 3px 1px #E6E6DD;
             opacity: 1;
             &.up {
                 background-image: svg-load("./icon/spinbox-up.svg", fill: #C9C9C2);
