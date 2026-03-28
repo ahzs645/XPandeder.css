@@ -1,0 +1,66 @@
+    <section class="component">
+      <h3 id="menus">Menus</h3>
+        <div>
+          <blockquote>
+            <em>Menus</em> display a list of commands available to the user. Because menus make commands visible and discoverable, you can use them to leverage the greater capacity people have for recognizing commands than for remembering them.
+
+            <footer>
+              &mdash; Microsoft Windows User Experience p. 107
+            </footer>
+          </blockquote>
+          <p>Context menus are implmented by assiging the <code>role="menu"</code> to a parent.</p>
+          
+          <p>Popup menus can be created by adding the attribute <code>aria-haspopup="true"</code>, and  child <code>&lt;ul&gt;</code> element with the <code>menu</code> role. Note that popup menus require either the <code>tabindex="0"</code> attribute or an <code>&lt;a&gt;</code> nchor link to maintain focus.</p>
+
+          <p>For a horizontal divider, use the class name <code>has-divider</code>.</p>
+
+          <p>Checkmarks and radio buttons require the relevant <code>&lt;input&gt;</code> types.</p>
+
+          <p>Icons can be implemented with an <code>img</code> tag. <code>12px</code> seems to be the sweet spot here.</p>
+
+          <p>Displayed shortcuts are contained within a <code>span</code> as a child of the <code>li</code>st element.</p>
+          <%- example(`
+            <div class="menu" style="width: 200px">
+              <ul role="menu">
+                <li role="menuitem" tabindex="0" class="bold">Bold</li>
+                <li role="menuitem" tabindex="0" aria-haspopup="true">Has Popup
+                  <ul role="menu" style="width: 200px">
+                    <li role="menuitem">uh....</li>
+                    <li role="menuitem">what are you doing here?</li>
+                  </ul>
+                </li>
+                <li role="menuitem" tabindex="0" class="has-divider">With Shortcut <span>Ctrl+W</span></li>
+                <li role="menuitem" tabindex="0" aria-disabled="true">Disabled</li>
+                <li role="menuitem" class="has-divider"><img src="https://img.icons8.com/fluency/12/like.png" aria-info="from icons8.com"/>With a cool icon!</li>
+                <li role="menuitem">
+                  <input type="checkbox" id="check1" name="check1" />
+                  <label for="check1">Check, check it out</label>
+                </li>
+                <li role="menuitem" class="has-divider">
+                  <input type="checkbox" id="check2" name="check2" />
+                  <label for="check2">I'm checking in</label>
+                </li>
+                <li role="menuitem">
+                  <input type="radio" name="menu-example" id="radio${getNewId()}" />
+                  <label for="radio${getCurrentId()}">Video killed</label>
+                </li>
+                <li role="menuitem">
+                  <input type="radio" name="menu-example" id="radio${getNewId()}" />
+                  <label for="radio${getCurrentId()}">The radio star</label>
+                </li>
+                <li role="menuitem">
+                  <input type="radio" name="menu-example" id="radio${getNewId()}" />
+                  <label for="radio${getCurrentId()}">Radio Gaga</label>
+                </li>
+              </ul>
+            </div>
+          `) %>
+        <blockquote>
+            However, be aware that cascading menus add complexity to the menu interface by requiring theuser to navigate further through the menu structure to get to a particular choice. 
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 116
+          </footer>
+        </blockquote>
+        </div>
+    </section>

@@ -107,9 +107,10 @@ function buildDocs() {
       );
     } else throw "error globbing dist directory.";
   });
+  const templatePath = path.join(__dirname, "docs/index.html.ejs");
   fs.writeFileSync(
     path.join(__dirname, "/dist/index.html"),
-    ejs.render(template, { getNewId, getCurrentId, example })
+    ejs.render(template, { getNewId, getCurrentId, example }, { filename: templatePath })
   );
 }
 

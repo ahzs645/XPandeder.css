@@ -1,0 +1,147 @@
+    <section class="component">
+      <h3 id="icon-thumbnail">Icon &amp; Thumbnail</h3>
+      <div>
+        <blockquote>
+          Icons are pictorial representations of objects such as files, folders, and programs. They help users identify and navigate items at a glance.
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 235
+          </footer>
+        </blockquote>
+
+        <p>
+          Icon thumbnails can be rendered at different sizes and support
+          <code>selected</code> and <code>hover</code> states. Use a container
+          with class <code>icon-thumbnail</code> and nest an image container and label inside.
+          Add the <code>selected</code> class for the selected state.
+          Use <code>size-48</code> or <code>size-32</code> on the image container for sizing.
+        </p>
+
+        <p>
+          Use the controls below to switch between sizes and click the icons to test selection states.
+        </p>
+
+        <div class="example">
+          <div style="margin-bottom: 12px;">
+            <div class="field-row">
+              <label>Size:</label>
+              <select id="icon-size-select">
+                <option value="48">Icon Title (48&times;48)</option>
+                <option value="32">Thumbnail (32&times;32)</option>
+              </select>
+            </div>
+          </div>
+          <div id="icon-thumbnail-demo" style="display: flex; gap: 24px; padding: 16px; background: white;">
+            <div class="icon-thumbnail" tabindex="0">
+              <div class="icon-thumbnail-image size-48">
+                <img src="folder-48.png" width="48" height="48" alt="Folder icon">
+              </div>
+              <div class="icon-thumbnail-label">App Patch</div>
+            </div>
+            <div class="icon-thumbnail selected" tabindex="0">
+              <div class="icon-thumbnail-image size-48">
+                <img src="folder-48.png" width="48" height="48" alt="Folder icon">
+              </div>
+              <div class="icon-thumbnail-label">Connection Wizard</div>
+            </div>
+            <div class="icon-thumbnail" tabindex="0">
+              <div class="icon-thumbnail-image size-48">
+                <img src="folder-48.png" width="48" height="48" alt="Folder icon">
+              </div>
+              <div class="icon-thumbnail-label">Cursors</div>
+            </div>
+          </div>
+        </div>
+
+        <h4>Icon View (32&times;32)</h4>
+        <p>
+          Use <code>size-32</code> on the image container for the smaller icon view.
+        </p>
+
+        <%- example(`
+<div style="display: flex; gap: 24px;">
+  <div class="icon-thumbnail">
+    <div class="icon-thumbnail-image size-32">
+      <img src="folder-32.png" width="32" height="32">
+    </div>
+    <div class="icon-thumbnail-label">App Patch</div>
+  </div>
+  <div class="icon-thumbnail selected">
+    <div class="icon-thumbnail-image size-32">
+      <img src="folder-32.png" width="32" height="32">
+    </div>
+    <div class="icon-thumbnail-label">Connection Wizard</div>
+  </div>
+  <div class="icon-thumbnail">
+    <div class="icon-thumbnail-image size-32">
+      <img src="folder-32.png" width="32" height="32">
+    </div>
+    <div class="icon-thumbnail-label">Cursors</div>
+  </div>
+</div>
+        `) %>
+
+        <h4>List View (mosaic)</h4>
+        <p>
+          Add the <code>list</code> class for a horizontal row layout with the
+          icon on the left and label to the right.
+        </p>
+
+        <%- example(`
+<div>
+  <div class="icon-thumbnail list">
+    <div class="icon-thumbnail-image">
+      <img src="folder-48.png" width="48" height="48">
+    </div>
+    <div class="icon-thumbnail-label">Item</div>
+  </div>
+  <div class="icon-thumbnail list selected">
+    <div class="icon-thumbnail-image">
+      <img src="folder-48.png" width="48" height="48">
+    </div>
+    <div class="icon-thumbnail-label">Item</div>
+  </div>
+  <div class="icon-thumbnail list">
+    <div class="icon-thumbnail-image">
+      <img src="folder-48.png" width="48" height="48">
+    </div>
+    <div class="icon-thumbnail-label">Item</div>
+  </div>
+  <div class="icon-thumbnail list">
+    <div class="icon-thumbnail-image">
+      <img src="folder-48.png" width="48" height="48">
+    </div>
+    <div class="icon-thumbnail-label">Item</div>
+  </div>
+</div>
+        `) %>
+
+        <script>
+        (function() {
+          var sizeSelect = document.getElementById("icon-size-select");
+          var demo = document.getElementById("icon-thumbnail-demo");
+          if (!sizeSelect || !demo) return;
+
+          sizeSelect.addEventListener("change", function() {
+            var size = this.value;
+            demo.querySelectorAll(".icon-thumbnail-image").forEach(function(c) {
+              c.classList.remove("size-48", "size-32");
+              c.classList.add("size-" + size);
+            });
+            demo.querySelectorAll("img").forEach(function(img) {
+              img.width = parseInt(size);
+              img.height = parseInt(size);
+            });
+          });
+
+          demo.querySelectorAll(".icon-thumbnail").forEach(function(thumb) {
+            thumb.addEventListener("click", function() {
+              demo.querySelectorAll(".icon-thumbnail").forEach(function(t) {
+                t.classList.remove("selected");
+              });
+              this.classList.add("selected");
+            });
+          });
+        })();
+        </script>
+      </div>
+    </section>

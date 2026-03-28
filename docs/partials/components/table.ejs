@@ -1,0 +1,59 @@
+    <section class="component">
+      <h3 id="table">Table</h3>
+      <div>
+        <blockquote>
+          A <em>list view</em> displays a collection of items, each
+          consisting of an icon and a label, presented in one of
+          several arrangements.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          Tables can be rendered using standard <code>table</code>,
+          <code>thead</code>, <code>tbody</code>, <code>tr</code>,
+          <code>th</code>, and <code>td</code> elements.
+        </p>
+
+        <%- example(`
+          <table style="width: 300px;">
+            <thead>
+              <tr>
+                <th aria-sort="ascending">Name</th>
+                <th>Type</th>
+                <th>Date Modified</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>App Patch</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr aria-selected="true">
+                <td>Connection Wizard</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Cursors</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Fonts</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+              <tr>
+                <td>Help</td>
+                <td>File Folder</td>
+                <td>25/06/2022 17:26</td>
+              </tr>
+            </tbody>
+          </table>
+        `) %>
+      </div>
+    </section>

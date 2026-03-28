@@ -1,0 +1,63 @@
+    <section class="component">
+      <h3 id="spin-box">SpinBox</h3>
+      <div>
+        <blockquote>
+          A <em>spin box</em> is a text box with an associated pair of
+          arrow buttons that allow the user to increment or decrement
+          a numeric value.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 189
+          </footer>
+        </blockquote>
+
+        <p>
+          SpinBoxes can be rendered by wrapping an <code>input</code> and
+          a <code>div</code> with class <code>spin-box-controls</code>
+          containing two <code>button</code> elements (with classes
+          <code>up</code> and <code>down</code>) inside a container with
+          the <code>spin-box</code> class.
+        </p>
+
+        <%- example(`
+          <div class="spin-box" style="width: 80px;">
+            <input type="text" value="01:01" />
+            <div class="spin-box-controls">
+              <button class="up"></button>
+              <button class="down"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          SpinBoxes work well for numeric values too.
+        </p>
+
+        <%- example(`
+          <label for="spin-example">Value:</label>
+          <div class="spin-box" style="width: 100px;">
+            <input type="text" id="spin-example" value="1024" />
+            <div class="spin-box-controls">
+              <button class="up"></button>
+              <button class="down"></button>
+            </div>
+          </div>
+        `) %>
+
+        <p>
+          Disabled SpinBoxes can be rendered by adding the
+          <code>disabled</code> class to the container and
+          the <code>disabled</code> attribute to the input.
+        </p>
+
+        <%- example(`
+          <div class="spin-box disabled" style="width: 80px;">
+            <input type="text" value="01:01" disabled />
+            <div class="spin-box-controls">
+              <button class="up" disabled></button>
+              <button class="down" disabled></button>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>

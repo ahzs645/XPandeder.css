@@ -22,6 +22,12 @@
         border: 1px solid #ece9d8;
         background: white;
 
+        img {
+            display: block;
+            margin: 0;
+            transform: none;
+        }
+
         &.size-48 {
             width: 96px;
             height: 96px;
@@ -58,6 +64,48 @@
     &:hover:not(.selected) {
         .icon-thumbnail-image {
             border: 3px solid #ece9d8;
+        }
+    }
+
+    /* List / Mosaic variant */
+    &.list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 4px 0;
+
+        .icon-thumbnail-image {
+            border: none;
+            background: none;
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+        }
+
+        .icon-thumbnail-label {
+            margin-top: 0;
+            margin-left: 8px;
+            text-align: left;
+            width: auto;
+            padding: 2px 6px;
+        }
+
+        &.selected {
+            .icon-thumbnail-image {
+                border: none;
+            }
+
+            .icon-thumbnail-label {
+                background: #316ac5;
+                color: white;
+            }
+        }
+
+        &:hover:not(.selected) {
+            .icon-thumbnail-image {
+                border: none;
+            }
         }
     }
 }

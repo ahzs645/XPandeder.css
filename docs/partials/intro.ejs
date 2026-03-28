@@ -1,0 +1,82 @@
+    <h2 id="intro">Intro</h2>
+    <p>
+      XP.css is an extention of 98.css. A CSS library for building interfaces that look like old UIs.<br>
+      See <a href="https://github.com/botoxparty/XP.css">XP.css on GitHub</a><br>
+      See <a href="https://github.com/jdan/98.css">98.css on GitHub</a>
+    </p>
+
+    <div class="window" style="margin: 32px; width: 250px">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          My First Program
+        </div>
+
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Hello, world!</p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button>OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+
+    <p>
+      This library relies on the usage of <strong>semantic HTML</strong>. To make a button, you'll need
+      to use a <code>&lt;button&gt;</code>. Input elements require labels. Icon buttons rely on
+      <code>aria-label</code>. This page will guide you through that process, but accessibility is a primary
+      goal of this project.
+    </p>
+
+    <p>
+      You can override many of the styles of your elements while maintaining the appearance provided by
+      this library. Need more padding on your buttons? Go for it. Need to add some color to your input labels?
+      Be our guest.
+    </p>
+
+    <p>
+      <strong>This library does not contain any JavaScript</strong>, it merely styles your HTML with some CSS.
+      This means 98.css is compatible with your frontend framework of choice.
+    </p>
+
+    <p>
+      Here is an example of <a href="https://codesandbox.io/s/silly-bas-dln9t?file=/src/index.js">XP.css
+        used with React</a>, and
+      <a href="https://codesandbox.io/s/vigilant-night-2jkz3?file=/index.html">an example with vanilla JavaScript</a>.
+      The
+      fastest way to use XP.css is to import it from unpkg.
+    </p>
+    <p><em>Windows XP Theme</em>
+    <pre style="max-width: fit-content">
+<code>&lt;link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+&gt;</code></pre>
+    </p>
+    <p><em>Windows 98 Theme</em>
+    <pre style="max-width: fit-content"><code>&lt;link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css@/dist/98.css"
+&gt;</code></pre>
+    </p>
+
+    <p>
+      You can also install XP.css <a href="https://www.npmjs.com/package/xp.css">from npm</a>.
+    </p>
+    <p><em>Installation</em>
+    <pre style="max-width: fit-content">
+<code>npm install xp.css</code></pre>
+    </p>
+    <p><em>Usage</em>
+    <pre style="max-width: fit-content">
+// For XP
+import "xp.css/dist/XP.css";
+
+// For 98
+import "xp.css/dist/98.css";</pre>
+    </p>
