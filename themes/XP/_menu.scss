@@ -80,7 +80,7 @@ ul {
 
     [role="menuitem"] {
         position: relative;
-        padding: 3px 5px;
+        padding: 4px 8px;
         &:active,
         &:focus, 
         &:focus-within,
@@ -205,16 +205,16 @@ ul {
 }
 
 .has-inactive-windows .window:not(.active) {
-    ul {        
+    ul {
         &[role="menubar"] {
-            color: #A8A597;
+            color: #ACA899;
         }
         [role="menuitem"] {
-            &:focus, 
+            &:focus,
             &:focus-within,
             &:hover {
                 background-color: #3169C1;
-                color: #A8A596;
+                color: #ACA899;
             }
         }
     }

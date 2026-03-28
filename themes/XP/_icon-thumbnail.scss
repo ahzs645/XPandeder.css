@@ -1,0 +1,63 @@
+/*-------------------------------------------*\
+    Icon Title & Thumbnail
+\*-------------------------------------------*/
+
+.icon-thumbnail {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+    font-family: var(--sans-serif);
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+
+    &:focus {
+        outline: none;
+    }
+
+    .icon-thumbnail-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ece9d8;
+        background: white;
+
+        &.size-48 {
+            width: 96px;
+            height: 96px;
+        }
+
+        &.size-32 {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    .icon-thumbnail-label {
+        margin-top: 4px;
+        text-align: center;
+        padding: 1px 4px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.selected {
+        .icon-thumbnail-image {
+            border: 3px solid #316ac5;
+        }
+
+        .icon-thumbnail-label {
+            background: #316ac5;
+            color: white;
+        }
+    }
+
+    &:hover:not(.selected) {
+        .icon-thumbnail-image {
+            border: 3px solid #ece9d8;
+        }
+    }
+}
