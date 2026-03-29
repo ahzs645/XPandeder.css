@@ -135,6 +135,23 @@
     }
 }
 
+.status-bar.has-resize {
+    position: relative;
+    padding-right: 14px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        right: 2px;
+        bottom: 3px;
+        background-image: svg-load("./icon/resize-handle.svg");
+        background-repeat: no-repeat;
+    }
+}
+
 .has-inactive-windows .window:not(.active) {
     box-shadow: inset -1px -1px #6669BA,inset 1px 1px #5B68CD,inset -2px -2px #7180D4,inset 2px 2px #7480DC,inset -3px -3px #7B8BD7,inset 3px 3px #758CDC;
     .title-bar {

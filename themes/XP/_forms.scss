@@ -232,28 +232,30 @@ input[type="color"] {
             border: 1px solid rgba(149, 178, 246, 0.5);
             border-radius: 3px;
             background-image: none;
-            background-size: 9px 5px;
-            &.up {
-                background-image: svg-load("./icon/spinbox-up.svg");
-                &:hover {
-                    background-color: #D4E4FF;
-                    box-shadow: inset 4px 4px 3px 1px #EAF2FF, inset -4px -4px 3px 1px #C0D6FF;
-                }
-                &:active {
-                    background-color: #A0B5E0;
-                    box-shadow: inset 4px 4px 3px 1px #B8CCF0, inset -4px -4px 3px 1px #8EA6D0;
-                }
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 11px 6px;
             }
-            &.down {
+            &.up::after {
+                background-image: svg-load("./icon/spinbox-up.svg");
+            }
+            &.down::after {
                 background-image: svg-load("./icon/spinbox-down.svg");
-                &:hover {
-                    background-color: #D4E4FF;
-                    box-shadow: inset 4px 4px 3px 1px #EAF2FF, inset -4px -4px 3px 1px #C0D6FF;
-                }
-                &:active {
-                    background-color: #A0B5E0;
-                    box-shadow: inset 4px 4px 3px 1px #B8CCF0, inset -4px -4px 3px 1px #8EA6D0;
-                }
+            }
+            &.up:hover,
+            &.down:hover {
+                background-color: #D4E4FF;
+                box-shadow: inset 4px 4px 3px 1px #EAF2FF, inset -4px -4px 3px 1px #C0D6FF;
+            }
+            &.up:active,
+            &.down:active {
+                background-color: #A0B5E0;
+                box-shadow: inset 4px 4px 3px 1px #B8CCF0, inset -4px -4px 3px 1px #8EA6D0;
             }
         }
     }
@@ -273,10 +275,10 @@ input[type="color"] {
             border-color: rgba(208, 208, 190, 0.5);
             box-shadow: inset 4px 4px 3px 1px #FBFBF9, inset -4px -4px 3px 1px #E6E6DD;
             opacity: 1;
-            &.up {
+            &.up::after {
                 background-image: svg-load("./icon/spinbox-up.svg", fill: #C9C9C2);
             }
-            &.down {
+            &.down::after {
                 background-image: svg-load("./icon/spinbox-down.svg", fill: #C9C9C2);
             }
         }

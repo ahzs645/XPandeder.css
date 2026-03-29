@@ -170,7 +170,9 @@
         <p>
           Assign the <code>ribbon</code> class to a <code>&lt;ul&gt;</code> element with the attribute <code>role="menubar"</code>. Subsequent <code>li</code>st items should have the role <code>ribbonitem</code>. For icons, just include an <code>&lt;img&gt;</code>.
         </p>
-        <p>To disable an option, apply the <code>disabled</code> attribute to the <code>&lt;button&gt;</code> parent.</p>
+        <p>To disable an option, apply the <code>disabled</code> attribute to the <code>&lt;button&gt;</code>.</p>
+        <p>To mark a button as active/selected, use <code>aria-selected="true"</code> on the <code>&lt;button&gt;</code>.</p>
+        <p>For dropdown buttons, add <code>aria-haspopup="true"</code> to the <code>&lt;button&gt;</code> to show a dropdown arrow.</p>
 
         <%- example(`
           <div class="window active" style="width: 700px">
@@ -190,10 +192,60 @@
                 <li role="menuitem">Help</li>
               </ul>
               <ul role="menubar" class="ribbon">
-                <li role="ribbonitem" aria-action="back"><button disabled><img src="https://img.icons8.com/flat-round/24/circled-left-2--v1.png" aria-info="from icons8.com"/> Back</button></li>
-                <li role="ribbonitem" aria-action="forward"><button><img src="https://img.icons8.com/flat-round/24/circled-right-2--v1.png" aria-info="from icons8.com"/></button></li>
-                <li role="ribbonitem" aria-action="up"><button><img src="https://img.icons8.com/color/24/home--v1.png" alt="home--v1" aria-info="from icons8.com"/></button></li>
-                <li role="ribbonitem" aria-action="search"><button><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Search</button></li>
+                <li role="ribbonitem" aria-action="back"><button disabled aria-haspopup="true"><img src="https://img.icons8.com/flat-round/24/circled-left-2--v1.png" aria-info="from icons8.com"/> Back</button></li>
+                <li role="ribbonitem" aria-action="forward"><button aria-haspopup="true"><img src="https://img.icons8.com/flat-round/24/circled-right-2--v1.png" aria-info="from icons8.com"/></button></li>
+                <li role="ribbonitem" aria-action="up"><button aria-selected="true"><img src="https://img.icons8.com/color/24/home--v1.png" alt="home--v1" aria-info="from icons8.com"/></button></li>
+                <li role="ribbonitem" aria-action="search"><button aria-haspopup="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Search</button></li>
+              </ul>
+            </div>
+          </div>
+        `) %>
+
+        <h5>Ribbon Button States</h5>
+        <p>Ribbon buttons support 5 states: <strong>Idle</strong>, <strong>Hover</strong>, <strong>Clicked</strong>, <strong>Active</strong>, and <strong>Disabled</strong>.</p>
+        <table>
+          <thead>
+            <tr><th>State</th><th>How to apply</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Idle</td><td>Default (no attributes)</td><td>Transparent background, no border</td></tr>
+            <tr><td>Hover</td><td>Mouse over (CSS <code>:hover</code>)</td><td>Light raised appearance with subtle border</td></tr>
+            <tr><td>Clicked</td><td>Mouse down (CSS <code>:active</code>)</td><td>Pressed-in appearance with darker fill</td></tr>
+            <tr><td>Active</td><td><code>aria-selected="true"</code></td><td>White background with blue border</td></tr>
+            <tr><td>Disabled</td><td><code>disabled</code> attribute</td><td>Grayed text, faded icon</td></tr>
+          </tbody>
+        </table>
+
+        <h5>Ribbon Sizes</h5>
+        <p>Three size variants are available: default (large, 38px), <code>ribbon-md</code> (30px), and <code>ribbon-sm</code> (22px).</p>
+
+        <%- example(`
+          <div style="background: #ECE9D8; padding: 8px; display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Large (default):</p>
+              <ul role="menubar" class="ribbon">
+                <li role="ribbonitem"><button><img src="https://img.icons8.com/color/24/home--v1.png" aria-info="from icons8.com"/> Idle</button></li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+                <li role="ribbonitem"><button aria-selected="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Active</button></li>
+                <li role="ribbonitem"><button disabled aria-haspopup="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Disabled</button></li>
+              </ul>
+            </div>
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Medium (ribbon-md):</p>
+              <ul role="menubar" class="ribbon ribbon-md">
+                <li role="ribbonitem"><button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Idle</button></li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+                <li role="ribbonitem"><button aria-selected="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Active</button></li>
+                <li role="ribbonitem"><button disabled aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Disabled</button></li>
+              </ul>
+            </div>
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Small (ribbon-sm):</p>
+              <ul role="menubar" class="ribbon ribbon-sm">
+                <li role="ribbonitem"><button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Idle</button></li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+                <li role="ribbonitem"><button aria-selected="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Active</button></li>
+                <li role="ribbonitem"><button disabled aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Disabled</button></li>
               </ul>
             </div>
           </div>
@@ -374,7 +426,34 @@
         </div>
       `) %>
 
-      
+        <h5>Resize Handle</h5>
+        <p>
+          Add the <code>has-resize</code> class to the status bar to display a
+          resize handle in the bottom-right corner. Remove the class to hide it.
+        </p>
+
+        <%- example(`
+        <div class="window" style="width: 320px">
+          <div class="title-bar">
+            <div class="title-bar-text">A Window With A Resize Handle</div>
+          </div>
+          <div class="window-body">
+        <p> There are just so many possibilities:</p>
+        <ul>
+            <li>A Task Manager</li>
+            <li>A Notepad</li>
+            <li>Or even a File Explorer!</li>
+        </ul>
+          </div>
+          <div class="status-bar has-resize">
+            <p class="status-bar-field">3 object(s)</p>
+            <p class="status-bar-field">10 Bytes</p>
+            <p class="status-bar-field">My Computer</p>
+          </div>
+        </div>
+      `) %>
+
+
     </section>
 
     <section class="component">
