@@ -15,7 +15,7 @@
     overflow: hidden;
 
     .start-button{
-        flex: 0 0 95px;
+        flex: 0 0 auto;
         box-sizing: border-box;
         height: 28px;
         position: relative;
@@ -78,7 +78,8 @@
         }
 
         /* Hover state - brighter green, softer shadows */
-        &:hover {
+        &:hover,
+        &.hover {
             background-color: #3AC43B;
             box-shadow:
                 1px 1px 1px rgba(48, 127, 232, 1),
@@ -92,6 +93,7 @@
 
         /* Active/pressed state (start menu open) */
         &:active,
+        &.active,
         &:has(input:checked) {
             background-color: #1F9A1F;
             box-shadow:

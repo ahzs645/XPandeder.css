@@ -1,0 +1,110 @@
+    <section class="component">
+      <h3 id="control-button">Control Button</h3>
+      <div>
+        <p><em>Molecule</em></p>
+
+        <blockquote>
+          Include command buttons associated with the common commands of the
+          primary window in the title bar. These buttons act as shortcuts to specific
+          window commands.
+
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 122
+          </footer>
+        </blockquote>
+
+        <p>
+          If you need more fine-tuned control over individual control buttons, you can
+          pick and detach one of them. Control buttons support five states that can be
+          set via CSS classes: <strong>Active</strong> (default), <strong>Hover</strong>
+          (<code>.hover</code>), <strong>Clicked</strong> (<code>.clicked</code>),
+          <strong>Inactive</strong> (<code>.inactive</code>), and <strong>Disabled</strong>
+          (<code>disabled</code> attribute).
+        </p>
+        <p>
+          <em>Active</em> is the idle state for an active window, while
+          <em>Inactive</em> is the idle state for an inactive window (behind and not
+          being the current focused window).
+        </p>
+
+        <img src="control-button-states.svg" alt="Control button states reference" style="max-width: 249px;">
+
+        <h4 id="control-button-types">Button types</h4>
+        <p>
+          Each control button is identified by its <code>aria-label</code>:
+          "Help", "Minimize", "Maximize", "Restore", and "Close".
+        </p>
+
+        <%- example(`
+<div class="title-bar-controls" style="display: inline-flex;">
+  <button aria-label="Help"></button>
+  <button aria-label="Minimize"></button>
+  <button aria-label="Maximize"></button>
+  <button aria-label="Restore"></button>
+  <button aria-label="Close"></button>
+</div>
+        `) %>
+
+        <h4 id="control-button-hover">Hover</h4>
+        <p>
+          Add <code>.hover</code> to simulate the hover state.
+        </p>
+
+        <%- example(`
+<div class="title-bar-controls" style="display: inline-flex;">
+  <button[[ class="hover"]] aria-label="Help"></button>
+  <button[[ class="hover"]] aria-label="Minimize"></button>
+  <button[[ class="hover"]] aria-label="Maximize"></button>
+  <button[[ class="hover"]] aria-label="Restore"></button>
+  <button[[ class="hover"]] aria-label="Close"></button>
+</div>
+        `) %>
+
+        <h4 id="control-button-clicked">Clicked</h4>
+        <p>
+          Add <code>.clicked</code> to simulate the pressed state.
+        </p>
+
+        <%- example(`
+<div class="title-bar-controls" style="display: inline-flex;">
+  <button[[ class="clicked"]] aria-label="Help"></button>
+  <button[[ class="clicked"]] aria-label="Minimize"></button>
+  <button[[ class="clicked"]] aria-label="Maximize"></button>
+  <button[[ class="clicked"]] aria-label="Restore"></button>
+  <button[[ class="clicked"]] aria-label="Close"></button>
+</div>
+        `) %>
+
+        <h4 id="control-button-inactive">Inactive</h4>
+        <p>
+          Add <code>.inactive</code> to show the idle state of an inactive window.
+          This is also applied automatically when a window without the <code>.active</code>
+          class is inside a <code>.has-inactive-windows</code> container.
+        </p>
+
+        <%- example(`
+<div class="title-bar-controls" style="display: inline-flex;">
+  <button[[ class="inactive"]] aria-label="Help"></button>
+  <button[[ class="inactive"]] aria-label="Minimize"></button>
+  <button[[ class="inactive"]] aria-label="Maximize"></button>
+  <button[[ class="inactive"]] aria-label="Restore"></button>
+  <button[[ class="inactive"]] aria-label="Close"></button>
+</div>
+        `) %>
+
+        <h4 id="control-button-disabled">Disabled</h4>
+        <p>
+          Use the <code>disabled</code> attribute to disable a control button.
+        </p>
+
+        <%- example(`
+<div class="title-bar-controls" style="display: inline-flex;">
+  <button aria-label="Help" disabled></button>
+  <button aria-label="Minimize" disabled></button>
+  <button aria-label="Maximize" disabled></button>
+  <button aria-label="Restore" disabled></button>
+  <button aria-label="Close" disabled></button>
+</div>
+        `) %>
+      </div>
+    </section>

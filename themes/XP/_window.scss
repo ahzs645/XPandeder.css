@@ -54,62 +54,104 @@
         min-width: 21px;
         min-height: 21px;
         margin-left: 2px;
-        background-repeat: no-repeat;
-        background-position: center;
-        box-shadow: none;
-        background-color: #0050ee;
-        transition: background 100ms;
+        padding: 0;
+        position: relative;
         border: none;
-        &:active,
-        &:hover,
+        border-radius: 3px;
+        background: linear-gradient(180deg, #245FF5 33%, #256BF8 66%);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.8),
+            inset 2px 1px 6px rgba(255, 255, 255, 0.33),
+            inset -2px -3px 5px rgba(8, 68, 195, 0.8);
+        transition: background 100ms, box-shadow 100ms, opacity 100ms;
         &:focus {
-            box-shadow: none !important;
+            outline: none;
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
+        }
+
+        &:hover, &.hover {
+            background: linear-gradient(180deg, #507FF7 33%, #5189F9 66%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.9),
+                inset 2px 1px 6px rgba(255, 255, 255, 0.4),
+                inset -2px -3px 5px rgba(8, 68, 195, 0.5),
+                0 0 5px rgba(62, 180, 255, 0.5) !important;
+        }
+
+        &:not(:disabled):active, &.active, &.clicked {
+            background: linear-gradient(135deg, #0051BE 33%, #004DB2 70%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.8),
+                inset 2px 2px 3px rgba(0, 0, 0, 0.66),
+                inset -2px -3px 5px rgba(8, 68, 195, 1) !important;
+        }
+
+        &.inactive {
+            opacity: 0.6;
+        }
+
+        &:disabled, &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    button[aria-label="Help"] {
+        &::after { background-image: svg-load("./icon/help.svg"); }
+        &:hover::after, &.hover::after { background-image: svg-load("./icon/help-hover.svg"); }
+        &:not(:disabled):active::after, &.active::after, &.clicked::after { background-image: svg-load("./icon/help-active.svg"); }
     }
     button[aria-label="Minimize"] {
-        background-image: svg-load("./icon/minimize.svg");
-        &:hover {
-            background-image: svg-load("./icon/minimize-hover.svg");
-        }
-        &:not(:disabled):active {
-            background-image: svg-load("./icon/minimize-active.svg");
-        }
+        &::after { background-image: svg-load("./icon/minimize.svg"); }
+        &:hover::after, &.hover::after { background-image: svg-load("./icon/minimize-hover.svg"); }
+        &:not(:disabled):active::after, &.active::after, &.clicked::after { background-image: svg-load("./icon/minimize-active.svg"); }
     }
     button[aria-label="Maximize"] {
-        background-image: svg-load("./icon/maximize.svg");
-        &:hover {
-            background-image: svg-load("./icon/maximize-hover.svg");
-        }
-        &:not(:disabled):active {
-            background-image: svg-load("./icon/maximize-active.svg");
-        }
+        &::after { background-image: svg-load("./icon/maximize.svg"); }
+        &:hover::after, &.hover::after { background-image: svg-load("./icon/maximize-hover.svg"); }
+        &:not(:disabled):active::after, &.active::after, &.clicked::after { background-image: svg-load("./icon/maximize-active.svg"); }
     }
     button[aria-label="Restore"] {
-        background-image: svg-load("./icon/restore.svg");
-        &:hover {
-            background-image: svg-load("./icon/restore-hover.svg");
-        }
-        &:not(:disabled):active {
-            background-image: svg-load("./icon/restore-active.svg");
-        }
+        &::after { background-image: svg-load("./icon/restore.svg"); }
+        &:hover::after, &.hover::after { background-image: svg-load("./icon/restore-hover.svg"); }
+        &:not(:disabled):active::after, &.active::after, &.clicked::after { background-image: svg-load("./icon/restore-active.svg"); }
     }
-    button[aria-label="Help"] {
-        background-image: svg-load("./icon/help.svg");
-        &:hover {
-            background-image: svg-load("./icon/help-hover.svg");
-        }
-        &:not(:disabled):active {
-            background-image: svg-load("./icon/help-active.svg");
-        }
-    }
+
     button[aria-label="Close"] {
-        background-image: svg-load("./icon/close.svg");
-        &:hover {
-            background-image: svg-load("./icon/close-hover.svg");
+        background: linear-gradient(180deg, #E46446 0%, #E65D32 100%);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.8),
+            inset 2px 1px 6px rgba(255, 255, 255, 0.1),
+            inset -2px -3px 5px rgba(170, 35, 0, 1);
+
+        &::after { background-image: svg-load("./icon/close.svg"); }
+
+        &:hover, &.hover {
+            background: linear-gradient(135deg, #F45555 0%, #F84C39 50%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.9),
+                inset 2px 1px 6px rgba(255, 255, 255, 0.2),
+                inset -2px -3px 4px rgba(255, 69, 20, 1),
+                0 0 5px rgba(255, 160, 122, 0.5) !important;
         }
-        &:not(:disabled):active {
-            background-image: svg-load("./icon/close-active.svg");
+        &:hover::after, &.hover::after { background-image: svg-load("./icon/close-hover.svg"); }
+
+        &:not(:disabled):active, &.active, &.clicked {
+            background: #BE3C1C;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.8),
+                inset 2px 2px 3px rgba(0, 0, 0, 0.66),
+                inset -2px -3px 4px rgba(195, 65, 30, 1) !important;
         }
+        &:not(:disabled):active::after, &.active::after, &.clicked::after { background-image: svg-load("./icon/close-active.svg"); }
     }
 }
 
@@ -178,9 +220,9 @@
         background: #7895DB;
         border-left-color:#6872CE;
         border-top-color: #6872CE;
-        border-right-color: #5457B3; 
+        border-right-color: #5457B3;
     }
-    .title-bar-controls button:not(:hover){
-        filter: saturate(46%) brightness(125%);
+    .title-bar-controls button:not(:hover):not(.hover) {
+        opacity: 0.6;
     }
 }
