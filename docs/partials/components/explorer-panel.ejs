@@ -1,0 +1,223 @@
+    <h3 id="explorer-panel">Explorer Side Panel</h3>
+    <p>
+      The Explorer Side Panel recreates the classic Windows XP folder task pane
+      found in Explorer windows. It sits inside the <code>window-body</code> using
+      <code>display: flex</code>, with collapsible sections containing icons and
+      action items. Use the <code>explorer-panel</code> class on a <code>div</code>
+      element.
+    </p>
+
+    <section class="component">
+      <h4 id="explorer-panel-primary">Primary Variant</h4>
+      <div>
+        <blockquote>
+          The <em>task pane</em> provides a list of useful actions relevant
+          to the current context in a Windows Explorer window. The primary
+          section highlights the most important task group.
+
+          <footer>
+            &mdash; Windows XP Explorer UI
+          </footer>
+        </blockquote>
+
+        <p>
+          The primary variant uses a dark blue gradient header. Add the
+          <code>primary</code> class to the
+          <code>explorer-panel-section-header</code>. Primary sections
+          automatically receive a lighter content background
+          (<code>#EFF3FF</code>).
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 500px;">
+            <div class="title-bar">
+              <div class="title-bar-text">Control Panel</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="display: flex; margin: 0 3px; padding: 0; height: 200px;">
+              <div class="explorer-panel">
+                <div class="explorer-panel-section">
+                  <div class="explorer-panel-section-header primary">
+                    <span>Control Panel</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235980D0'/%3E%3Cstop offset='1' stop-color='%232E60C1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%2373A1E2'/%3E%3Cpath d='M4.5 9L8 6.5L11.5 9M4.5 12L8 9.5L11.5 12' stroke='white' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/help_book_big-4.png">
+                      <span>Switch to Category View</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/settings_gear-0.png">
+                      <span>Switch to Classic View</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="flex: 1; padding: 8px; background: #fff;">
+                <p style="font-size: 11px; color: #333;">Window content area</p>
+              </div>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h4 id="explorer-panel-default">Default Variant</h4>
+      <div>
+        <p>
+          The default variant uses a white-to-blue gradient header with blue
+          text. Omit the <code>primary</code> class on the header. Default
+          sections have a slightly darker content background
+          (<code>#D6DFF7</code>).
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 500px;">
+            <div class="title-bar">
+              <div class="title-bar-text">My Computer</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="display: flex; margin: 0 3px; padding: 0; height: 220px;">
+              <div class="explorer-panel">
+                <div class="explorer-panel-section">
+                  <div class="explorer-panel-section-header">
+                    <span>See Also</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='%23E7EEF4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%23AEB8DA'/%3E%3Cpath d='M4.5 9L8 6.5L11.5 9M4.5 12L8 9.5L11.5 12' stroke='%23003CA5' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
+                      <span>Windows Update</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/help_book_big-4.png">
+                      <span>Help and Support</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="explorer-panel-section">
+                  <div class="explorer-panel-section-header">
+                    <span>Details</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='%23E7EEF4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%23AEB8DA'/%3E%3Cpath d='M4.5 9L8 6.5L11.5 9M4.5 12L8 9.5L11.5 12' stroke='%23003CA5' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item static">
+                      <span><strong>My Computer</strong></span>
+                    </div>
+                    <div class="explorer-panel-separator"></div>
+                    <div class="explorer-panel-item static">
+                      <span>System Folder</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="flex: 1; padding: 8px; background: #fff;">
+                <p style="font-size: 11px; color: #333;">Window content area</p>
+              </div>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>
+
+    <section class="component">
+      <h4 id="explorer-panel-combined">Combined Example</h4>
+      <div>
+        <p>
+          A typical Explorer window combines both variants together with a
+          primary section on top and default sections below. Add the
+          <code>collapsed</code> class to a section to hide its content,
+          and swap the toggle icon to point downward.
+        </p>
+
+        <%- example(`
+          <div class="window" style="width: 500px;">
+            <div class="title-bar">
+              <div class="title-bar-text">My Computer</div>
+              <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+              </div>
+            </div>
+            <div class="window-body" style="display: flex; margin: 0 3px; padding: 0; height: 340px;">
+              <div class="explorer-panel">
+                <div class="explorer-panel-section">
+                  <div class="explorer-panel-section-header primary">
+                    <span>System Tasks</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235980D0'/%3E%3Cstop offset='1' stop-color='%232E60C1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%2373A1E2'/%3E%3Cpath d='M4.5 9L8 6.5L11.5 9M4.5 12L8 9.5L11.5 12' stroke='white' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/help_book_big-4.png">
+                      <span>View system information</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/settings_gear-0.png">
+                      <span>Add or remove programs</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/control_panel-0.png">
+                      <span>Change a setting</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="explorer-panel-section">
+                  <div class="explorer-panel-section-header">
+                    <span>Other Places</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='%23E7EEF4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%23AEB8DA'/%3E%3Cpath d='M4.5 9L8 6.5L11.5 9M4.5 12L8 9.5L11.5 12' stroke='%23003CA5' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png">
+                      <span>My Network Places</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
+                      <span>My Documents</span>
+                    </div>
+                    <div class="explorer-panel-item">
+                      <img alt="" src="https://win98icons.alexmeub.com/icons/png/control_panel-0.png">
+                      <span>Control Panel</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="explorer-panel-section collapsed">
+                  <div class="explorer-panel-section-header">
+                    <span>Details</span>
+                    <img alt="" class="toggle-icon" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='1' stop-color='%23E7EEF4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='8' cy='8' r='7' fill='url(%23g)' stroke='%23AEB8DA'/%3E%3Cpath d='M4.5 6L8 8.5L11.5 6M4.5 9L8 11.5L11.5 9' stroke='%23003CA5' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+                  </div>
+                  <div class="explorer-panel-section-content">
+                    <div class="explorer-panel-item static">
+                      <span><strong>My Computer</strong></span>
+                    </div>
+                    <div class="explorer-panel-item static">
+                      <span>System Folder</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="flex: 1; padding: 8px; background: #fff;">
+                <p style="font-size: 11px; color: #333;">Explorer window content area</p>
+              </div>
+            </div>
+            <div class="status-bar">
+              <p class="status-bar-field">3 object(s)</p>
+              <p class="status-bar-field">My Computer</p>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>

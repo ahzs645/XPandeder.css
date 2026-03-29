@@ -288,6 +288,19 @@
             </div>
           </div>
         `) %>
+
+        <h5>Go / Action Button</h5>
+        <p>A call-to-action button with a built-in green arrow icon. Add the <code>go-button</code> class to the <code>&lt;button&gt;</code> and include a <code>&lt;span class="go-icon"&gt;&lt;/span&gt;</code> for the icon. The icon brightens automatically on hover, click, and active states.</p>
+
+        <%- example(`
+          <div style="background: #ECE9D8; padding: 8px;">
+            <ul role="menubar" class="ribbon ribbon-sm">
+              <li role="ribbonitem"><button class="go-button"><span class="go-icon"></span> OK</button></li>
+              <li role="ribbonitem"><button class="go-button" aria-selected="true"><span class="go-icon"></span> OK</button></li>
+              <li role="ribbonitem"><button class="go-button" disabled><span class="go-icon"></span> OK</button></li>
+            </ul>
+          </div>
+        `) %>
       </div>
     </section>
 
@@ -487,6 +500,42 @@
             <p class="status-bar-field">3 object(s)</p>
             <p class="status-bar-field">10 Bytes</p>
             <p class="status-bar-field">My Computer</p>
+          </div>
+        </div>
+      `) %>
+
+        <h5>Gradient Status Bar</h5>
+        <p>
+          Add the <code>has-gradient</code> class to the status bar for an
+          Explorer-style gradient background. This can be combined with
+          <code>has-resize</code>. Status bar fields also support inline images.
+        </p>
+
+        <%- example(`
+        <div class="window" style="width: 400px">
+          <div class="title-bar">
+            <div class="title-bar-text">Explorer-Style Status Bar</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body">
+        <p> There are just so many possibilities:</p>
+        <ul>
+            <li>A Task Manager</li>
+            <li>A Notepad</li>
+            <li>Or even a File Explorer!</li>
+        </ul>
+          </div>
+          <div class="status-bar has-gradient has-resize">
+            <p class="status-bar-field">3 object(s)</p>
+            <p class="status-bar-field">10 Bytes</p>
+            <p class="status-bar-field">
+              <img src="https://win98icons.alexmeub.com/icons/png/computer_explorer-0.png" alt="My Computer">
+              My Computer
+            </p>
           </div>
         </div>
       `) %>
