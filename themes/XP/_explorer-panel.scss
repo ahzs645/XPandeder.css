@@ -32,8 +32,9 @@
     &.collapsed .explorer-panel-section-content {
         max-height: 0;
         opacity: 0;
-        padding: 0;
-        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-color: transparent;
         pointer-events: none;
     }
 }
@@ -110,7 +111,7 @@
     max-height: 1000px;
     opacity: 1;
     overflow: hidden;
-    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s, padding 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s;
     padding: 8px 10px;
 }
 

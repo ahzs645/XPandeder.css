@@ -100,13 +100,10 @@ function buildDocs() {
     </div>`;
   }
 
-  glob("docs/*", (err, files) => {
-    if (!err) {
-      files.forEach((srcFile) =>
-        fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
-      );
-    } else throw "error globbing dist directory.";
-  });
+  const docFiles = fs.readdirSync("docs").map(f => path.join("docs", f)).filter(f => fs.statSync(f).isFile());
+  docFiles.forEach((srcFile) =>
+    fs.copyFileSync(srcFile, path.join("dist", path.basename(srcFile)))
+  );
   const templatePath = path.join(__dirname, "docs/index.html.ejs");
   fs.writeFileSync(
     path.join(__dirname, "/dist/index.html"),
