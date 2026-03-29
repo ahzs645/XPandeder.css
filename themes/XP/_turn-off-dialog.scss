@@ -1,0 +1,135 @@
+/*-------------------------------------------*\
+    Turn Off Dialog
+\*-------------------------------------------*/
+
+.turn-off-dialog {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
+    background: #509AF4;
+    border: 1px solid #245CDA;
+    border-radius: 5px;
+    box-shadow: 0 4px 0 #245CDA;
+    font-family: var(--sans-serif);
+    font-size: 11px;
+    -webkit-font-smoothing: antialiased;
+
+    &.single-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.turn-off-dialog-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: white;
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: nowrap;
+
+    &:hover {
+        background: #316AC5;
+
+        .turn-off-dialog-icon.power {
+            background: linear-gradient(135deg, #F45555 0%, #F84C39 50%);
+            box-shadow:
+                inset 10px 2px 8px rgba(255, 255, 255, 0.1),
+                inset -2px -3px 4px rgba(255, 68, 20, 1);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                width: 8px;
+                height: 8px;
+                background: #FFA07A;
+                filter: blur(2.5px);
+                mix-blend-mode: color-burn;
+                z-index: 0;
+            }
+        }
+
+        .turn-off-dialog-icon.logoff {
+            background: linear-gradient(315deg, #FEA827 0%, #FFBC56 48%, #FEA827 100%);
+            box-shadow:
+                inset 10px 2px 8px rgba(255, 255, 255, 0.1),
+                inset -2px -3px 5px rgba(202, 111, 0, 1);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                right: -2px;
+                width: 8px;
+                height: 8px;
+                background: #FFE41E;
+                filter: blur(2.5px);
+                mix-blend-mode: color-burn;
+                z-index: 0;
+            }
+        }
+    }
+}
+
+.turn-off-dialog-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    /* Glass sheen - vertical line */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 1px;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, white, transparent);
+        opacity: 0.7;
+        z-index: 1;
+    }
+
+    svg {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .xp-icon {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        z-index: 2;
+        color: white;
+    }
+
+    &.power {
+        background: linear-gradient(180deg, #E46446 0%, #E65D32 100%);
+        box-shadow:
+            inset 10px 2px 8px rgba(255, 255, 255, 0.1),
+            inset -2px -3px 5px rgba(170, 35, 0, 1);
+    }
+
+    &.logoff {
+        background: linear-gradient(315deg, #D99429 0%, #DEA34F 48%, #D48E24 82%);
+        box-shadow:
+            inset 10px 2px 8px rgba(255, 255, 255, 0.1),
+            inset -2px -3px 5px rgba(163, 106, 0, 1);
+    }
+}

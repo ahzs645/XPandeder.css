@@ -1,0 +1,72 @@
+    <section class="component">
+      <h3 id="icons">Icons</h3>
+      <div>
+        <blockquote>
+          Icons are pictorial representations of objects, actions, or concepts.
+          They help users quickly identify functionality at a glance.
+          <footer>
+            &mdash; Microsoft Windows User Experience p. 235
+          </footer>
+        </blockquote>
+
+        <p>
+          XP.css includes a set of reusable CSS-based icons using the
+          <code>xp-icon</code> class. Icons inherit their color from
+          <code>currentColor</code>, so they automatically match the
+          surrounding text color. Combine <code>xp-icon</code> with a
+          variant class like <code>xp-icon-power</code> or
+          <code>xp-icon-logoff</code>.
+        </p>
+
+        <h4 id="icons-available">Available Icons</h4>
+
+        <%- example(`
+<div style="display: flex; gap: 24px; align-items: center; padding: 12px;">
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <span class="xp-icon xp-icon-power"></span>
+    <span>xp-icon-power</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 6px;">
+    <span class="xp-icon xp-icon-logoff"></span>
+    <span>xp-icon-logoff</span>
+  </div>
+</div>
+        `) %>
+
+        <h4 id="icons-color">Color Inheritance</h4>
+        <p>
+          Icons use <code>currentColor</code> via CSS <code>mask-image</code>,
+          so they adapt to any text color.
+        </p>
+
+        <%- example(`
+<div style="display: flex; gap: 24px; align-items: center; padding: 12px;">
+  <span class="xp-icon xp-icon-power" style="color: #E65D32;"></span>
+  <span class="xp-icon xp-icon-power" style="color: #316AC5;"></span>
+  <span class="xp-icon xp-icon-power" style="color: #D48E24;"></span>
+  <span class="xp-icon xp-icon-logoff" style="color: #E65D32;"></span>
+  <span class="xp-icon xp-icon-logoff" style="color: #316AC5;"></span>
+  <span class="xp-icon xp-icon-logoff" style="color: #D48E24;"></span>
+</div>
+        `) %>
+
+        <h4 id="icons-sizing">Custom Sizing</h4>
+        <p>
+          Override <code>width</code> and <code>height</code> to change the
+          icon size.
+        </p>
+
+        <%- example(`
+<div style="display: flex; gap: 16px; align-items: center; padding: 12px;">
+  <span class="xp-icon xp-icon-power" style="width: 12px; height: 12px;"></span>
+  <span class="xp-icon xp-icon-power"></span>
+  <span class="xp-icon xp-icon-power" style="width: 20px; height: 20px;"></span>
+  <span class="xp-icon xp-icon-power" style="width: 28px; height: 28px;"></span>
+  <span class="xp-icon xp-icon-logoff" style="width: 12px; height: 12px;"></span>
+  <span class="xp-icon xp-icon-logoff"></span>
+  <span class="xp-icon xp-icon-logoff" style="width: 20px; height: 20px;"></span>
+  <span class="xp-icon xp-icon-logoff" style="width: 28px; height: 28px;"></span>
+</div>
+        `) %>
+      </div>
+    </section>

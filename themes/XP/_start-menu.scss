@@ -471,16 +471,40 @@
         color: #fff;
         font-size: 11px;
         cursor: pointer;
-        padding: 4px 8px;
-        border-radius: 2px;
+        padding: 4px 10px 4px 6px;
+        border-radius: 3px;
         border: 1px solid transparent;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
         white-space: nowrap;
+        gap: 4px;
+        line-height: 1;
 
+        .start-menu-footer-button-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        span {
+            font-size: 11px;
+        }
+
+        /* Legacy support for img icons */
         img {
             width: 20px;
             height: 20px;
-            margin-right: 5px;
+            margin-right: 3px;
         }
 
         &.logoff {
@@ -489,7 +513,14 @@
             box-shadow:
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 inset -2px -3px 5px rgba(100, 66, 0, 1);
-            border-radius: 2px;
+
+            .start-menu-footer-button-icon {
+                background: linear-gradient(135deg, #D99429 0%, #DEA34F 48%, #D48E24 82%);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow:
+                    inset 0 0 3px rgba(255, 255, 255, 0.15),
+                    inset -1px -2px 3px rgba(100, 66, 0, 0.8);
+            }
 
             &:hover {
                 background: linear-gradient(to bottom, #E8B366 0%, #E0A23D 50%, #DA9832 100%);
@@ -502,7 +533,14 @@
             box-shadow:
                 inset 0 1px 0 rgba(255, 255, 255, 0.1),
                 inset -2px -3px 5px rgba(78, 16, 0, 1);
-            border-radius: 2px;
+
+            .start-menu-footer-button-icon {
+                background: linear-gradient(135deg, #E46446 0%, #E65D32 100%);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                box-shadow:
+                    inset 0 0 3px rgba(255, 255, 255, 0.15),
+                    inset -1px -2px 3px rgba(78, 16, 0, 0.8);
+            }
 
             &:hover {
                 background: linear-gradient(to bottom, #EE7A60 0%, #F07048 100%);

@@ -1,0 +1,78 @@
+    <section class="component">
+      <h3 id="turn-off-dialog">Turn Off Dialog</h3>
+      <div>
+        <blockquote>
+          The Turn Off Computer dialog provides options for shutting down,
+          restarting, or putting the computer in standby mode.
+          <footer>
+            &mdash; Microsoft Windows User Experience
+          </footer>
+        </blockquote>
+
+        <p>
+          Use a container with class <code>turn-off-dialog</code> and nest
+          <code>turn-off-dialog-item</code> buttons inside. Each item contains a
+          <code>turn-off-dialog-icon</code> with a variant class
+          (<code>power</code> or <code>logoff</code>) and an
+          <code>xp-icon</code> inside for the icon graphic.
+        </p>
+
+        <%- example(`
+<div class="turn-off-dialog">
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon power">
+      <span class="xp-icon xp-icon-power"></span>
+    </div>
+    <span>Turn off</span>
+  </button>
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon power">
+      <span class="xp-icon xp-icon-power"></span>
+    </div>
+    <span>Turn off</span>
+  </button>
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon logoff">
+      <span class="xp-icon xp-icon-logoff"></span>
+    </div>
+    <span>Turn off</span>
+  </button>
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon logoff">
+      <span class="xp-icon xp-icon-logoff"></span>
+    </div>
+    <span>Turn off</span>
+  </button>
+</div>
+        `) %>
+
+        <h4>Single Row Variant</h4>
+        <p>
+          Add the <code>single-row</code> class for a three-column layout, matching the classic
+          Turn Off Computer dialog.
+        </p>
+
+        <%- example(`
+<div class="turn-off-dialog single-row">
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon logoff">
+      <span class="xp-icon xp-icon-logoff"></span>
+    </div>
+    <span>Stand By</span>
+  </button>
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon power">
+      <span class="xp-icon xp-icon-power"></span>
+    </div>
+    <span>Turn Off</span>
+  </button>
+  <button class="turn-off-dialog-item">
+    <div class="turn-off-dialog-icon logoff">
+      <span class="xp-icon xp-icon-logoff"></span>
+    </div>
+    <span>Restart</span>
+  </button>
+</div>
+        `) %>
+      </div>
+    </section>
