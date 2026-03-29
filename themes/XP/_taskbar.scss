@@ -91,10 +91,9 @@
                 inset 1px 0 2px rgba(0, 67, 38, 0.5);
         }
 
-        /* Active/pressed state (start menu open) */
+        /* Active/pressed state */
         &:active,
-        &.active,
-        &:has(input:checked) {
+        &.active {
             background-color: #1F9A1F;
             box-shadow:
                 1px 1px 1px rgba(48, 127, 232, 1),

@@ -1,30 +1,32 @@
     <section class="component">
       <h3 id="start-menu">Start Menu</h3>
       <div>
-        <p>The classic Windows XP Luna Start Menu. Features a user header with avatar, a two-column layout with pinned programs (left, white) and system links (right, blue), an All Programs button, and a footer with Log Off / Turn Off buttons.</p>
+        <p>The classic Windows XP Luna Start Menu. Features a user header with avatar, a two-column layout with pinned programs (left, white) and system links (right, blue), an All Programs button with a green arrow, and a footer with styled Log Off and Turn Off buttons.</p>
 
         <p>Place the <code>start-menu</code> element inside a <code>desktop</code> container alongside the <code>taskbar</code>. The menu automatically shows when the Start button's checkbox is checked. Click the Start button below to toggle.</p>
 
+        <p>Use the <code>emphasize</code> class on items to bold their text. Use <code>with-arrow</code> for submenu indicators. Footer buttons support <code>logoff</code> and <code>shutdown</code> color variants.</p>
+
         <%- example(`
-        <div class="desktop" style="width: 900px; height: 430px; background: #3A6EA5; display: flex; flex-direction: column; justify-content: flex-end;">
+        <div class="desktop" style="width: 900px; height: 520px; background: #3A6EA5; display: flex; flex-direction: column; justify-content: flex-end;">
           <div class="start-menu">
             <div class="start-menu-header">
-              <img alt="User" src="https://img.icons8.com/color/40/user-male-circle--v1.png">
-              <span>User</span>
+              <img alt="User" src="https://img.icons8.com/color/52/user-male-circle--v1.png">
+              <span>Username</span>
             </div>
             <div class="start-menu-body">
               <hr class="start-menu-orange-hr">
               <div class="start-menu-left">
                 <div class="start-menu-items">
                   <div class="start-menu-item emphasize">
-                    <img class="start-menu-item-img" alt="Internet" src="https://img.icons8.com/color/30/internet-explorer.png">
+                    <img class="start-menu-item-img" alt="Internet" src="https://img.icons8.com/color/32/internet-explorer.png">
                     <div class="start-menu-item-texts">
                       <div class="start-menu-item-text">Internet</div>
                       <div class="start-menu-item-description">Internet Explorer</div>
                     </div>
                   </div>
                   <div class="start-menu-item emphasize">
-                    <img class="start-menu-item-img" alt="E-mail" src="https://img.icons8.com/color/30/ms-outlook.png">
+                    <img class="start-menu-item-img" alt="E-mail" src="https://img.icons8.com/color/32/ms-outlook.png">
                     <div class="start-menu-item-texts">
                       <div class="start-menu-item-text">E-mail</div>
                       <div class="start-menu-item-description">Outlook Express</div>
@@ -32,51 +34,92 @@
                   </div>
                   <div class="start-menu-separator"></div>
                   <div class="start-menu-item">
-                    <img class="start-menu-item-img" alt="Command Prompt" src="https://img.icons8.com/office/30/command-line.png">
+                    <img class="start-menu-item-img" alt="Windows Media Player" src="https://img.icons8.com/color/32/windows-media-player.png">
+                    <div class="start-menu-item-texts">
+                      <div class="start-menu-item-text">Windows Media Player</div>
+                    </div>
+                  </div>
+                  <div class="start-menu-item">
+                    <img class="start-menu-item-img" alt="MSN Messenger" src="https://img.icons8.com/color/32/msn.png">
+                    <div class="start-menu-item-texts">
+                      <div class="start-menu-item-text">MSN Messenger</div>
+                    </div>
+                  </div>
+                  <div class="start-menu-item">
+                    <img class="start-menu-item-img" alt="Command Prompt" src="https://img.icons8.com/office/32/command-line.png">
                     <div class="start-menu-item-texts">
                       <div class="start-menu-item-text">Command Prompt</div>
                     </div>
                   </div>
                   <div class="start-menu-item">
-                    <img class="start-menu-item-img" alt="Calculator" src="https://img.icons8.com/color/30/calculator--v1.png">
-                    <div class="start-menu-item-texts">
-                      <div class="start-menu-item-text">Calculator</div>
-                    </div>
-                  </div>
-                  <div class="start-menu-item">
-                    <img class="start-menu-item-img" alt="Notepad" src="https://img.icons8.com/color/30/notepad.png">
+                    <img class="start-menu-item-img" alt="Notepad" src="https://img.icons8.com/color/32/notepad.png">
                     <div class="start-menu-item-texts">
                       <div class="start-menu-item-text">Notepad</div>
                     </div>
                   </div>
                   <div class="start-menu-item">
-                    <img class="start-menu-item-img" alt="Paint" src="https://img.icons8.com/color/30/paint-palette.png">
+                    <img class="start-menu-item-img" alt="Paint" src="https://img.icons8.com/color/32/paint-palette.png">
                     <div class="start-menu-item-texts">
                       <div class="start-menu-item-text">Paint</div>
+                    </div>
+                  </div>
+                  <div class="start-menu-item">
+                    <img class="start-menu-item-img" alt="Calculator" src="https://img.icons8.com/color/32/calculator--v1.png">
+                    <div class="start-menu-item-texts">
+                      <div class="start-menu-item-text">Calculator</div>
                     </div>
                   </div>
                 </div>
                 <div class="start-menu-all-programs">
                   <div class="start-menu-all-programs-button">
                     <span>All Programs</span>
-                    <span>&#9654;</span>
+                    <div class="start-menu-all-programs-arrow"></div>
+                  </div>
+                  <div class="start-menu-submenu">
+                    <div class="start-menu-submenu-sidebar"></div>
+                    <div class="start-menu-submenu-items">
+                      <div class="start-menu-submenu-item">
+                        <img alt="" src="https://img.icons8.com/color/16/windows-media-player.png">
+                        <span>Windows Media Player</span>
+                      </div>
+                      <div class="start-menu-submenu-item">
+                        <img alt="" src="https://img.icons8.com/color/16/windows-update.png">
+                        <span>Windows Update</span>
+                      </div>
+                      <div class="start-menu-submenu-separator"></div>
+                      <div class="start-menu-submenu-item">
+                        <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png">
+                        <span>Accessories</span>
+                        <div class="start-menu-submenu-item-arrow"></div>
+                      </div>
+                      <div class="start-menu-submenu-item">
+                        <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png">
+                        <span>Games</span>
+                        <div class="start-menu-submenu-item-arrow"></div>
+                      </div>
+                      <div class="start-menu-submenu-item">
+                        <img alt="" src="https://win98icons.alexmeub.com/icons/png/directory_closed-4.png">
+                        <span>Startup</span>
+                        <div class="start-menu-submenu-item-arrow"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="start-menu-right">
-                <div class="start-menu-item">
+                <div class="start-menu-item emphasize">
                   <img class="start-menu-item-img" alt="My Documents" src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
                   <div class="start-menu-item-texts">
                     <div class="start-menu-item-text">My Documents</div>
                   </div>
                 </div>
-                <div class="start-menu-item">
+                <div class="start-menu-item emphasize">
                   <img class="start-menu-item-img" alt="My Pictures" src="https://win98icons.alexmeub.com/icons/png/camera3-0.png">
                   <div class="start-menu-item-texts">
                     <div class="start-menu-item-text">My Pictures</div>
                   </div>
                 </div>
-                <div class="start-menu-item">
+                <div class="start-menu-item emphasize">
                   <img class="start-menu-item-img" alt="My Computer" src="https://win98icons.alexmeub.com/icons/png/computer_explorer-5.png">
                   <div class="start-menu-item-texts">
                     <div class="start-menu-item-text">My Computer</div>
@@ -90,13 +133,26 @@
                   </div>
                 </div>
                 <div class="start-menu-item">
+                  <img class="start-menu-item-img" alt="Printers and Faxes" src="https://win98icons.alexmeub.com/icons/png/settings_gear-0.png">
+                  <div class="start-menu-item-texts">
+                    <div class="start-menu-item-text">Printers and Faxes</div>
+                  </div>
+                </div>
+                <div class="start-menu-separator"></div>
+                <div class="start-menu-item">
                   <img class="start-menu-item-img" alt="Help and Support" src="https://win98icons.alexmeub.com/icons/png/help_book_big-4.png">
                   <div class="start-menu-item-texts">
                     <div class="start-menu-item-text">Help and Support</div>
                   </div>
                 </div>
                 <div class="start-menu-item">
-                  <img class="start-menu-item-img" alt="Run..." src="https://img.icons8.com/color/25/console.png">
+                  <img class="start-menu-item-img" alt="Search" src="https://img.icons8.com/color/24/search--v1.png">
+                  <div class="start-menu-item-texts">
+                    <div class="start-menu-item-text">Search</div>
+                  </div>
+                </div>
+                <div class="start-menu-item">
+                  <img class="start-menu-item-img" alt="Run..." src="https://img.icons8.com/color/24/console.png">
                   <div class="start-menu-item-texts">
                     <div class="start-menu-item-text">Run...</div>
                   </div>
@@ -105,13 +161,13 @@
             </div>
             <div class="start-menu-footer">
               <div class="start-menu-footer-buttons">
-                <div class="start-menu-footer-button">
-                  <img alt="Log Off" src="https://img.icons8.com/color/24/logout-rounded-left.png">
+                <div class="start-menu-footer-button logoff">
+                  <img alt="Log Off" src="https://img.icons8.com/color/20/logout-rounded-left.png">
                   <span>Log Off</span>
                 </div>
-                <div class="start-menu-footer-button">
-                  <img alt="Turn Off" src="https://img.icons8.com/color/24/shutdown--v1.png">
-                  <span>Turn Off Computer</span>
+                <div class="start-menu-footer-button shutdown">
+                  <img alt="Turn Off" src="https://img.icons8.com/color/20/shutdown--v1.png">
+                  <span>Turn Off</span>
                 </div>
               </div>
             </div>
