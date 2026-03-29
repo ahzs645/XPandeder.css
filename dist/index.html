@@ -1471,6 +1471,79 @@ import "xp.css/dist/98.css";</pre>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>
     </div>
+
+        <h5>Split / Combo Button</h5>
+        <p>A split button separates the main action from the dropdown trigger. Wrap two <code>&lt;button&gt;</code> elements inside a <code>li</code> with class <code>split-button</code>. The first button is the action, the second is the dropdown.</p>
+
+        <div class="example">
+      <div style="background: #ECE9D8; padding: 8px; display: flex; flex-direction: column; gap: 12px;">
+  <div>
+    <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Large (default):</p>
+    <ul role="menubar" class="ribbon">
+      <li role="ribbonitem" class="split-button">
+        <button><img src="https://img.icons8.com/color/24/home--v1.png" aria-info="from icons8.com"/> Label</button>
+        <button></button>
+      </li>
+      <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+    </ul>
+  </div>
+  <div>
+    <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Medium (ribbon-md):</p>
+    <ul role="menubar" class="ribbon ribbon-md">
+      <li role="ribbonitem" class="split-button">
+        <button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Label</button>
+        <button></button>
+      </li>
+      <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+    </ul>
+  </div>
+  <div>
+    <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Small (ribbon-sm):</p>
+    <ul role="menubar" class="ribbon ribbon-sm">
+      <li role="ribbonitem" class="split-button">
+        <button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Label</button>
+        <button></button>
+      </li>
+      <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+    </ul>
+  </div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #ECE9D8; padding: 8px; display: flex; flex-direction: column; gap: 12px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin: 0 0 4px; font-size: 10px; color: #888;&quot;</span>&gt;</span>Large (default):<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menubar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ribbon&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;split-button&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/24/home--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Label<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/24/search--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin: 0 0 4px; font-size: 10px; color: #888;&quot;</span>&gt;</span>Medium (ribbon-md):<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menubar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ribbon ribbon-md&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;split-button&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/16/home--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Label<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/16/search--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin: 0 0 4px; font-size: 10px; color: #888;&quot;</span>&gt;</span>Small (ribbon-sm):<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menubar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ribbon ribbon-sm&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;split-button&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/16/home--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Label<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;ribbonitem&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://img.icons8.com/color/16/search--v1.png&quot;</span> <span class="hljs-attr">aria-info</span>=<span class="hljs-string">&quot;from icons8.com&quot;</span>/&gt;</span> Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
       </div>
     </section>
 

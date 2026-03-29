@@ -250,6 +250,44 @@
             </div>
           </div>
         `) %>
+
+        <h5>Split / Combo Button</h5>
+        <p>A split button separates the main action from the dropdown trigger. Wrap two <code>&lt;button&gt;</code> elements inside a <code>li</code> with class <code>split-button</code>. The first button is the action, the second is the dropdown.</p>
+
+        <%- example(`
+          <div style="background: #ECE9D8; padding: 8px; display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Large (default):</p>
+              <ul role="menubar" class="ribbon">
+                <li role="ribbonitem" class="split-button">
+                  <button><img src="https://img.icons8.com/color/24/home--v1.png" aria-info="from icons8.com"/> Label</button>
+                  <button></button>
+                </li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/24/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+              </ul>
+            </div>
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Medium (ribbon-md):</p>
+              <ul role="menubar" class="ribbon ribbon-md">
+                <li role="ribbonitem" class="split-button">
+                  <button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Label</button>
+                  <button></button>
+                </li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+              </ul>
+            </div>
+            <div>
+              <p style="margin: 0 0 4px; font-size: 10px; color: #888;">Small (ribbon-sm):</p>
+              <ul role="menubar" class="ribbon ribbon-sm">
+                <li role="ribbonitem" class="split-button">
+                  <button><img src="https://img.icons8.com/color/16/home--v1.png" aria-info="from icons8.com"/> Label</button>
+                  <button></button>
+                </li>
+                <li role="ribbonitem"><button aria-haspopup="true"><img src="https://img.icons8.com/color/16/search--v1.png" aria-info="from icons8.com"/> Dropdown</button></li>
+              </ul>
+            </div>
+          </div>
+        `) %>
       </div>
     </section>
 
