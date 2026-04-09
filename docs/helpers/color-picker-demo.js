@@ -21,7 +21,7 @@ function renderColorPickerDialog({
   initialColor = "#8080FF",
 } = {}) {
   return `
-          [[<div class="window active" style="display: inline-block" id="${dialogId}" data-color-picker-dialog>]]
+          [[<div class="window active color-picker-window" style="display: inline-block" id="${dialogId}" data-color-picker-dialog>]]
             <div class="title-bar">
               <div class="title-bar-text">${title}</div>
               <div class="title-bar-controls">
@@ -33,12 +33,12 @@ function renderColorPickerDialog({
               <div class="color-picker">
                 <div class="color-picker-top">
                   <div class="color-picker-left">
-                    <label style="margin-bottom: 4px">Basic colors:</label>
-                    <div class="color-picker-basic" data-role="basic-swatches" style="margin-bottom: 8px">
+                    <label>Basic colors:</label>
+                    <div class="color-picker-basic" data-role="basic-swatches">
 ${renderSwatches(BASIC_COLORS)}
                     </div>
-                    <label style="margin-bottom: 4px">Custom colors:</label>
-                    <div class="color-picker-custom" data-role="custom-swatches" style="margin-bottom: 8px">
+                    <label>Custom colors:</label>
+                    <div class="color-picker-custom" data-role="custom-swatches">
 ${renderSwatches(CUSTOM_COLORS)}
                     </div>
                     <div class="color-picker-left-bottom">

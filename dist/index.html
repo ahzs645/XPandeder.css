@@ -3269,7 +3269,7 @@ import "xp.css/dist/98.css";</pre>
     </div>
 
         <div class="example">
-      <div class="window active" style="display: inline-block" id="cp-dialog" data-color-picker-dialog>
+      <div class="window active color-picker-window" style="display: inline-block" id="cp-dialog" data-color-picker-dialog>
   <div class="title-bar">
     <div class="title-bar-text">Edit colors</div>
     <div class="title-bar-controls">
@@ -3281,8 +3281,8 @@ import "xp.css/dist/98.css";</pre>
     <div class="color-picker">
       <div class="color-picker-top">
         <div class="color-picker-left">
-          <label style="margin-bottom: 4px">Basic colors:</label>
-          <div class="color-picker-basic" data-role="basic-swatches" style="margin-bottom: 8px">
+          <label>Basic colors:</label>
+          <div class="color-picker-basic" data-role="basic-swatches">
             <div class="color-swatch" style="background:#FF8080"></div>
             <div class="color-swatch" style="background:#FFFF80"></div>
             <div class="color-swatch" style="background:#80FF80"></div>
@@ -3332,8 +3332,8 @@ import "xp.css/dist/98.css";</pre>
             <div class="color-swatch" style="background:#400040"></div>
             <div class="color-swatch" style="background:#FFFFFF"></div>
           </div>
-          <label style="margin-bottom: 4px">Custom colors:</label>
-          <div class="color-picker-custom" data-role="custom-swatches" style="margin-bottom: 8px">
+          <label>Custom colors:</label>
+          <div class="color-picker-custom" data-role="custom-swatches">
             <div class="color-swatch" style="background:#FFFFFF"></div>
             <div class="color-swatch" style="background:#FFFFFF"></div>
             <div class="color-swatch" style="background:#FFFFFF"></div>
@@ -3432,8 +3432,8 @@ import "xp.css/dist/98.css";</pre>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker&quot;</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-top&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-left&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 4px&quot;</span>&gt;</span>Basic colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-basic&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;basic-swatches&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Basic colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-basic&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;basic-swatches&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FF8080&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFF80&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#80FF80&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -3483,8 +3483,8 @@ import "xp.css/dist/98.css";</pre>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#400040&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 4px&quot;</span>&gt;</span>Custom colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-custom&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;custom-swatches&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Custom colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-custom&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;custom-swatches&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>

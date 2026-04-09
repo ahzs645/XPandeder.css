@@ -7,42 +7,69 @@
     font-size: 11px;
     display: inline-flex;
     flex-direction: column;
-    min-width: 420px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.color-picker-window {
+    width: 453px;
+}
+
+.color-picker-window .window-body {
+    margin: 0 3px;
+    padding: 10px;
+    background: #ece9d8;
+    box-sizing: border-box;
 }
 
 .color-picker-top {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
     align-items: stretch;
 }
 
 .color-picker-left {
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: 193px;
+    min-width: 193px;
+    label {
+        display: block;
+        margin-bottom: 6px;
+        line-height: 1;
+    }
 }
 
 .color-picker-right {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 6px;
 }
 
 .color-picker-right-top {
     display: flex;
-    gap: 8px;
+    gap: 18px;
 }
 
 .color-picker-basic,
 .color-picker-custom {
     display: grid;
     grid-template-columns: repeat(8, 16px);
-    gap: 3px;
+    column-gap: 9px;
+    row-gap: 9px;
+}
+
+.color-picker-basic {
+    margin-bottom: 18px;
+}
+
+.color-picker-custom {
+    margin-bottom: 3px;
 }
 
 .color-swatch {
@@ -139,7 +166,7 @@
     flex-direction: column;
     align-items: stretch;
     flex-shrink: 0;
-    width: 64px;
+    width: 58px;
 }
 
 .color-preview-label {
@@ -155,33 +182,49 @@
 }
 
 .color-preview-chip {
-    width: 64px;
-    height: 41px;
+    width: 58px;
+    height: 40px;
     border: 1px solid #808080;
 }
 
 .color-inputs {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     .color-input-group {
         display: flex;
         flex-direction: column;
-        gap: 3px;
+        gap: 2px;
     }
     .color-input-row {
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 3px;
         label {
-            min-width: 34px;
+            min-width: 0;
             text-align: right;
         }
         input[type="number"] {
-            width: 40px;
+            width: 31px;
+            min-width: 31px;
+            height: 20px;
             font-family: var(--sans-serif);
             font-size: 11px;
             padding: 1px 2px;
+            box-sizing: border-box;
+            appearance: textfield;
+            -moz-appearance: textfield;
         }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    .color-input-group:first-child .color-input-row label {
+        min-width: 24px;
+    }
+    .color-input-group:last-child .color-input-row label {
+        min-width: 33px;
     }
 }
 
@@ -189,9 +232,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 6px;
+    gap: 3px;
+    margin-top: auto;
 }
 
 .color-picker-bottom-buttons {
@@ -203,22 +245,26 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 6px;
+    width: 100%;
 }
 
 .color-picker-controls {
     display: flex;
-    gap: 12px;
-    align-items: center;
+    gap: 10px;
+    align-items: flex-start;
     align-self: flex-start;
+    width: 100%;
 }
 
 .color-picker-define-button {
-    min-width: 150px;
+    width: 191px;
+    min-width: 191px;
 }
 
 .color-picker-save-button {
-    min-width: 170px;
+    width: 219px;
+    min-width: 219px;
     align-self: flex-start;
 }
 
