@@ -29,8 +29,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     gap: 10px;
-    width: 410px;
 }
 
 .color-picker-right-top {
@@ -202,9 +202,8 @@
 .color-picker-right-bottom {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 10px;
-    width: 410px;
 }
 
 .color-picker-controls {
@@ -220,7 +219,7 @@
 
 .color-picker-save-button {
     min-width: 170px;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .color-picker-bottom-actions {
