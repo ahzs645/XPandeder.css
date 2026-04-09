@@ -1,0 +1,21 @@
+    <section class="component">
+      <h3 id="all-programs-arrow">All Programs Arrow</h3>
+      <div>
+        <p>This preview isolates the XP Start menu's green All Programs arrow and shows the two distinct visual states separately.</p>
+
+        <p>Use <code>start-menu-all-programs-arrow</code> inside the real Start menu button. Add <code>.hover</code> to preview the highlighted arrow, and the Start menu button now switches to that hover asset automatically on hover or focus.</p>
+
+        <%- example(`
+          <div class="xp-all-programs-arrow">
+            <div class="xp-all-programs-arrow__state">
+              <div class="xp-all-programs-arrow__preview" aria-label="All Programs arrow inactive"></div>
+              <span class="xp-all-programs-arrow__label">Inactive</span>
+            </div>
+            <div class="xp-all-programs-arrow__state">
+              <div class="xp-all-programs-arrow__preview hover" aria-label="All Programs arrow hover"></div>
+              <span class="xp-all-programs-arrow__label">Hover</span>
+            </div>
+          </div>
+        `) %>
+      </div>
+    </section>

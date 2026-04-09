@@ -51,6 +51,7 @@
           <li><a href="#progress-bar">ProgressBar</a></li>
           <li><a href="#inactive-windows">Inactive Windows</a></li>
           <li><a href="#taskbar">Taskbar</a></li>
+          <li><a href="#all-programs-arrow">All Programs Arrow</a></li>
           <li><a href="#table">Table</a></li>
           <li><a href="#tooltip">Tooltip</a></li>
           <li><a href="#balloon-tips">Balloon Tips</a></li>
@@ -71,6 +72,7 @@
       <li><a href="#issues-contributing-etc">Issues, Contributing, etc.</a></li>
     </ul>
   </aside>
+
 
     <div class="theme-switcher">
     <section class="field-row">
@@ -3044,6 +3046,41 @@ import "xp.css/dist/98.css";</pre>
     </section>
 
         <section class="component">
+      <h3 id="all-programs-arrow">All Programs Arrow</h3>
+      <div>
+        <p>This preview isolates the XP Start menu's green All Programs arrow and shows the two distinct visual states separately.</p>
+
+        <p>Use <code>start-menu-all-programs-arrow</code> inside the real Start menu button. Add <code>.hover</code> to preview the highlighted arrow, and the Start menu button now switches to that hover asset automatically on hover or focus.</p>
+
+        <div class="example">
+      <div class="xp-all-programs-arrow">
+  <div class="xp-all-programs-arrow__state">
+    <div class="xp-all-programs-arrow__preview" aria-label="All Programs arrow inactive"></div>
+    <span class="xp-all-programs-arrow__label">Inactive</span>
+  </div>
+  <div class="xp-all-programs-arrow__state">
+    <div class="xp-all-programs-arrow__preview hover" aria-label="All Programs arrow hover"></div>
+    <span class="xp-all-programs-arrow__label">Hover</span>
+  </div>
+</div>
+      <details>
+        <summary>Show code</summary>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__state&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__preview&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;All Programs arrow inactive&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__label&quot;</span>&gt;</span>Inactive<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__state&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__preview hover&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;All Programs arrow hover&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-all-programs-arrow__label&quot;</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+      </details>
+    </div>
+      </div>
+    </section>
+
+        <section class="component">
       <h3 id="table">Table</h3>
       <div>
         <blockquote>
@@ -3232,12 +3269,12 @@ import "xp.css/dist/98.css";</pre>
     </div>
 
         <div class="example">
-      <div class="window active" style="display: inline-block" id="cp-dialog">
+      <div class="window active" style="display: inline-block" id="cp-dialog" data-color-picker-dialog>
   <div class="title-bar">
     <div class="title-bar-text">Color</div>
     <div class="title-bar-controls">
-      <button aria-label="Help"></button>
-      <button aria-label="Close"></button>
+      <button type="button" aria-label="Help"></button>
+      <button type="button" aria-label="Close"></button>
     </div>
   </div>
   <div class="window-body">
@@ -3245,7 +3282,7 @@ import "xp.css/dist/98.css";</pre>
       <div class="color-picker-top">
         <div class="color-picker-left">
           <label style="margin-bottom: 4px">Basic colors:</label>
-          <div class="color-picker-basic" id="cp-basic" style="margin-bottom: 8px">
+          <div class="color-picker-basic" data-role="basic-swatches" style="margin-bottom: 8px">
             <div class="color-swatch" style="background:#FF8080"></div>
             <div class="color-swatch" style="background:#FFFF80"></div>
             <div class="color-swatch" style="background:#80FF80"></div>
@@ -3296,7 +3333,7 @@ import "xp.css/dist/98.css";</pre>
             <div class="color-swatch" style="background:#FFFFFF"></div>
           </div>
           <label style="margin-bottom: 4px">Custom colors:</label>
-          <div class="color-picker-custom" id="cp-custom" style="margin-bottom: 8px">
+          <div class="color-picker-custom" data-role="custom-swatches" style="margin-bottom: 8px">
             <div class="color-swatch" style="background:#FFFFFF"></div>
             <div class="color-swatch" style="background:#FFFFFF"></div>
             <div class="color-swatch" style="background:#FFFFFF"></div>
@@ -3317,13 +3354,13 @@ import "xp.css/dist/98.css";</pre>
         </div>
 
         <div class="color-picker-right">
-          <div class="color-spectrum" id="cp-spectrum">
-            <canvas width="190" height="181" id="cp-spectrum-canvas"></canvas>
-            <div class="color-spectrum-cursor" id="cp-spectrum-cursor" style="left: 0px; top: 90px"></div>
+          <div class="color-spectrum" data-role="spectrum">
+            <canvas width="190" height="181" data-role="spectrum-canvas"></canvas>
+            <div class="color-spectrum-cursor" data-role="spectrum-cursor" style="left: 0px; top: 90px"></div>
           </div>
-          <div class="color-luminance" id="cp-luminance">
-            <canvas width="12" height="181" id="cp-luminance-canvas"></canvas>
-            <div class="color-luminance-arrows" id="cp-luminance-arrows" style="top: 86px">
+          <div class="color-luminance" data-role="luminance">
+            <canvas width="12" height="181" data-role="luminance-canvas"></canvas>
+            <div class="color-luminance-arrows" data-role="luminance-arrows" style="top: 86px">
               <div class="color-luminance-arrow-right"></div>
             </div>
           </div>
@@ -3334,8 +3371,8 @@ import "xp.css/dist/98.css";</pre>
         <div class="color-picker-preview-block">
           <div class="color-preview-label"><span>Color</span><span>|</span><span>Solid</span></div>
           <div class="color-preview-dual">
-            <div class="color-preview-new" id="cp-preview-new" style="background: #FF0000"></div>
-            <div class="color-preview-old" id="cp-preview-old" style="background: #000000"></div>
+            <div class="color-preview-new" data-role="preview-new" style="background: #FF0000"></div>
+            <div class="color-preview-old" data-role="preview-old" style="background: #000000"></div>
           </div>
         </div>
 
@@ -3343,29 +3380,29 @@ import "xp.css/dist/98.css";</pre>
           <div class="color-input-group">
             <div class="color-input-row">
               <label>Hue:</label>
-              <input type="number" id="cp-hue" value="0" min="0" max="360">
+              <input type="number" data-channel="hue" value="0" min="0" max="360">
             </div>
             <div class="color-input-row">
               <label>Sat:</label>
-              <input type="number" id="cp-sat" value="240" min="0" max="240">
+              <input type="number" data-channel="sat" value="240" min="0" max="240">
             </div>
             <div class="color-input-row">
               <label>Lum:</label>
-              <input type="number" id="cp-lum" value="120" min="0" max="240">
+              <input type="number" data-channel="lum" value="120" min="0" max="240">
             </div>
           </div>
           <div class="color-input-group">
             <div class="color-input-row">
               <label>Red:</label>
-              <input type="number" id="cp-red" value="255" min="0" max="255">
+              <input type="number" data-channel="red" value="255" min="0" max="255">
             </div>
             <div class="color-input-row">
               <label>Green:</label>
-              <input type="number" id="cp-green" value="0" min="0" max="255">
+              <input type="number" data-channel="green" value="0" min="0" max="255">
             </div>
             <div class="color-input-row">
               <label>Blue:</label>
-              <input type="number" id="cp-blue" value="0" min="0" max="255">
+              <input type="number" data-channel="blue" value="0" min="0" max="255">
             </div>
           </div>
         </div>
@@ -3373,10 +3410,10 @@ import "xp.css/dist/98.css";</pre>
 
       <div class="color-picker-bottom">
         <div class="color-picker-bottom-left">
-          <button style="min-width: 68px">OK</button>
-          <button style="min-width: 68px">Cancel</button>
+          <button type="button" style="min-width: 68px">OK</button>
+          <button type="button" style="min-width: 68px">Cancel</button>
         </div>
-        <button id="cp-add-custom">Add to Custom Colors</button>
+        <button type="button" data-action="add-custom">Add to Custom Colors</button>
       </div>
     </div>
   </div>
@@ -3387,8 +3424,8 @@ import "xp.css/dist/98.css";</pre>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-text&quot;</span>&gt;</span>Color<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;title-bar-controls&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Help&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Help&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;window-body&quot;</span>&gt;</span>
@@ -3396,7 +3433,7 @@ import "xp.css/dist/98.css";</pre>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-top&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-left&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 4px&quot;</span>&gt;</span>Basic colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-basic&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-basic&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-basic&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;basic-swatches&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FF8080&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFF80&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#80FF80&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -3447,7 +3484,7 @@ import "xp.css/dist/98.css";</pre>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 4px&quot;</span>&gt;</span>Custom colors:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-custom&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-custom&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-custom&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;custom-swatches&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-bottom: 8px&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-swatch&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background:#FFFFFF&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -3468,13 +3505,13 @@ import "xp.css/dist/98.css";</pre>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-right&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-spectrum&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;190&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;181&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-spectrum-canvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum-cursor&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-spectrum-cursor&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;left: 0px; top: 90px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;spectrum&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;190&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;181&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;spectrum-canvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-spectrum-cursor&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;spectrum-cursor&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;left: 0px; top: 90px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-luminance&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;12&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;181&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-luminance-canvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance-arrows&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-luminance-arrows&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;top: 86px&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;luminance&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;12&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;181&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;luminance-canvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance-arrows&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;luminance-arrows&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;top: 86px&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-luminance-arrow-right&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -3485,8 +3522,8 @@ import "xp.css/dist/98.css";</pre>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-preview-block&quot;</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-label&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Color<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>|<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-dual&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-new&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-preview-new&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #FF0000&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-old&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-preview-old&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #000000&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-new&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;preview-new&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #FF0000&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-preview-old&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;preview-old&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background: #000000&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
@@ -3494,29 +3531,29 @@ import "xp.css/dist/98.css";</pre>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-group&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Hue:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-hue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;360&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;hue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;360&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Sat:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-sat&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;240&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;240&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;sat&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;240&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;240&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Lum:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-lum&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;120&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;240&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;lum&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;120&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;240&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-group&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Red:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-red&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;255&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;255&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Green:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-green&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;green&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-input-row&quot;</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Blue:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-blue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">data-channel</span>=<span class="hljs-string">&quot;blue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;255&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -3524,166 +3561,19 @@ import "xp.css/dist/98.css";</pre>
 
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-bottom&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;color-picker-bottom-left&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;min-width: 68px&quot;</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;min-width: 68px&quot;</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;min-width: 68px&quot;</span>&gt;</span>OK<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;min-width: 68px&quot;</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cp-add-custom&quot;</span>&gt;</span>Add to Custom Colors<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">data-action</span>=<span class="hljs-string">&quot;add-custom&quot;</span>&gt;</span>Add to Custom Colors<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
       </details>
     </div>
-
-        <script>
-        (function () {
-          var SW = 190, SH = 181, LW = 12, LH = 181;
-          var hue = 0, sat = 100, lum = 50;
-          var customIdx = 0;
-          var draggingSpec = false, draggingLum = false;
-
-          function hslToRgb(h, s, l) {
-            h /= 360; s /= 100; l /= 100;
-            var r, g, b;
-            if (s === 0) { r = g = b = l; } else {
-              var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
-              function f(p, q, t) { if (t < 0) t++; if (t > 1) t--; if (t < 1/6) return p+(q-p)*6*t; if (t < 1/2) return q; if (t < 2/3) return p+(q-p)*(2/3-t)*6; return p; }
-              r = f(p, q, h+1/3); g = f(p, q, h); b = f(p, q, h-1/3);
-            }
-            return [Math.round(r*255), Math.round(g*255), Math.round(b*255)];
-          }
-          function rgbToHsl(r, g, b) {
-            r /= 255; g /= 255; b /= 255;
-            var max = Math.max(r,g,b), min = Math.min(r,g,b);
-            var h = 0, s = 0, l = (max+min)/2;
-            if (max !== min) {
-              var d = max-min; s = l > 0.5 ? d/(2-max-min) : d/(max+min);
-              if (max===r) h=((g-b)/d+(g<b?6:0))/6; else if (max===g) h=((b-r)/d+2)/6; else h=((r-g)/d+4)/6;
-            }
-            return [Math.round(h*360), Math.round(s*100), Math.round(l*100)];
-          }
-          function rgbToHex(r,g,b) { return "#"+[r,g,b].map(function(c){return c.toString(16).padStart(2,"0");}).join("").toUpperCase(); }
-          function hexToRgb(hex) { var m = hex.replace("#","").match(/.{2}/g); return m ? m.map(function(c){return parseInt(c,16);}) : [0,0,0]; }
-          function rgbStyleToHex(str) { var m = str.match(/\d+/g); return m ? rgbToHex(+m[0], +m[1], +m[2]) : "#000000"; }
-
-          var specCanvas = document.getElementById("cp-spectrum-canvas");
-          var lumCanvas = document.getElementById("cp-luminance-canvas");
-          var specCursor = document.getElementById("cp-spectrum-cursor");
-          var lumArrows = document.getElementById("cp-luminance-arrows");
-          var specEl = document.getElementById("cp-spectrum");
-          var lumEl = document.getElementById("cp-luminance");
-          var previewNew = document.getElementById("cp-preview-new");
-          var inHue = document.getElementById("cp-hue");
-          var inSat = document.getElementById("cp-sat");
-          var inLum = document.getElementById("cp-lum");
-          var inRed = document.getElementById("cp-red");
-          var inGreen = document.getElementById("cp-green");
-          var inBlue = document.getElementById("cp-blue");
-          var addBtn = document.getElementById("cp-add-custom");
-          var basicGrid = document.getElementById("cp-basic");
-          var customGrid = document.getElementById("cp-custom");
-          if (!specCanvas) return;
-
-          function drawSpectrum() {
-            var ctx = specCanvas.getContext("2d");
-            var img = ctx.createImageData(SW, SH);
-            for (var y = 0; y < SH; y++) {
-              for (var x = 0; x < SW; x++) {
-                var rgb = hslToRgb((x / SW) * 360, (1 - y / SH) * 100, 50);
-                var i = (y * SW + x) * 4;
-                img.data[i] = rgb[0]; img.data[i+1] = rgb[1]; img.data[i+2] = rgb[2]; img.data[i+3] = 255;
-              }
-            }
-            ctx.putImageData(img, 0, 0);
-          }
-
-          function drawLuminance() {
-            var ctx = lumCanvas.getContext("2d");
-            for (var y = 0; y < LH; y++) {
-              var rgb = hslToRgb(hue, sat, (1 - y / LH) * 100);
-              ctx.fillStyle = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
-              ctx.fillRect(0, y, LW, 1);
-            }
-          }
-
-          function updateUI() {
-            var rgb = hslToRgb(hue, sat, lum);
-            var hex = rgbToHex(rgb[0], rgb[1], rgb[2]);
-            specCursor.style.left = ((hue / 360) * SW) + "px";
-            specCursor.style.top = ((1 - sat / 100) * SH) + "px";
-            lumArrows.style.top = ((1 - lum / 100) * LH - 4) + "px";
-            previewNew.style.background = hex;
-            inHue.value = hue;
-            inSat.value = Math.round(sat * 2.4);
-            inLum.value = Math.round(lum * 2.4);
-            inRed.value = rgb[0];
-            inGreen.value = rgb[1];
-            inBlue.value = rgb[2];
-            drawLuminance();
-          }
-
-          function setFromHSL(h, s, l) {
-            hue = Math.max(0, Math.min(360, h));
-            sat = Math.max(0, Math.min(100, s));
-            lum = Math.max(0, Math.min(100, l));
-            updateUI();
-          }
-          function setFromRGB(r, g, b) { var hsl = rgbToHsl(r, g, b); hue = hsl[0]; sat = hsl[1]; lum = hsl[2]; updateUI(); }
-          function setFromHex(hex) { var rgb = hexToRgb(hex); setFromRGB(rgb[0], rgb[1], rgb[2]); }
-
-          function pickSpectrum(e) {
-            var r = specEl.getBoundingClientRect();
-            hue = Math.round(Math.max(0, Math.min(SW-1, e.clientX-r.left)) / SW * 360);
-            sat = Math.round((1 - Math.max(0, Math.min(SH-1, e.clientY-r.top)) / SH) * 100);
-            updateUI();
-          }
-          specEl.addEventListener("mousedown", function(e) { draggingSpec = true; pickSpectrum(e); e.preventDefault(); });
-
-          function pickLuminance(e) {
-            var r = lumEl.getBoundingClientRect();
-            lum = Math.round((1 - Math.max(0, Math.min(LH-1, e.clientY-r.top)) / LH) * 100);
-            updateUI();
-          }
-          lumEl.addEventListener("mousedown", function(e) { draggingLum = true; pickLuminance(e); e.preventDefault(); });
-
-          window.addEventListener("mousemove", function(e) { if (draggingSpec) pickSpectrum(e); if (draggingLum) pickLuminance(e); });
-          window.addEventListener("mouseup", function() { draggingSpec = false; draggingLum = false; });
-
-          function clearSelected() { document.querySelectorAll("#cp-dialog .color-swatch.selected").forEach(function(el) { el.classList.remove("selected"); }); }
-          basicGrid.addEventListener("click", function(e) {
-            var sw = e.target.closest(".color-swatch"); if (!sw) return;
-            clearSelected(); sw.classList.add("selected");
-            setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
-          });
-          customGrid.addEventListener("click", function(e) {
-            var sw = e.target.closest(".color-swatch"); if (!sw) return;
-            clearSelected(); sw.classList.add("selected");
-            customIdx = Array.from(customGrid.children).indexOf(sw);
-            setFromHex(sw.style.background.indexOf("#") === 0 ? sw.style.background : rgbStyleToHex(sw.style.background));
-          });
-
-          inHue.addEventListener("input", function() { setFromHSL(+inHue.value, sat, lum); });
-          inSat.addEventListener("input", function() { setFromHSL(hue, Math.round(+inSat.value / 2.4), lum); });
-          inLum.addEventListener("input", function() { setFromHSL(hue, sat, Math.round(+inLum.value / 2.4)); });
-          inRed.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
-          inGreen.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
-          inBlue.addEventListener("input", function() { setFromRGB(+inRed.value, +inGreen.value, +inBlue.value); });
-
-          addBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            var hex = rgbToHex.apply(null, hslToRgb(hue, sat, lum));
-            var swatches = customGrid.querySelectorAll(".color-swatch");
-            swatches[customIdx].style.background = hex;
-            clearSelected(); swatches[customIdx].classList.add("selected");
-            customIdx = (customIdx + 1) % swatches.length;
-          });
-
-          drawSpectrum();
-          setFromHSL(0, 100, 50);
-        })();
-        </script>
       </div>
     </section>
+
         <section class="component">
       <h3 id="icon-thumbnail">Icon &amp; Thumbnail</h3>
       <div>

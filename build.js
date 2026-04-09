@@ -7,6 +7,7 @@ const hljs = require("highlight.js");
 const mkdirp = require("mkdirp");
 const path = require("path");
 const postcss = require("postcss");
+const { renderColorPickerDialog } = require("./docs/helpers/color-picker-demo");
 
 const { homepage, version } = require("./package.json");
 
@@ -107,7 +108,11 @@ function buildDocs() {
   const templatePath = path.join(__dirname, "docs/index.html.ejs");
   fs.writeFileSync(
     path.join(__dirname, "/dist/index.html"),
-    ejs.render(template, { getNewId, getCurrentId, example }, { filename: templatePath })
+    ejs.render(
+      template,
+      { getNewId, getCurrentId, example, renderColorPickerDialog },
+      { filename: templatePath }
+    )
   );
 }
 
