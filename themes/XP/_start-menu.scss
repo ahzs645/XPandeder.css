@@ -414,11 +414,148 @@
         &.start-menu-submenu--games {
             top: auto;
             bottom: 0;
-            min-width: 0;
-            background: transparent;
-            border: 0;
-            box-shadow: none;
-            overflow: visible;
+            width: 135px;
+            min-width: 135px;
+            box-sizing: border-box;
+            padding-left: 6px;
+            background: #fff;
+            border: 1px solid #70A0F9;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+
+            .start-menu-submenu-sidebar {
+                width: 6px;
+            }
+
+            .start-menu-submenu-items {
+                padding: 0;
+                background: #fff;
+            }
+
+            .start-menu-submenu-item {
+                height: 20px;
+                min-height: 20px;
+                padding: 0 8px 0 6px;
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: 16px minmax(0, 1fr);
+                align-items: center;
+                gap: 8px;
+                outline: 0;
+
+                &:focus-visible {
+                    background-color: #316AC5;
+                    color: #fff;
+                }
+            }
+
+            .start-menu-submenu-item-icon {
+                width: 16px;
+                height: 16px;
+                display: block;
+                position: relative;
+                border-radius: 2px;
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                }
+
+                &--internet {
+                    background: linear-gradient(180deg, #80d8ff 0%, #2f71cf 100%);
+
+                    &::before {
+                        inset: 3px;
+                        border: 1px solid rgba(255, 255, 255, 0.9);
+                        border-radius: 50%;
+                    }
+
+                    &::after {
+                        left: 3px;
+                        right: 3px;
+                        top: 7px;
+                        height: 1px;
+                        background: rgba(255, 255, 255, 0.9);
+                    }
+                }
+
+                &--pinball {
+                    background: radial-gradient(circle at 35% 35%, #ffd76e 0%, #ff9c2e 42%, #cf3d22 100%);
+
+                    &::before {
+                        inset: 5px;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.82);
+                    }
+                }
+
+                &--cards-red,
+                &--cards-purple,
+                &--cards-blue,
+                &--cards-gold {
+                    background: linear-gradient(180deg, #f7fbff 0%, #d9e6f7 100%);
+
+                    &::before,
+                    &::after {
+                        width: 6px;
+                        height: 8px;
+                        top: 4px;
+                        border-radius: 1px;
+                        background: #fff;
+                        box-shadow: 0 0 0 1px rgba(43, 69, 121, 0.28);
+                    }
+
+                    &::before {
+                        left: 2px;
+                        transform: rotate(-8deg);
+                    }
+
+                    &::after {
+                        right: 2px;
+                        transform: rotate(8deg);
+                    }
+                }
+
+                &--cards-red::after {
+                    background: linear-gradient(180deg, #fff 0%, #ffd9d9 100%);
+                    box-shadow: 0 0 0 1px rgba(197, 48, 67, 0.4);
+                }
+
+                &--cards-purple::after {
+                    background: linear-gradient(180deg, #fff 0%, #eadbff 100%);
+                    box-shadow: 0 0 0 1px rgba(104, 70, 183, 0.42);
+                }
+
+                &--cards-blue::after {
+                    background: linear-gradient(180deg, #fff 0%, #d9ecff 100%);
+                    box-shadow: 0 0 0 1px rgba(46, 121, 200, 0.42);
+                }
+
+                &--cards-gold::after {
+                    background: linear-gradient(180deg, #fff 0%, #fff0bf 100%);
+                    box-shadow: 0 0 0 1px rgba(194, 135, 16, 0.42);
+                }
+
+                &--mine {
+                    background: linear-gradient(180deg, #d9d9dd 0%, #8d8f98 100%);
+
+                    &::before {
+                        inset: 4px;
+                        border-radius: 50%;
+                        background: #2b2e38;
+                    }
+
+                    &::after {
+                        inset: 1px;
+                        border: 1px solid rgba(255, 255, 255, 0.35);
+                        border-radius: 50%;
+                    }
+                }
+            }
         }
 
         .start-menu-submenu-sidebar {
@@ -466,6 +603,16 @@
             &:hover {
                 background-color: #316AC5;
                 color: #fff;
+
+                .start-menu-submenu-item-arrow {
+                    border-left-color: #fff;
+                }
+            }
+
+            &:focus-visible {
+                background-color: #316AC5;
+                color: #fff;
+                outline: none;
 
                 .start-menu-submenu-item-arrow {
                     border-left-color: #fff;
@@ -531,129 +678,47 @@
         }
     }
 
-    .start-menu-footer-buttons {
+    .start-menu-turn-off-dialog {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         height: 100%;
         position: relative;
         z-index: 1;
-    }
-
-        .start-menu-footer-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: #fff;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        font-family: Tahoma, Arial, var(--sans-serif);
         font-size: 11px;
-        font-weight: 400;
-        cursor: pointer;
-        padding: 2px;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-        white-space: nowrap;
-        gap: 5px;
-        line-height: 1;
-        position: relative;
-        overflow: visible;
-        transition: background-color 120ms ease;
-        border-radius: 3px;
+        -webkit-font-smoothing: antialiased;
 
-        &::before {
-            content: none;
+        .turn-off-dialog-item {
+            gap: 5px;
+            padding: 2px;
+            border-radius: 0;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
         }
 
-        > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .start-menu-footer-button-icon {
-            width: 22px;
-            height: 22px;
-            border-radius: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            position: relative;
-            overflow: hidden;
-            outline: 1px solid rgba(255, 255, 255, 0.95);
-            outline-offset: -1px;
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                inset: 0;
-            }
-
-            &::before {
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 15px 15px;
-                z-index: 1;
-            }
-
-            &::after {
-                background:
-                    linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0) 45%),
-                    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 3px 3px / 1px 15px no-repeat,
-                    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 3px 4px / 15px 1px no-repeat;
-                pointer-events: none;
-            }
-
-            svg {
-                width: 14px;
-                height: 14px;
-                position: relative;
-                z-index: 1;
-            }
-        }
-
-        span {
+        .turn-off-dialog-item span {
             font-size: 11px;
             letter-spacing: 0;
         }
 
-        /* Legacy support for img icons */
-        img {
-            width: 20px;
-            height: 20px;
-            margin-right: 3px;
+        .turn-off-dialog-icon {
+            width: 22px;
+            height: 22px;
         }
 
-        &.logoff {
-            .start-menu-footer-button-icon {
-                background: linear-gradient(225deg, #d99429 0%, #dea34f 48%, #d48e24 82%);
-                border: 1px solid rgba(186, 123, 30, 0.5);
-                box-shadow:
-                    inset 10px 2px 8px -2px rgba(255, 255, 255, 0.1),
-                    inset -2px -3px 5px #a36a00;
-
-                &::before {
-                    background-image: svg-load("./icon/logoff.svg");
-                }
-            }
-
+        .turn-off-dialog-icon .xp-icon {
+            width: 12px;
+            height: 12px;
         }
 
-        &.shutdown {
-            .start-menu-footer-button-icon {
-                background: linear-gradient(180deg, #e46446 0%, #e65d32 100%);
-                border: 1px solid rgba(228, 95, 62, 0.5);
-                box-shadow:
-                    inset 10px 2px 8px -2px rgba(255, 255, 255, 0.1),
-                    inset -2px -3px 5px #aa2300;
-
-                &::before {
-                    background-image: svg-load("./icon/power.svg");
-                }
-            }
-
-        }
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .turn-off-dialog-icon .xp-icon-logoff {
+            width: 15px;
+            height: 15px;
         }
     }
 }

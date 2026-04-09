@@ -2646,8 +2646,52 @@ import "xp.css/dist/98.css";</pre>
             <div class="start-menu-all-programs-arrow"></div>
           </div>
           <div class="start-menu-submenu start-menu-submenu--games">
-            <div class="xp-start-menu-games-submenu">
-              <div class="xp-start-menu-games-submenu__preview" aria-label="Games submenu preview"></div>
+            <div class="start-menu-submenu-sidebar" aria-hidden="true"></div>
+            <div class="start-menu-submenu-items" role="menu" aria-label="Games">
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                <span>Internet Backgammon</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                <span>Internet Checkers</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                <span>Internet Hearts</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                <span>Internet Reversi</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                <span>Internet Spades</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--pinball" aria-hidden="true"></span>
+                <span>Pinball</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-red" aria-hidden="true"></span>
+                <span>Solitaire</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-purple" aria-hidden="true"></span>
+                <span>Spider Solitaire</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-blue" aria-hidden="true"></span>
+                <span>FreeCell</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-gold" aria-hidden="true"></span>
+                <span>Hearts</span>
+              </div>
+              <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--mine" aria-hidden="true"></span>
+                <span>Minesweeper</span>
+              </div>
             </div>
           </div>
         </div>
@@ -2725,15 +2769,19 @@ import "xp.css/dist/98.css";</pre>
       </div>
     </div>
     <div class="start-menu-footer">
-      <div class="start-menu-footer-buttons">
-        <div class="start-menu-footer-button logoff">
-          <div class="start-menu-footer-button-icon" aria-hidden="true"></div>
+      <div class="turn-off-dialog start-menu-turn-off-dialog" aria-label="Power actions">
+        <button class="turn-off-dialog-item" type="button">
+          <div class="turn-off-dialog-icon logoff">
+            <span class="xp-icon xp-icon-logoff"></span>
+          </div>
           <span>Log off</span>
-        </div>
-        <div class="start-menu-footer-button shutdown">
-          <div class="start-menu-footer-button-icon" aria-hidden="true"></div>
+        </button>
+        <button class="turn-off-dialog-item" type="button">
+          <div class="turn-off-dialog-icon power">
+            <span class="xp-icon xp-icon-power"></span>
+          </div>
           <span>Turn off</span>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -2829,8 +2877,52 @@ import "xp.css/dist/98.css";</pre>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-all-programs-arrow&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu start-menu-submenu--games&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-start-menu-games-submenu&quot;</span>&gt;</span>
-              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-start-menu-games-submenu__preview&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Games submenu preview&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-sidebar&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-items&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menu&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Games&quot;</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--internet&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Internet Backgammon<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--internet&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Internet Checkers<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--internet&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Internet Hearts<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--internet&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Internet Reversi<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--internet&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Internet Spades<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--pinball&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Pinball<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-red&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Solitaire<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-purple&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Spider Solitaire<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-blue&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>FreeCell<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-gold&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Hearts<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;menuitem&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-submenu-item-icon start-menu-submenu-item-icon--mine&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Minesweeper<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -2908,15 +3000,19 @@ import "xp.css/dist/98.css";</pre>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer&quot;</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer-buttons&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer-button logoff&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer-button-icon&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog start-menu-turn-off-dialog&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Power actions&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-item&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-icon logoff&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-icon xp-icon-logoff&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Log off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer-button shutdown&quot;</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;start-menu-footer-button-icon&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-item&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-icon power&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-icon xp-icon-power&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Turn off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -4332,13 +4428,13 @@ import "xp.css/dist/98.css";</pre>
   <div class="turn-off-dialog-icon logoff">
     <span class="xp-icon xp-icon-logoff"></span>
   </div>
-  <span>Turn off</span>
+  <span>Log off</span>
 </button>
 <button class="turn-off-dialog-item">
   <div class="turn-off-dialog-icon logoff">
     <span class="xp-icon xp-icon-logoff"></span>
   </div>
-  <span>Turn off</span>
+  <span>Log off</span>
 </button>
 </div>
       <details>
@@ -4360,13 +4456,13 @@ import "xp.css/dist/98.css";</pre>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-icon logoff&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-icon xp-icon-logoff&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Turn off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Log off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-item&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;turn-off-dialog-icon logoff&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;xp-icon xp-icon-logoff&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Turn off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Log off<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
       </details>

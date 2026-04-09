@@ -11,7 +11,7 @@
     border: 1px solid #245CDA;
     border-radius: 5px;
     box-shadow: 0 4px 0 #245CDA;
-    font-family: var(--sans-serif);
+    font-family: Tahoma, Arial, var(--sans-serif);
     font-size: 11px;
     -webkit-font-smoothing: antialiased;
 
@@ -23,86 +23,47 @@
 .turn-off-dialog-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 3px 8px;
-    border-radius: 2px;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 2px;
+    border-radius: 0;
     cursor: pointer;
     color: white;
     background: transparent;
     border: none;
+    box-shadow: none;
+    min-width: 0;
+    min-height: 0;
     font-family: inherit;
     font-size: inherit;
+    font-weight: 400;
+    line-height: 1;
     white-space: nowrap;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    appearance: none;
+    -webkit-appearance: none;
 
-    &:hover {
+    &:focus {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus-visible {
         background: #316AC5;
-
-        .turn-off-dialog-icon.power {
-            background: linear-gradient(135deg, #F45555 0%, #F84C39 50%);
-            box-shadow:
-                inset 10px 2px 8px rgba(255, 255, 255, 0.1),
-                inset -2px -3px 4px rgba(255, 68, 20, 1);
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                right: -2px;
-                width: 8px;
-                height: 8px;
-                background: #FFA07A;
-                filter: blur(2.5px);
-                mix-blend-mode: color-burn;
-                z-index: 0;
-            }
-        }
-
-        .turn-off-dialog-icon.logoff {
-            background: linear-gradient(315deg, #FEA827 0%, #FFBC56 48%, #FEA827 100%);
-            box-shadow:
-                inset 10px 2px 8px rgba(255, 255, 255, 0.1),
-                inset -2px -3px 5px rgba(202, 111, 0, 1);
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                right: -2px;
-                width: 8px;
-                height: 8px;
-                background: #FFE41E;
-                filter: blur(2.5px);
-                mix-blend-mode: color-burn;
-                z-index: 0;
-            }
-        }
     }
 }
 
 .turn-off-dialog-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 2px;
-    border: 1px solid white;
+    width: 22px;
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
     flex-shrink: 0;
-
-    /* Glass sheen - vertical line */
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 1px;
-        width: 1px;
-        height: 100%;
-        background: linear-gradient(180deg, white, transparent);
-        opacity: 0.7;
-        z-index: 1;
-    }
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 
     svg {
         width: 12px;
@@ -115,7 +76,7 @@
         width: 12px;
         height: 12px;
         position: relative;
-        z-index: 2;
+        z-index: 1;
         color: white;
     }
 
@@ -125,16 +86,20 @@
     }
 
     &.power {
-        background: linear-gradient(180deg, #E46446 0%, #E65D32 100%);
-        box-shadow:
-            inset 10px 2px 8px rgba(255, 255, 255, 0.1),
-            inset -2px -3px 5px rgba(170, 35, 0, 1);
+        background-image: svg-load("./icon/turn-off-button-power-idle.svg");
     }
 
     &.logoff {
-        background: linear-gradient(315deg, #D99429 0%, #DEA34F 48%, #D48E24 82%);
-        box-shadow:
-            inset 10px 2px 8px rgba(255, 255, 255, 0.1),
-            inset -2px -3px 5px rgba(163, 106, 0, 1);
+        background-image: svg-load("./icon/turn-off-button-logoff-idle.svg");
     }
+}
+
+.turn-off-dialog-item:hover .turn-off-dialog-icon.power,
+.turn-off-dialog-item:focus-visible .turn-off-dialog-icon.power {
+    background-image: svg-load("./icon/turn-off-button-power-hover.svg");
+}
+
+.turn-off-dialog-item:hover .turn-off-dialog-icon.logoff,
+.turn-off-dialog-item:focus-visible .turn-off-dialog-icon.logoff {
+    background-image: svg-load("./icon/turn-off-button-logoff-hover.svg");
 }
