@@ -72,3 +72,27 @@ document.querySelectorAll(".explorer-panel-section-header").forEach(function (he
     }
   });
 });
+
+document.querySelectorAll(".desktop").forEach((desktop) => {
+  const startMenuToggle = desktop.querySelector('input[name="start-menu-demo"]');
+
+  if (!startMenuToggle) {
+    return;
+  }
+
+  const startButton = desktop.querySelector(".start-button");
+
+  const syncStartMenuDemo = () => {
+    const isOpen = startMenuToggle.checked;
+
+    desktop.dataset.startMenuOpen = String(isOpen);
+
+    if (startButton) {
+      startButton.classList.toggle("active", isOpen);
+      startButton.setAttribute("aria-pressed", String(isOpen));
+    }
+  };
+
+  startMenuToggle.addEventListener("change", syncStartMenuDemo);
+  syncStartMenuDemo();
+});

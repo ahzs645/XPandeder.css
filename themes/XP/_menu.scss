@@ -408,3 +408,21 @@ ul {
     }
 }
 
+/*-------------------------------------------*\
+    Start Menu Games Submenu
+\*-------------------------------------------*/
+
+.xp-start-menu-games-submenu {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 0;
+    background: transparent;
+}
+
+.xp-start-menu-games-submenu__preview {
+    width: 141px;
+    height: 248px;
+    flex: 0 0 auto;
+    background: svg-load("./icon/start-menu-games-submenu.svg") no-repeat center;
+    background-size: contain;
+}
