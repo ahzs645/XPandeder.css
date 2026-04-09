@@ -28,9 +28,9 @@ function initColorPickerDialog(dialog) {
   const previewNew = dialog.querySelector('[data-role="preview-new"]');
   const basicGrid = dialog.querySelector('[data-role="basic-swatches"]');
   const customGrid = dialog.querySelector('[data-role="custom-swatches"]');
-  const addCustomButton = dialog.querySelector('[data-action="add-custom"]');
+  const saveCustomButton = dialog.querySelector('[data-action="save-custom"]');
 
-  if (!spectrumCanvas || !luminanceCanvas || !previewNew || !basicGrid || !customGrid || !addCustomButton) {
+  if (!spectrumCanvas || !luminanceCanvas || !previewNew || !basicGrid || !customGrid || !saveCustomButton) {
     return;
   }
 
@@ -177,7 +177,7 @@ function initColorPickerDialog(dialog) {
     luminanceArrows.style.top = `${(1 - lum / 100) * luminanceHeight - 4}px`;
     previewNew.style.background = hex;
 
-    inputs.hue.value = hue;
+    inputs.hue.value = Math.round((hue / 360) * 240);
     inputs.sat.value = Math.round(sat * 2.4);
     inputs.lum.value = Math.round(lum * 2.4);
     inputs.red.value = r;
@@ -273,7 +273,7 @@ function initColorPickerDialog(dialog) {
   basicGrid.addEventListener("click", (event) => selectSwatch(event, false));
   customGrid.addEventListener("click", (event) => selectSwatch(event, true));
 
-  inputs.hue.addEventListener("input", () => setFromHsl(Number(inputs.hue.value), sat, lum));
+  inputs.hue.addEventListener("input", () => setFromHsl((Number(inputs.hue.value) / 240) * 360, sat, lum));
   inputs.sat.addEventListener("input", () => setFromHsl(hue, Math.round(Number(inputs.sat.value) / 2.4), lum));
   inputs.lum.addEventListener("input", () => setFromHsl(hue, sat, Math.round(Number(inputs.lum.value) / 2.4)));
 
@@ -289,7 +289,7 @@ function initColorPickerDialog(dialog) {
   inputs.green.addEventListener("input", updateFromRgbInputs);
   inputs.blue.addEventListener("input", updateFromRgbInputs);
 
-  addCustomButton.addEventListener("click", (event) => {
+  saveCustomButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     const swatches = customGrid.querySelectorAll(".color-swatch");
