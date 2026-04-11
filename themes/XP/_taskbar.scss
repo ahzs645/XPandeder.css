@@ -79,7 +79,9 @@
 
         /* Hover state - brighter green, softer shadows */
         &:hover,
-        &.hover {
+        &.hover,
+        &.is-hover,
+        &[data-state='hover'] {
             background-color: #3AC43B;
             box-shadow:
                 1px 1px 1px rgba(48, 127, 232, 1),
@@ -93,7 +95,9 @@
 
         /* Active/pressed state */
         &:active,
-        &.active {
+        &.active,
+        &.is-active,
+        &[data-state='active'] {
             background-color: #1F9A1F;
             box-shadow:
                 1px 1px 1px rgba(48, 127, 232, 1),
@@ -122,6 +126,58 @@
             filter: drop-shadow(1px 1.5px 3px rgba(43, 49, 0, 1));
             position: relative;
             z-index: 2;
+        }
+
+        &.start-button--image {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            height: 30px;
+            left: 0;
+            overflow: visible;
+            transform: none;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            label {
+                padding: 0;
+                gap: 0;
+                filter: none;
+            }
+
+            .start-button-image {
+                display: block;
+                width: auto;
+                height: 30px;
+            }
+
+            &:hover,
+            &.hover,
+            &.is-hover,
+            &[data-state='hover'] {
+                background: transparent;
+                box-shadow: none;
+
+                .start-button-image {
+                    filter: brightness(1.05);
+                }
+            }
+
+            &:active,
+            &.active,
+            &.is-active,
+            &[data-state='active'] {
+                background: transparent;
+                box-shadow: none;
+
+                .start-button-image {
+                    filter: brightness(0.94);
+                }
+            }
         }
     }
     .running-applications {
@@ -180,10 +236,15 @@
         grid-column-gap: 0px;
         grid-row-gap: 0px;
         transition: grid-template-columns 300ms ease-in-out;
-        &:has(>[aria-label="notif-expand"] input:checked) {
-            grid-template-columns: 8px 100px; 
+        --xp-tray-collapsed-width: 77px;
+        --xp-tray-expanded-width: max-content;
 
+        &:has(>[aria-label="notif-expand"] input:checked),
+        &.is-expanded,
+        &[data-expanded='true'] {
+            grid-template-columns: 8px var(--xp-tray-expanded-width);
         }
+        grid-template-columns: 8px var(--xp-tray-collapsed-width);
         .clock {
         }
         [aria-label="notif-expand"] {
@@ -213,6 +274,10 @@
 
                 
             }
+        }
+        &.is-expanded [aria-label="notif-expand"]::after,
+        &[data-expanded='true'] [aria-label="notif-expand"]::after {
+            transform: scaleX(-1);
         }
         .external {
             grid-area: 1 / 1 / 2 / 2;

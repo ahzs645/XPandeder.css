@@ -12,6 +12,10 @@
 
         <p>Taskbar buttons (<code>app-button</code> class) go into the <code>running-applications</code> element. The tabs will resize if there are too many to fit in the space. The <code>active</code> class is for <a href="#inactive-windows">active/inactive windows</a></p>
 
+        <p>Framework-driven shells can set <code>.start-button.is-active</code> or <code>data-state="active"</code> on the Start button, and <code>.notification-tray.is-expanded</code> or <code>data-expanded="true"</code> on the tray, instead of relying only on native hover and checkbox selectors.</p>
+
+        <p>Use <code>.start-button.start-button--image</code> with an inner <code>.start-button-image</code> if your app wants to supply a full illustrated Start button asset. The tray also supports <code>--xp-tray-expanded-width</code> for content-driven widths when expanded.</p>
+
         <h4>Start Button</h4>
         <p>The Start Button is a molecule that hugs its content — only its width changes based on the label. This makes it suitable for localisation where the label text may vary in length.</p>
 

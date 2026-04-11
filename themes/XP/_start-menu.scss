@@ -2,7 +2,8 @@
     Start Menu
 \*-------------------------------------------*/
 
-.desktop {
+.desktop,
+.xp-taskbar-shell {
     position: relative;
 
     &[data-start-menu-open='true'] .start-menu,
@@ -142,7 +143,8 @@
         background: #fff;
         border-top: 1px solid #1c6bd1;
         border-bottom: 1px solid #1c6bd1;
-        overflow: hidden;
+        /* Allow flyout menus to escape the two-pane shell. */
+        overflow: visible;
     }
 
     .start-menu-orange-hr {
@@ -173,6 +175,7 @@
         min-height: 374px;
         padding: 6px;
         box-sizing: border-box;
+        overflow: visible;
 
         .start-menu-items {
             display: flex;
@@ -229,6 +232,7 @@
         color: #0A236A;
         min-width: 0;
         box-sizing: border-box;
+        overflow: visible;
 
         .start-menu-item {
             padding: 1px;
@@ -642,8 +646,14 @@
     /* Show submenu on hover */
     .start-menu-item:hover > .start-menu-submenu,
     .start-menu-item:focus-within > .start-menu-submenu,
+    .start-menu-item.active > .start-menu-submenu,
+    .start-menu-item.is-open > .start-menu-submenu,
+    .start-menu-submenu-item:hover > .start-menu-submenu,
+    .start-menu-submenu-item:focus-within > .start-menu-submenu,
+    .start-menu-submenu-item.is-open > .start-menu-submenu,
     .start-menu-all-programs:hover > .start-menu-submenu,
-    .start-menu-all-programs:focus-within > .start-menu-submenu {
+    .start-menu-all-programs:focus-within > .start-menu-submenu,
+    .start-menu-all-programs.is-open > .start-menu-submenu {
         display: block;
     }
 
