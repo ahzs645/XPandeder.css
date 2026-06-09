@@ -66,15 +66,73 @@
     </section>
 
     <section class="component">
-      <h3 id="start-menu-games-submenu">Start Menu Games Submenu</h3>
+      <h3 id="start-menu-games-flyout">Start Menu Games Flyout</h3>
       <div>
-        <p>This XP submenu demo is based on the Figma games flyout. It now renders as the exact exported submenu shell instead of pairing it with the extra template card.</p>
+        <p>This is the real <code>start-menu-submenu--games</code> flyout component used inside the full Start menu, shown open on its own. Every entry uses one of the library's built-in CSS icons (<code>--internet</code>, <code>--pinball</code>, <code>--cards-red</code>/<code>-purple</code>/<code>-blue</code>/<code>-gold</code>, <code>--mine</code>) &mdash; no external images. The <em>Internet Games</em> item cascades into a second-level submenu on hover or focus.</p>
 
-        <p>Use <code>xp-start-menu-games-submenu</code> for the section wrapper and <code>xp-start-menu-games-submenu__preview</code> for the submenu preview itself.</p>
+        <p>Add the <code>start-menu--flyout-demo</code> modifier to a <code>start-menu</code> element to render the submenu standalone, without the full menu panel chrome. Nested submenus are created by giving a <code>start-menu-submenu-item</code> its own child <code>start-menu-submenu</code>.</p>
 
         <%- example(`
-          <div class="xp-start-menu-games-submenu">
-            <div class="xp-start-menu-games-submenu__preview" aria-label="Games submenu preview"></div>
+          <div class="start-menu start-menu--flyout-demo">
+            <div class="start-menu-submenu start-menu-submenu--games">
+              <div class="start-menu-submenu-sidebar" aria-hidden="true"></div>
+              <div class="start-menu-submenu-items" role="menu" aria-label="Games">
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0" aria-haspopup="true">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                  <span>Internet Games</span>
+                  <span class="start-menu-submenu-item-arrow" aria-hidden="true"></span>
+                  <div class="start-menu-submenu start-menu-submenu--games">
+                    <div class="start-menu-submenu-sidebar" aria-hidden="true"></div>
+                    <div class="start-menu-submenu-items" role="menu" aria-label="Internet Games">
+                      <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                        <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                        <span>Internet Backgammon</span>
+                      </div>
+                      <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                        <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                        <span>Internet Checkers</span>
+                      </div>
+                      <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                        <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                        <span>Internet Hearts</span>
+                      </div>
+                      <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                        <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                        <span>Internet Reversi</span>
+                      </div>
+                      <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                        <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
+                        <span>Internet Spades</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--pinball" aria-hidden="true"></span>
+                  <span>Pinball</span>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-red" aria-hidden="true"></span>
+                  <span>Solitaire</span>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-purple" aria-hidden="true"></span>
+                  <span>Spider Solitaire</span>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-blue" aria-hidden="true"></span>
+                  <span>FreeCell</span>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--cards-gold" aria-hidden="true"></span>
+                  <span>Hearts</span>
+                </div>
+                <div class="start-menu-submenu-item" role="menuitem" tabindex="0">
+                  <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--mine" aria-hidden="true"></span>
+                  <span>Minesweeper</span>
+                </div>
+              </div>
+            </div>
           </div>
         `) %>
       </div>

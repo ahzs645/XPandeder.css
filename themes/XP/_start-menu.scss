@@ -411,15 +411,16 @@
         border: 1px solid #70A0F9;
         border-radius: 1px;
         box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-        min-width: 180px;
+        width: max-content;
+        min-width: 124px;
         z-index: 10;
         display: none;
 
         &.start-menu-submenu--games {
             top: auto;
             bottom: 0;
-            width: 135px;
-            min-width: 135px;
+            width: max-content;
+            min-width: 124px;
             box-sizing: border-box;
             padding-left: 6px;
             background: #fff;
@@ -442,10 +443,15 @@
                 padding: 0 8px 0 6px;
                 box-sizing: border-box;
                 display: grid;
-                grid-template-columns: 16px minmax(0, 1fr);
+                grid-template-columns: 16px auto;
                 align-items: center;
                 gap: 8px;
                 outline: 0;
+
+                /* reserve room for the cascade arrow */
+                &[aria-haspopup="true"] {
+                    padding-right: 18px;
+                }
 
                 &:focus-visible {
                     background-color: #316AC5;
@@ -730,5 +736,36 @@
             width: 15px;
             height: 15px;
         }
+    }
+}
+
+/*-------------------------------------------*\
+    Start Menu — standalone submenu flyout
+
+    Reuses the real .start-menu-submenu component outside of the full
+    Start menu chrome (e.g. for docs demos). Strips the panel
+    background/border/fixed sizing and renders the top-level submenu
+    open in place; nested submenus still cascade on hover/focus.
+\*-------------------------------------------*/
+
+.start-menu.start-menu--flyout-demo {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+
+    &::before {
+        content: none;
+    }
+
+    /* Show the top-level submenu inline instead of as an absolute flyout */
+    > .start-menu-submenu {
+        position: static;
+        display: block;
     }
 }
