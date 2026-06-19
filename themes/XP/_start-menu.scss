@@ -416,154 +416,116 @@
         z-index: 10;
         display: none;
 
-        &.start-menu-submenu--games {
-            top: auto;
-            bottom: 0;
-            width: max-content;
-            min-width: 124px;
-            box-sizing: border-box;
-            padding-left: 6px;
-            background: #fff;
-            border: 1px solid #70A0F9;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
+        /* CSS-drawn item icons (no external images), aligned to the
+           item icon slot. An item may use an <img> or a
+           <span class="start-menu-submenu-item-icon">. */
+        .start-menu-submenu-item-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            display: block;
+            border-radius: 2px;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.45),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.18);
 
-            .start-menu-submenu-sidebar {
-                width: 6px;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
             }
 
-            .start-menu-submenu-items {
-                padding: 0;
-                background: #fff;
-            }
+            &--internet {
+                background: linear-gradient(180deg, #80d8ff 0%, #2f71cf 100%);
 
-            .start-menu-submenu-item {
-                height: 20px;
-                min-height: 20px;
-                padding: 0 8px 0 6px;
-                box-sizing: border-box;
-                display: grid;
-                grid-template-columns: 16px auto;
-                align-items: center;
-                gap: 8px;
-                outline: 0;
-
-                /* reserve room for the cascade arrow */
-                &[aria-haspopup="true"] {
-                    padding-right: 18px;
+                &::before {
+                    inset: 3px;
+                    border: 1px solid rgba(255, 255, 255, 0.9);
+                    border-radius: 50%;
                 }
 
-                &:focus-visible {
-                    background-color: #316AC5;
-                    color: #fff;
+                &::after {
+                    left: 3px;
+                    right: 3px;
+                    top: 7px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.9);
                 }
             }
 
-            .start-menu-submenu-item-icon {
-                width: 16px;
-                height: 16px;
-                display: block;
-                position: relative;
-                border-radius: 2px;
-                box-shadow:
-                    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-                    inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+            &--pinball {
+                background: radial-gradient(circle at 35% 35%, #ffd76e 0%, #ff9c2e 42%, #cf3d22 100%);
+
+                &::before {
+                    inset: 5px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.82);
+                }
+            }
+
+            &--cards-red,
+            &--cards-purple,
+            &--cards-blue,
+            &--cards-gold {
+                background: linear-gradient(180deg, #f7fbff 0%, #d9e6f7 100%);
 
                 &::before,
                 &::after {
-                    content: '';
-                    position: absolute;
+                    width: 6px;
+                    height: 8px;
+                    top: 4px;
+                    border-radius: 1px;
+                    background: #fff;
+                    box-shadow: 0 0 0 1px rgba(43, 69, 121, 0.28);
                 }
 
-                &--internet {
-                    background: linear-gradient(180deg, #80d8ff 0%, #2f71cf 100%);
-
-                    &::before {
-                        inset: 3px;
-                        border: 1px solid rgba(255, 255, 255, 0.9);
-                        border-radius: 50%;
-                    }
-
-                    &::after {
-                        left: 3px;
-                        right: 3px;
-                        top: 7px;
-                        height: 1px;
-                        background: rgba(255, 255, 255, 0.9);
-                    }
+                &::before {
+                    left: 2px;
+                    transform: rotate(-8deg);
                 }
 
-                &--pinball {
-                    background: radial-gradient(circle at 35% 35%, #ffd76e 0%, #ff9c2e 42%, #cf3d22 100%);
+                &::after {
+                    right: 2px;
+                    transform: rotate(8deg);
+                }
+            }
 
-                    &::before {
-                        inset: 5px;
-                        border-radius: 50%;
-                        background: rgba(255, 255, 255, 0.82);
-                    }
+            &--cards-red::after {
+                background: linear-gradient(180deg, #fff 0%, #ffd9d9 100%);
+                box-shadow: 0 0 0 1px rgba(197, 48, 67, 0.4);
+            }
+
+            &--cards-purple::after {
+                background: linear-gradient(180deg, #fff 0%, #eadbff 100%);
+                box-shadow: 0 0 0 1px rgba(104, 70, 183, 0.42);
+            }
+
+            &--cards-blue::after {
+                background: linear-gradient(180deg, #fff 0%, #d9ecff 100%);
+                box-shadow: 0 0 0 1px rgba(46, 121, 200, 0.42);
+            }
+
+            &--cards-gold::after {
+                background: linear-gradient(180deg, #fff 0%, #fff0bf 100%);
+                box-shadow: 0 0 0 1px rgba(194, 135, 16, 0.42);
+            }
+
+            &--mine {
+                background: linear-gradient(180deg, #d9d9dd 0%, #8d8f98 100%);
+
+                &::before {
+                    inset: 4px;
+                    border-radius: 50%;
+                    background: #2b2e38;
                 }
 
-                &--cards-red,
-                &--cards-purple,
-                &--cards-blue,
-                &--cards-gold {
-                    background: linear-gradient(180deg, #f7fbff 0%, #d9e6f7 100%);
-
-                    &::before,
-                    &::after {
-                        width: 6px;
-                        height: 8px;
-                        top: 4px;
-                        border-radius: 1px;
-                        background: #fff;
-                        box-shadow: 0 0 0 1px rgba(43, 69, 121, 0.28);
-                    }
-
-                    &::before {
-                        left: 2px;
-                        transform: rotate(-8deg);
-                    }
-
-                    &::after {
-                        right: 2px;
-                        transform: rotate(8deg);
-                    }
-                }
-
-                &--cards-red::after {
-                    background: linear-gradient(180deg, #fff 0%, #ffd9d9 100%);
-                    box-shadow: 0 0 0 1px rgba(197, 48, 67, 0.4);
-                }
-
-                &--cards-purple::after {
-                    background: linear-gradient(180deg, #fff 0%, #eadbff 100%);
-                    box-shadow: 0 0 0 1px rgba(104, 70, 183, 0.42);
-                }
-
-                &--cards-blue::after {
-                    background: linear-gradient(180deg, #fff 0%, #d9ecff 100%);
-                    box-shadow: 0 0 0 1px rgba(46, 121, 200, 0.42);
-                }
-
-                &--cards-gold::after {
-                    background: linear-gradient(180deg, #fff 0%, #fff0bf 100%);
-                    box-shadow: 0 0 0 1px rgba(194, 135, 16, 0.42);
-                }
-
-                &--mine {
-                    background: linear-gradient(180deg, #d9d9dd 0%, #8d8f98 100%);
-
-                    &::before {
-                        inset: 4px;
-                        border-radius: 50%;
-                        background: #2b2e38;
-                    }
-
-                    &::after {
-                        inset: 1px;
-                        border: 1px solid rgba(255, 255, 255, 0.35);
-                        border-radius: 50%;
-                    }
+                &::after {
+                    inset: 1px;
+                    border: 1px solid rgba(255, 255, 255, 0.35);
+                    border-radius: 50%;
                 }
             }
         }
@@ -661,6 +623,20 @@
     .start-menu-all-programs:focus-within > .start-menu-submenu,
     .start-menu-all-programs.is-open > .start-menu-submenu {
         display: block;
+    }
+
+    /* The All Programs flyout sits near the bottom of the panel, so it opens
+       upward (bottom-aligned) rather than down from the anchor. */
+    .start-menu-all-programs > .start-menu-submenu {
+        top: auto;
+        bottom: 0;
+    }
+
+    /* Flipped cascade — set by the optional xp-start-menu.js helper when a
+       flyout would overflow the right viewport edge, so it opens leftward. */
+    .start-menu-submenu.start-menu-submenu--flip-left {
+        left: auto;
+        right: 100%;
     }
 
     /* ===== Footer ===== */

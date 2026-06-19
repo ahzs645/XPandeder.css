@@ -74,6 +74,13 @@ function buildXPCSS() {
     });
 }
 
+function buildJS() {
+  mkdirp.sync("dist");
+  // Optional Start Menu flyout helper — shipped alongside the CSS.
+  fs.copyFileSync("js/xp-start-menu.js", "dist/xp-start-menu.js");
+  return Promise.resolve();
+}
+
 function buildDocs() {
   let id = 0;
   function getNewId() {
@@ -120,6 +127,7 @@ function build() {
   build98CSS()
     .then(buildXPCSS)
     .then(buildCSS)
+    .then(buildJS)
     .then(buildDocs)
     .catch((err) => console.log(err));
 }

@@ -66,22 +66,22 @@
     </section>
 
     <section class="component">
-      <h3 id="start-menu-games-flyout">Start Menu Games Flyout</h3>
+      <h3 id="start-menu-submenu-flyout">Start Menu Submenu Flyout</h3>
       <div>
-        <p>This is the real <code>start-menu-submenu--games</code> flyout component used inside the full Start menu, shown open on its own. Every entry uses one of the library's built-in CSS icons (<code>--internet</code>, <code>--pinball</code>, <code>--cards-red</code>/<code>-purple</code>/<code>-blue</code>/<code>-gold</code>, <code>--mine</code>) &mdash; no external images. The <em>Internet Games</em> item cascades into a second-level submenu on hover or focus.</p>
+        <p>This is the <code>start-menu-submenu</code> flyout component used inside the full Start menu, shown open on its own. Every entry uses one of the library's built-in CSS icons via <code>start-menu-submenu-item-icon</code> (<code>--internet</code>, <code>--pinball</code>, <code>--cards-red</code>/<code>-purple</code>/<code>-blue</code>/<code>-gold</code>, <code>--mine</code>) &mdash; no external images. The <em>Internet Games</em> item cascades into a second-level submenu on hover or focus.</p>
 
         <p>Add the <code>start-menu--flyout-demo</code> modifier to a <code>start-menu</code> element to render the submenu standalone, without the full menu panel chrome. Nested submenus are created by giving a <code>start-menu-submenu-item</code> its own child <code>start-menu-submenu</code>.</p>
 
         <%- example(`
           <div class="start-menu start-menu--flyout-demo">
-            <div class="start-menu-submenu start-menu-submenu--games">
+            <div class="start-menu-submenu">
               <div class="start-menu-submenu-sidebar" aria-hidden="true"></div>
               <div class="start-menu-submenu-items" role="menu" aria-label="Games">
                 <div class="start-menu-submenu-item" role="menuitem" tabindex="0" aria-haspopup="true">
                   <span class="start-menu-submenu-item-icon start-menu-submenu-item-icon--internet" aria-hidden="true"></span>
                   <span>Internet Games</span>
                   <span class="start-menu-submenu-item-arrow" aria-hidden="true"></span>
-                  <div class="start-menu-submenu start-menu-submenu--games">
+                  <div class="start-menu-submenu">
                     <div class="start-menu-submenu-sidebar" aria-hidden="true"></div>
                     <div class="start-menu-submenu-items" role="menu" aria-label="Internet Games">
                       <div class="start-menu-submenu-item" role="menuitem" tabindex="0">

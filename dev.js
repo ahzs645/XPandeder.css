@@ -31,7 +31,7 @@ function rebuild() {
 rebuild();
 
 // Watch source files
-watch(["gui/**/*", "themes/**/*", "docs/**/*"], {
+watch(["gui/**/*", "themes/**/*", "docs/**/*", "js/**/*"], {
   ignoreInitial: true,
 }).on("all", (event, path) => {
   console.log(`${event}: ${path}`);
